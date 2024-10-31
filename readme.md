@@ -6,5 +6,9 @@ for rcfile in "${DOTFILES:-$HOME}"/.dotfiles/shell/^README.md(.N); do
 done
 ```
 
+```sh
+cp ~/.dotfiles/gitsecret ~/.gitsecret
+```
+
 # create symbolic links for dotfiles/config files
 

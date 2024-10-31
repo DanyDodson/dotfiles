@@ -3,7 +3,9 @@
 [user]
   name = "danydodson"
   email ="danydodson@gmail.com"
-  signingkey = "op://Personal/git-ssh-key/public key"
+
+[includeIf "gitdir:/Users/"]
+	path = "~/.gitsecret"
 
 [commit]
 	gpgsign = true
