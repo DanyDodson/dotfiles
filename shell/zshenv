@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+#
+# Defines environment variables.
+#
+
+skip_global_compinit=1
+
+setopt noglobalrcs
+
+export SYSTEM=$(uname -s)
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+# Dotfiles
+export DOTFILES=$HOME/.dotfiles
+
+# 1Password
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
+export SSH_AUTH_SOCK="$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+
+# oh-my-zsh
+export ZSH="$HOME/.omz"
+
+# Home-made scripts
+export PATH=$PATH:${DOTFILES}/bin

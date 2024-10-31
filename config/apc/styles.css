@@ -1,0 +1,7 @@
+.monaco-editor .margin-view-overlays .line-numbers {
+  font-size: 0.9rem !important;
+}
+
+.relative-current-line-number {
+  text-align: unset !important;
+}

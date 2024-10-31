@@ -1,0 +1,106 @@
+# gitconfig
+
+[user]
+  name = "danydodson"
+  email ="danydodson@gmail.com"
+  signingkey = "op://Personal/git-ssh-key/public key"
+
+[commit]
+	gpgsign = true
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[core]
+	editor = nvim
+	pager = delta
+	compression = -1
+	sharedRepository = 0664
+	commentchar = ";"
+	ignorecase = false
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+	compactionHeuristic = true
+	renames = true
+	renameLimit = 12650
+
+[init]
+	defaultBranch = main
+
+[difftool]
+	prompt = false
+
+[push]
+	default = simple
+
+[mergetool]
+	prompt = false
+
+[pager]
+	status = true
+
+[blame]
+	date = short
+	showEmail = true
+
+[branch]
+	autosetupmerge = always
+	autosetuprebase = always
+
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required  = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+
+[rebase]
+	stat = true
+
+[rerere]
+	enabled = 1
+
+[credential "https://github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper = !/opt/homebrew/bin/gh auth git-credential
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+
+[url "git@heroku.com:"]
+	insteadOf = "heroku:"
+
+[url "ssh://git@"]
+	insteadOf = https://
