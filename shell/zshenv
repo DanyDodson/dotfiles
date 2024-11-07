@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
-
-#
-# Defines environment variables.
-#
+# vim:syntax=zsh
+# vim:filetype=zsh
 
 skip_global_compinit=1
 
@@ -18,12 +16,12 @@ fi
 # Dotfiles
 export DOTFILES=$HOME/.dotfiles
 
+# oh-my-zsh
+export ZSH="$HOME/.omz"
+
 # 1Password
 export OP_BIOMETRIC_UNLOCK_ENABLED=true
 export SSH_AUTH_SOCK="$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
-# oh-my-zsh
-export ZSH="$HOME/.omz"
-
-# Home-made scripts
-export PATH=$PATH:${DOTFILES}/bin
+# Homebrew
+export HOMEBREW_NO_ENV_HINTS=true

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-# Update and clean
+# Update and Clean
 
-cd "$HOME"/.dotfiles/macos && ./clean.sh
+cd "$HOME"/.dotfiles/scripts && ./clean.sh

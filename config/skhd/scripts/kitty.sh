@@ -17,7 +17,7 @@
 logfile="${HOME}/.config/skhd/kitty_console.log"
 
 function kclog {
-  [[ -n "${logfile}" ]] && printf -- "$*\n" &>>"${logfile}"
+  [[ -n "${logfile}" ]] && printf -- "%s\n" "$*" &>>"${logfile}"
 }
 
 kclog 'Launching Kitty Console Script.'
@@ -167,7 +167,7 @@ function launch_new_kitty {
   { kitty --title Console --directory '/' --listen-on "${SOCKET}" & } 2>/dev/null
   kitty_pid=$!
   disown -r "${kitty_pid}"
-  printf "${kitty_pid}\n"
+  printf "%s\n" ${kitty_pid}
 }
 
 function launch_new_hidden_kitty {
@@ -189,7 +189,7 @@ function learnings {
   kitty @ --to unix:/tmp/kitty-console ls | jq '.[].tabs[].windows[].pid'
 
   # From this, one can use
-  ps -f $KITTY_BASH_PID
+  ps -f "$KITTY_BASH_PID"
 
   # To get the main kitty PID
 }

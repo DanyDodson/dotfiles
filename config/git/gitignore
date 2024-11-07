@@ -1,0 +1,14 @@
+.DS_Store
+desktop.ini
+.VolumeIcon.icns
+Icon
+*~.nib
+Thumbs.db
+node_modules
+npm-debug.log
+yarn-error.log
+bower_components
+*.sublime-*
+.tern-project
+.vscode
+.idea

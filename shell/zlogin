@@ -1,15 +1,13 @@
 #!/usr/bin/env zsh
-
-#
-# Executes commands at login post-zshrc.
-#
+# vim:syntax=zsh
+# vim:filetype=zsh
 
 # Execute code that does not affect the current session in the background.
 {
   # Compile the completion dump to increase startup speed.
   setopt LOCAL_OPTIONS EXTENDED_GLOB
   autoload -U zrecompile
-
+  
   zcompdump="${ZDOTDIR:-$HOME/.cache/zsh}/.zcompdump"
   if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
     if command mkdir "${zcompdump}.zwc.lock" 2>/dev/null; then
@@ -18,3 +16,15 @@
     fi
   fi
 } &!
+
+# Print a random, hopefully interesting, adage.
+# if (( $+commands[fortune] )); then
+#   fortune -a
+#   print
+# fi
+
+# if (( $+commands[figlet] )); then
+#   print '\n'
+#   figlet -f slant $USER@$HOST | lolcat
+#   print
+# fi
