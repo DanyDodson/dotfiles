@@ -28,6 +28,8 @@ if [[ -f "${DOTFILES}/zsh/functions.zsh" ]]; then
   source ${DOTFILES}/zsh/functions.zsh
 fi
 
+# test -e /Users/dany/.iterm2_shell_integration.zsh && source /Users/dany/.iterm2_shell_integration.zsh || true
+
 # 
 autoload -Uz compinit
 if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
