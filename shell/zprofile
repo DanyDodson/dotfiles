@@ -26,6 +26,11 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
 # Local System Binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
+export GOPATH=$HOME/Golang
+export GOROOT=/opt/homebrew/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+
 # start ssh-agent
 eval "$(ssh-agent -s)" >/dev/null 2>&1
 
@@ -36,11 +41,6 @@ eval "$(ssh-agent -s)" >/dev/null 2>&1
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-export GOPATH=$HOME/Golang
-export GOROOT=/opt/homebrew/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 # Paths
 for path_file in /etc/paths.d/*(.N); do
