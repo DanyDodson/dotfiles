@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
 
 skip_global_compinit=1
 

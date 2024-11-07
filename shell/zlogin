@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
 
 # Execute code that does not affect the current session in the background.
 {

@@ -5,7 +5,7 @@ Host *
 
 Host rawdog-server
 	HostName 54.235.104.180
-	IdentityFile ~/.ssh/rawdog.pem
+	IdentityFile ~/.ssh/rawdog.key.pem
 	User ubuntu
 
 Host github.com

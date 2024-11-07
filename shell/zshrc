@@ -1,8 +1,7 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
 
-# zmodload zsh/zprof
+# consistent colouring
+export CLICOLOR=1
 
 # load oh-my-zsh
 ZSH_THEME="sorin"
@@ -39,5 +38,3 @@ fi
 
 # after all, set the PATH for macOS
 [[ -x /bin/launchctl ]] && /bin/launchctl setenv PATH $PATH
-
-# zprof

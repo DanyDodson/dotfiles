@@ -7,7 +7,7 @@ _exists() {
 }
 
 # GNU ls aliases
-alias ls='/opt/homebrew/bin/gls --color=auto'
+alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first'
 alias ll='ls -lAh'
 alias l='ll'
 
@@ -25,18 +25,18 @@ alias sudo='sudo '
 
 alias src='source ~/.zshrc'
 
-# Folders Shortcuts
-[ -d ~/Downloads ] && alias dl='cd ~/Downloads'
-[ -d ~/Projects ] && alias pj='cd ~/Projects'
-[ -d ~/Projects/Code ] && alias pjc='cd ~/Projects/Code'
-[ -d ~/Projects/Class ] && alias pjclass='cd ~/Projects/Class'
-[ -d ~/Projects/Apps ] && alias pja='cd ~/Projects/Apps'
-[ -d ~/Projects/Github ] && alias pjg='cd ~/Projects/Github'
-
 # Commands Shortcuts
-alias e="$EDITOR"
+# alias e="$EDITOR"
 alias -- +x='chmod +x'
 alias x+='chmod +x'
+
+if _exists wget; then
+  alias wget="wget --config=$HOME/.dotfiles/config/wget/wgetrc --no-check-certificate"
+fi
+
+if _exists curl; then
+  alias curl='curl --silent'
+fi
 
 if _exists npm; then
   alias lsg-npm='npm ls -g --depth 0'
@@ -63,6 +63,9 @@ fi
 if _exists bat; then
   alias bat='bat --tabs=4 --wrap=never --style=plain --color=always --theme="OneHalfDark"'
   alias cat='bat'
+  alias man='batman'
+  # alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
+  # alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
 fi
 
 # diff
@@ -78,6 +81,14 @@ alias df='df -h'
 # Pipe Aliases
 alias grep='egrep --color=auto '
 alias egrep='egrep --color=auto '
+
+# Folders Shortcuts
+[ -d ~/Downloads ] && alias dl='cd ~/Downloads'
+[ -d ~/Projects ] && alias pj='cd ~/Projects'
+[ -d ~/Projects/Code ] && alias pjc='cd ~/Projects/Code'
+[ -d ~/Projects/Class ] && alias pjclass='cd ~/Projects/Class'
+[ -d ~/Projects/Apps ] && alias pja='cd ~/Projects/Apps'
+[ -d ~/Projects/Github ] && alias pjg='cd ~/Projects/Github'
 
 # scutil
 alias sys.get.computername='scutil --get ComputerName'
@@ -105,6 +116,9 @@ alias launch.start='launchctl start '
 alias launch.stop='launchctl stop '
 
 # Spotlight / Meta-data indexing (MDS)
+alias spotlight_off='sudo mdutil -a -i off'
+alias spotlight_on='sudo mdutil -a -i on'
+
 alias spotlight.exclusion.show='sudo defaults read /.Spotlight-V100/VolumeConfiguration.plist Exclusions'
 alias spotlight.exclusion.add='sudo defaults write /.Spotlight-V100/VolumeConfiguration.plist Exclusions -array-add '
 

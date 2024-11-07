@@ -1,9 +1,4 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
-
-# Browser
-export BROWSER='open'
 
 # Editors
 export EDITOR='nvim'
@@ -12,6 +7,9 @@ export PAGER='less'
 
 # Language
 export LANG='en_US.UTF-8'
+
+# Browser
+export BROWSER='open'
 
 # Homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -28,8 +26,16 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
 # Local System Binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
+# start ssh-agent
+eval "$(ssh-agent -s)" >/dev/null 2>&1
+
 # Rust
-source "$HOME/.cargo/env"
+[[ ! -f $HOME/.config/cargo/env ]] || . $HOME/.config/cargo/env
+
+# load pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 
 export GOPATH=$HOME/Golang
 export GOROOT=/opt/homebrew/opt/go/libexec
