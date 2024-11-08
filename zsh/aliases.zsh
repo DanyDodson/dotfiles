@@ -27,8 +27,8 @@ alias src='source ~/.zshrc'
 
 # Commands Shortcuts
 # alias e="$EDITOR"
-alias -- +x='chmod +x'
-alias x+='chmod +x'
+# alias -- +x='chmod +x'
+# alias x+='chmod +x'
 
 if _exists wget; then
   alias wget="wget --config=$HOME/.dotfiles/config/wget/wgetrc --no-check-certificate"
@@ -60,6 +60,10 @@ if _exists brew; then
   alias bbcheck='brew bundle check --file=~/.dotfiles/macos/brewfile'
 fi
 
+if _exists ranger; then
+  alias ra='ranger'
+fi
+
 if _exists bat; then
   alias bat='bat --tabs=4 --wrap=never --style=plain --color=always --theme="OneHalfDark"'
   alias cat='bat'
@@ -69,14 +73,14 @@ if _exists bat; then
 fi
 
 # diff
-# alias diff='colordiff'
+alias diff='colordiff'
 
 # change dir
 # alias ..='cd ..'
 # alias ...='cd ../..'
 # alias ....='cd ../../../..'
 
-# alias df='df -h'
+alias df='df -h'
 
 # Pipe Aliases
 alias grep='egrep --color=auto '
@@ -91,21 +95,21 @@ alias egrep='egrep --color=auto '
 [ -d ~/Projects/Github ] && alias pjg='cd ~/Projects/Github'
 
 # scutil
-# alias sys.get.computername='scutil --get ComputerName'
-# alias sys.get.localhostname='scutil --get LocalHostName'
-# alias sys.get.hostname='scutil --get HostName'
-# alias sys.get.dns='scutil --dns'
-# alias sys.get.proxy='scutil --proxy'
-# alias sys.get.network.interface='scutil --nwi'
+alias sys.get.computername='scutil --get ComputerName'
+alias sys.get.localhostname='scutil --get LocalHostName'
+alias sys.get.hostname='scutil --get HostName'
+alias sys.get.dns='scutil --dns'
+alias sys.get.proxy='scutil --proxy'
+alias sys.get.network.interface='scutil --nwi'
 
-# alias sys.uti.file='mdls -name kMDItemContentTypeTree '
+alias sys.uti.file='mdls -name kMDItemContentTypeTree '
 
-# alias sys.pkg.list='pkgutil --pkgs'
+alias sys.pkg.list='pkgutil --pkgs'
 
 # show CPU info
-# alias sys.cpu='sysctl -n machdep.cpu.brand_string'
+alias sys.cpu='sysctl -n machdep.cpu.brand_string'
 
-# alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
+alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
 
 # OS X's launchctl
 alias launch.list='launchctl list '
@@ -119,11 +123,11 @@ alias launch.stop='launchctl stop '
 alias spotlight_off='sudo mdutil -a -i off'
 alias spotlight_on='sudo mdutil -a -i on'
 
-# alias spotlight.exclusion.show='sudo defaults read /.Spotlight-V100/VolumeConfiguration.plist Exclusions'
-# alias spotlight.exclusion.add='sudo defaults write /.Spotlight-V100/VolumeConfiguration.plist Exclusions -array-add '
+alias spotlight.exclusion.show='sudo defaults read /.Spotlight-V100/VolumeConfiguration.plist Exclusions'
+alias spotlight.exclusion.add='sudo defaults write /.Spotlight-V100/VolumeConfiguration.plist Exclusions -array-add '
 
-# alias spotlight.indexing.stop='sudo launchctl stop com.apple.metadata.mds'
-# alias spotlight.indexing.start='sudo launchctl start com.apple.metadata.md'
-# alias spotlight.indexing.restart='spotlight.indexing.stop && spotlight.indexing.start'
+alias spotlight.indexing.stop='sudo launchctl stop com.apple.metadata.mds'
+alias spotlight.indexing.start='sudo launchctl start com.apple.metadata.md'
+alias spotlight.indexing.restart='spotlight.indexing.stop && spotlight.indexing.start'
 
 

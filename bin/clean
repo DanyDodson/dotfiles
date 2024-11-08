@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-
-# Update and Clean
-
-cd "$HOME"/.dotfiles/scripts && ./clean.sh

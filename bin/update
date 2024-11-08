@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Update
+
+cd "$HOME"/.dotfiles/scripts && ./update.sh

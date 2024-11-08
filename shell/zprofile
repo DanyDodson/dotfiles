@@ -1,7 +1,11 @@
 #!/usr/bin/env zsh
 
 # Editors
-export EDITOR='nvim'
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='vim'
+else
+	export EDITOR='nvim'
+fi
 export VISUAL='nvim'
 export PAGER='less'
 
@@ -11,14 +15,8 @@ export LANG='en_US.UTF-8'
 # Browser
 export BROWSER='open'
 
-# Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-
 # Dotfile Scripts
 export PATH=$PATH:${DOTFILES}/bin
-
-# Coreutils
-# export PATH=/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH
 
 # System Executables
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
@@ -26,12 +24,16 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
 # Local System Binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
+# Go
 export GOPATH=$HOME/Golang
 export GOROOT=/opt/homebrew/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# start ssh-agent
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# s|Start ssh-agent
 eval "$(ssh-agent -s)" >/dev/null 2>&1
 
 # Rust
@@ -43,11 +45,9 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # Paths
-for path_file in /etc/paths.d/*(.N); do
-  path+=($(<$path_file))
-done
-unset path_file
+# for path_file in /etc/paths.d/*(.N); do
+#   path+=($(<$path_file))
+# done
+# unset path_file
 
-# Ensure path arrays do not contain duplicates.
 typeset -gU fpath path
-

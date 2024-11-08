@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
 
 function dots() {
   cd ~/.dotfiles/ && nvim .
@@ -31,8 +29,16 @@ function copy() {
   printf "%s" "$*" | tr -d "\n" | pbcopy
 }
 
+function skhd_error() {
+  tail -f /tmp/skhd_"$USER"\.err.log
+}
+
+function skhd_debug() {
+  tail -f /tmp/skhd_"$USER"\.out.log
+}
+
 function yabai_error() {
-  btail -f /tmp/yabai_"$USER"\.err.log
+  tail -f /tmp/yabai_"$USER"\.err.log
 }
 
 function yabai_debug() {
