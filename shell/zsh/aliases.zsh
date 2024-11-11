@@ -1,6 +1,4 @@
 #!/usr/bin/env zsh
-# vim:syntax=zsh
-# vim:filetype=zsh
 
 _exists() {
   command -v $1 >/dev/null 2>&1

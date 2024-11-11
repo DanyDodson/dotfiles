@@ -1,11 +1,11 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 # color complist
 zmodload -i zsh/complist
 autoload -Uz colors && colors
 
 # enable gnu ls in macos
-# zstyle ':omz:lib:theme-and-appearance' gnu-ls yes
+zstyle ':omz:lib:theme-and-appearance' gnu-ls yes
 
 # group matches and describe
 # https://thevaluable.dev/zsh-completion-guide-examples/
