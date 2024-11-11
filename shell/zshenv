@@ -4,20 +4,23 @@ skip_global_compinit=1
 
 setopt noglobalrcs
 
-# Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
-fi
-
-# Dotfiles
+export ZSH="$HOME/.omz"
 export DOTFILES=$HOME/.dotfiles
 
-# oh-my-zsh
-export ZSH="$HOME/.omz"
-
-# 1Password
+export GOPATH="${HOME}/.go"
+export GOROOT="/opt/homebrew/opt/go/libexec"
+export CARGO_HOME="${HOME}/.cargo"
+export PYENV_ROOT="$HOME/.pyenv"
+export HOMEBREW_NO_ENV_HINTS=true
+export TMUX_PLUGIN_MANAGER_PATH="${HOME}/.tmux/plugins"
+export CURL_HOME="${DOTFILES}/config/curl"
+export WGETRC="${DOTFILES}/config/wget/wgetrc"
 export OP_BIOMETRIC_UNLOCK_ENABLED=true
 export SSH_AUTH_SOCK="$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+export LESSHISTFILE="-"
 
-# Homebrew
-export HOMEBREW_NO_ENV_HINTS=true
+export EDITOR='nvim'
+export VISUAL='nvim'
+export BROWSER="open"
+export LANG='en_US.UTF-8'
+export PAGER='less'

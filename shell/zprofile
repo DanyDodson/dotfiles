@@ -1,53 +1,27 @@
 #!/usr/bin/env zsh
 
-# Editors
-if [[ -n $SSH_CONNECTION ]]; then
-	export EDITOR='vim'
-else
-	export EDITOR='nvim'
-fi
-export VISUAL='nvim'
-export PAGER='less'
-
-# Language
-export LANG='en_US.UTF-8'
-
-# Browser
-export BROWSER='open'
-
-# Dotfile Scripts
-export PATH=$PATH:${DOTFILES}/bin
-
-# System Executables
+# system Executables
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
     
-# Local System Binaries
+# local system binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# Go
-export GOPATH=$HOME/Golang
-export GOROOT=/opt/homebrew/opt/go/libexec
-export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
+# dotfile bin
+export PATH=$PATH:${DOTFILES}/bin
 
-# Homebrew
+# jomebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# s|Start ssh-agent
-eval "$(ssh-agent -s)" >/dev/null 2>&1
+# go
+export PATH=$PATH:$GO_PATH/bin
+export PATH=$PATH:$GOROOT/bin
 
-# Rust
-[[ ! -f $HOME/.config/cargo/env ]] || . $HOME/.config/cargo/env
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.omz}/custom}/plugins/zsh-completions/src
 
-# load pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Paths
-# for path_file in /etc/paths.d/*(.N); do
-#   path+=($(<$path_file))
-# done
-# unset path_file
+# paths
+for path_file in /etc/paths.d/*(.N); do
+  path+=($(<$path_file))
+done
+unset path_file
 
 typeset -gU fpath path

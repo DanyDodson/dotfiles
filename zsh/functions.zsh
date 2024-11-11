@@ -65,3 +65,4 @@ function brew_leaves() {
 function brew_leaves_casks() {
   brew ls --casks | xargs brew desc --eval-all
 }
+

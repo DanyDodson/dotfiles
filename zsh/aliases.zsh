@@ -11,24 +11,9 @@ alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directorie
 alias ll='ls -lAh'
 alias l='ll'
 
-# Better ls
-# if _exists eza; then
-#   unalias ls
-#   alias ls='eza --icons --header --git'
-#   alias lt='eza --icons --tree'
-#   unalias l
-#   alias l='ls -l'
-#   alias la='ls -lAh'
-# fi
-
 alias sudo='sudo '
 
 alias src='source ~/.zshrc'
-
-# Commands Shortcuts
-# alias e="$EDITOR"
-# alias -- +x='chmod +x'
-# alias x+='chmod +x'
 
 if _exists wget; then
   alias wget="wget --config=$HOME/.dotfiles/config/wget/wgetrc --no-check-certificate"
