@@ -1,0 +1,51 @@
+"$schema" = "https://yazi-rs.github.io/schemas/theme.json"
+
+[flavor]
+use = ""
+
+
+[manager]
+
+preview_hovered = { underline = false }
+
+# border_style = { fg = "darkgray" }
+
+[which]
+cols = 3
+mask = { bg = "black" }
+cand = { fg = "lightcyan" }
+rest = { fg = "darkgray" }
+desc = { fg = "lightmagenta" }
+separator = " 󳷰 "
+separator_style = { fg = "darkgray" }
+
+[icon]
+
+prepend_dirs = [
+  { name = "Projects", text = "" },
+]
+
+append_files = [
+  { name = ".yarnrc", text = "", fg_dark = "light-grey", fg_light = "#698187" },
+	{ name = ".gitsecret", text = "", fg_dark = "light-red", fg_light = "#ff3700" },
+  { name = ".tmux.conf", text = "", fg_dark = "green", fg_light = "#00bd00" },
+
+  { name = ".zlogin", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = "zlogin", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = ".zlogout", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = "zlogout", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = "zshrc", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = "zprofile", text = "", fg_dark = "green", fg_light = "#68e32b" },
+  { name = "zshenv", text = "", fg_dark = "green", fg_light = "#68e32b" },
+
+  { name = "id_ed25519", text = "󰷖", fg_dark = "yellow", fg_light = "yellow" },
+
+  { name = ".zcompdump.zwc", text = "", fg_dark = "dark-grey", fg_light = "#3c545c" },
+  { name = ".zcompdump", text = "", fg_dark = "dark-grey", fg_light = "#3c545c" }
+]
+
+append_exts = [
+  { name = "pem", text = "󰷖", fg_dark = "yellow", fg_light = "yellow" },
+  { name = "key", text = "󰷖", fg_dark = "yellow", fg_light = "yellow" },
+]
+

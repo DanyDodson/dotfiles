@@ -12,9 +12,9 @@
 # Needs dircolors/gdircolors from GNU coreutils
 # brew info coreutils
 
-DIR 		01;34 					# directory
+DIR 		01;34
 LINK 		target
-SOCK 		01;35 					# socket
+SOCK 		01;35
 MISSING 	00
 SETUID 		37;41
 SETGID 		30;43

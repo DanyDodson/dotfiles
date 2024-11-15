@@ -1,5 +1,48 @@
 #!/usr/bin/env bash
 
-# Update
+# Gets macOS software updates, updates Homebrew, npm packages, dotfiles, and some other software.
 
-cd "$HOME"/.dotfiles/scripts && ./update.sh
+function header() {
+	echo -e "$(tput sgr 0 1)$(tput setaf 6)$1$(tput sgr0)"
+}
+
+sudo -v
+echo
+
+# dotfiles
+dotfiles
+echo
+
+# oh-my-zsh
+header "Updating oh-my-zsh..."
+"$ZSH/tools/upgrade.sh"
+echo 
+
+# macOS
+header "Updating macOS..."
+sudo -v
+sudo softwareupdate -i -a
+echo
+
+# Homebrew
+header "Updating Homebrew packages..."
+sudo -v
+brew upgrade
+brew upgrade --cask
+brew cleanup
+echo
+
+# npm
+header "Updating npm modules..."
+npm update -g
+echo
+
+# Clean
+header "Emptying trash and cleaning logs..."
+sudo command rm -rf ~/.Trash/*
+sudo command rm -rfv /Volumes/*/.Trashes
+sudo command rm -rfv /private/var/log/asl/*.asl
+echo 
+
+# Nyan cat! Yay!
+nyan

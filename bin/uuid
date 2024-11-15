@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
+# Generate a uuid.
+
 uuidgen | tr -d - | tr -d '\n' | tr '[:upper:]' '[:lower:]'  | pbcopy && pbpaste && echo

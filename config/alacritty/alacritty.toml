@@ -2,9 +2,8 @@
 # ┃ General ┃
 # ┗━━━━━━━━━┛
 
-[shell]
-program = "/bin/zsh"
-args = ["-l"]
+[terminal]
+shell = "/bin/zsh"
 
 [env]
 EDITOR = "nvim"
@@ -17,23 +16,26 @@ multiplier = 1
 [selection]
 save_to_clipboard = true
 
+# ┏━━━━━━━━━━━━━┓
+# ┃   Colors    ┃
+# ┗━━━━━━━━━━━━━┛
+
+[general]
+import = ["~/.dotfiles/config/alacritty/themes/onedark.toml"]
+
 # ┏━━━━━━━━━━┓
 # ┃  Fonts   ┃
 # ┗━━━━━━━━━━┛
 
 [font]
 size = 15
-normal = { family = "FiraCode Nerd Font", style = "Retina" }
-bold = { style = "Retina" }
-italic = { style = "Retina" }
-bold_italic = { style = "Retina" }
-offset = { x = 0, y = 0 }
+offset = { x = 1, y = 0 }
 glyph_offset = { x = 0, y = 0 }
-
-# make fonts crisp:
-# defaults write org.alacritty AppleFontSmoothing -int 0
-# defaults write -g AppleFontSmoothing -int 0
-# defaults delete org.alacritty AppleFontSmoothing
+builtin_box_drawing = false
+normal = { family = "FiraCode Nerd Font", style = "Retina" }
+bold = { family = "FiraCode Nerd Font", style = "Retina"  }
+italic = { family = "FiraCode Nerd Font", style = "Retina" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Retina"  }
 
 # ┏━━━━━━━━━━━━┓
 # ┃ Appearance ┃
@@ -46,6 +48,7 @@ dynamic_padding = true
 option_as_alt = "Both"
 decorations = "buttonless"
 padding = { x = 0, y = 0 }
+startup_mode = "SimpleFullscreen"
 
 [cursor]
 style = { shape = "Beam", blinking = "On" }
@@ -72,87 +75,6 @@ persistent_logging = false
 print_events = true
 highlight_damage = false
 log_level = "Warn"
-
-
-# ┏━━━━━━━━━━━━━┓
-# ┃   Colors    ┃
-# ┗━━━━━━━━━━━━━┛
-
-# One Dark
-
-# import = ["~/.dotfiles/config/alacritty/themes/onedark.toml"]
-
-[colors.primary]
-foreground = '#acb1bd'
-background = '#21242a'
-dim_foreground = "#828482"
-bright_foreground = "None"
-
-[colors.cursor]
-text    = "CellBackground"
-cursor  = "CellForeground"
-
-[colors.vi_mode_cursor]
-text    = "CellBackground"
-cursor  = "CellForeground"
-
-[colors.selection]
-text       = "CellBackground"
-background = "CellForeground"
-
-[colors.search.matches]
-foreground = "#181818"
-background = "#ac4242"
-
-[colors.search.focused_match]
-foreground = "#181818"
-background = "#f4bf75"
-
-[colors.hints.start]
-foreground = "#181818"
-background = "#f4bf75"
-
-[colors.hints.end]
-foreground = "#181818"
-background = "#ac4242"
-
-[colors.line_indicator]
-foreground = "None"
-background = "None"
-
-[colors.footer_bar]
-foreground = "#181818"
-background = "#d8d8d8"
-
-[colors.normal]
-black   = '#21242a'
-red     = '#d17277'
-green   = '#a0c180'
-yellow  = '#dfc184'
-blue    = '#73ade9'
-magenta = '#bb7bd7'
-cyan    = '#6fb3bf'
-white   = '#acb1bd'
-
-[colors.bright]
-black   = '#21242a'
-red     = '#d17277'
-green   = '#a0c180'
-yellow  = '#dfc184'
-blue    = '#73ade9'
-magenta = '#bb7bd7'
-cyan    = '#6fb3bf'
-white   = '#acb1bd'
-
-[colors.dim]
-black   = "#131415"
-red     = "#864343"
-green   = "#777c44"
-yellow  = "#9e824c"
-blue    = "#556a7d"
-magenta = "#75617b"
-cyan    = "#5b7d78"
-white   = "#828482"
 
 # ┏━━━━━━━━━━━━━┓
 # ┃ Keybindings ┃
