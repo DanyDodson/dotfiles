@@ -3,7 +3,7 @@
 # Install dependencies and software
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/setup/report.sh"
+. "$HOME/.dotfiles/setup/reports.sh"
 
 # Create symbolic links for zsh config files
 ln -sf "${DOTFILES}/shell/zlogin" "${HOME}/.zlogin"

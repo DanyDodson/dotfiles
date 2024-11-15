@@ -89,10 +89,11 @@ fi
 # Folders Shortcuts
 [ -d ~/.dotfiles ] && alias dots='cd ~/.dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'
-[ -d ~/Projects ] && alias pj='cd ~/Projects'
-[ -d ~/Projects/class ] && alias pclass='cd ~/Projects/class'
-[ -d ~/Projects/repos ] && alias prepos='cd ~/Projects/repos'
-[ -d ~/Projects/served ] && alias pserved='cd ~/Projects/served'
+[ -d ~/Projects ] && alias proj='cd ~/Projects'
+[ -d ~/Projects/class ] && alias class='cd ~/Projects/class'
+[ -d ~/Projects/exts ] && alias exts='cd ~/Projects/exts'
+[ -d ~/Projects/repos ] && alias repos='cd ~/Projects/repos'
+[ -d ~/Projects/served ] && alias served='cd ~/Projects/served'
 
 # Prints a cleaner $PATH and $FPATH
 alias path='echo -e ${PATH//:/\\n}'

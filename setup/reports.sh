@@ -27,7 +27,7 @@ success() {
   echo -e "${GREEN}${*}${RESET}"
 }
 
-# End section
+# End reporter
 finish() {
   success "Done!"
   echo
@@ -55,8 +55,7 @@ on_start() {
 
 # Finished reporter
 on_finish() {
-  echo
-  success "Setup was successfully done!"
+  success "Everything was successfully done!"
   success "Happy Coding!"
   echo
   echo -ne "$RED"'-_-_-_-_-_-_-_-_-_-_-_-_-_-_'

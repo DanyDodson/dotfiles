@@ -2,47 +2,65 @@
 
 # Gets macOS software updates, updates Homebrew, npm packages, dotfiles, and some other software.
 
-function header() {
-	echo -e "$(tput sgr 0 1)$(tput setaf 6)$1$(tput sgr0)"
-}
+# shellcheck disable=SC1091
+. "$HOME/.dotfiles/setup/reports.sh"
 
 sudo -v
 echo
 
 # dotfiles
 dotfiles
-echo
 
-# oh-my-zsh
-header "Updating oh-my-zsh..."
-"$ZSH/tools/upgrade.sh"
-echo 
+# Update oh-my-zsh
+function update_omz() {
+  info "Updating oh-my-zsh..."
+  "$ZSH/tools/upgrade.sh"
+  finish
+}
 
-# macOS
-header "Updating macOS..."
-sudo -v
-sudo softwareupdate -i -a
-echo
+# Update macOS system apps
+function update_macos() {
+  info "Updating macOS..."
+  sudo -v
+  sudo softwareupdate -i -a
+  finish
+}
 
-# Homebrew
-header "Updating Homebrew packages..."
-sudo -v
-brew upgrade
-brew upgrade --cask
-brew cleanup
-echo
+# Update and clean Homebrew
+function update_homebrew() {
+  info "Updating Homebrew packages..."
+  sudo -v
+  brew update
+  brew upgrade
+  brew autoremove
+  brew cleanup --prune=all -s
+  finish
+}
 
-# npm
-header "Updating npm modules..."
-npm update -g
-echo
+# Update npm packages
+function update_npm() {
+  info "Updating npm modules..."
+  npm update -g
+  finish
+}
 
-# Clean
-header "Emptying trash and cleaning logs..."
-sudo command rm -rf ~/.Trash/*
-sudo command rm -rfv /Volumes/*/.Trashes
-sudo command rm -rfv /private/var/log/asl/*.asl
-echo 
+# Clear trash and log files
+function clean_up() {
+  info "Emptying trash and cleaning logs..."
+  sudo command rm -rf ~/.Trash/*
+  sudo command rm -rfv /Volumes/*/.Trashes
+  sudo command rm -rfv /private/var/log/asl/*.asl
+  finish
+}
 
-# Nyan cat! Yay!
-nyan
+update() {
+  update_omz "$*"
+  update_macos "$*"
+  update_homebrew "$*"
+  update_npm "$*"
+  clean_up "$*"
+  on_finish "$*"
+}
+
+update "$*"
+
