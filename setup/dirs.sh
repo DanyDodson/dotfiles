@@ -3,7 +3,7 @@
 # Install dependencies and software
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/tools/report.sh"
+. "$HOME/.dotfiles/tools/reporter.sh"
 
 set -e
 trap on_error SIGTERM
@@ -54,7 +54,6 @@ mkdir -p "$HOME"/.config/yazi
 info "Linking config/* files..."
 ln -sf "$DOTFILES/config/alacritty/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
 ln -sf "$DOTFILES/config/gh/config.yaml" "$HOME/.config/gh/config.yaml"
-ln -sf "$DOTFILES/config/gh/hosts.yaml" "$HOME/.config/gh/hosts.yaml"
 ln -sf "$DOTFILES/config/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
 ln -sf "$DOTFILES/config/ranger/rc.conf" "$HOME/.config/ranger/rc.conf"
 ln -sf "$DOTFILES/config/skhd/skhdrc" "$HOME/.config/skhd/skhdrc"

@@ -3,7 +3,7 @@
 # Gets macOS software updates, updates Homebrew, npm packages, dotfiles, and some other software.
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/tools/report.sh"
+. "$HOME/.dotfiles/tools/reporter.sh"
 
 sudo -v
 echo
