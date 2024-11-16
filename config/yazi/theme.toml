@@ -22,7 +22,15 @@ separator_style = { fg = "darkgray" }
 [icon]
 
 prepend_dirs = [
-  { name = "Projects", text = "" },
+  { name = "Desktop", text = "󰉋" },
+  { name = "Documents", text = "󰉋" },
+  { name = "Downloads", text = "󰉋" },
+  { name = "Library", text = "󰉋" },
+  { name = "Movies", text = "󰉋" },
+  { name = "Music", text = "󰉋" },
+  { name = "Pictures", text = "󰉋" },
+  { name = "Public", text = "󰉋" },
+  { name = ".config", text = "󰉋" },
 ]
 
 append_files = [

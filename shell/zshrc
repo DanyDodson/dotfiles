@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 source ${DOTFILES}/zsh/functions.zsh
 source ${DOTFILES}/zsh/aliases.zsh
 source ${DOTFILES}/zsh/colors.zsh
+source ${DOTFILES}/zsh/history.zsh
 source ${DOTFILES}/zsh/completion.zsh
 
 # start ssh-agent
@@ -47,7 +48,8 @@ fi
 
 # fzf
 if [ $(command -v fzf) ]; then
-    source $DOTFILES/config/fzf/fzf.zsh
+  source $DOTFILES/config/fzf/fzf.zsh
+  eval "$(fzf --zsh)"
 fi
 
 # iterm2 integration

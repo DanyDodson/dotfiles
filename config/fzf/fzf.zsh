@@ -20,7 +20,7 @@ _gen_fzf_default_opts() {
   local color0E='#c678dd'
   local color0F='#be5046'
 
-  export FZF_DEFAULT_OPTS="--no-info --prompt=' ' --height=50%"
+  export FZF_DEFAULT_OPTS="--no-info --prompt=' ' --height=75%"
 
   export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS"" \
     --color=bg+:$color01,bg:$color00,spinner:$color0C,hl:$color0D"" \
@@ -30,53 +30,37 @@ _gen_fzf_default_opts() {
 
 _gen_fzf_default_opts
 
-export FZF_ALT_C_COMMAND="fd --type d -HLi . . 2>/dev/null"
-export FZF_DEFAULT_COMMAND="rg --hidden -l "" -g '!.git' . 2>/dev/null"
-export FZF_PREVIEW_COMMAND="bat --decorations=never --theme=OneHalfDark --color always {} 2>/dev/null"
+export FZF_DEFAULT_COMMAND='fd --hidden --type=d --strip-cwd-prefix --exclude .git'
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_ALT_C_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
+
+# export FZF_PREVIEW_OPTS='--preview "$DOTFILES/config/fzf/fzf-preview.sh {}" --bind "?:toggle-preview,ctrl-a:select-all,ctrl-d:preview-page-down,ctrl-u:preview-page-up" --preview-window wrap'
+# export FZF_PREVIEW_COMMAND="bat --decorations=never --theme=OneHalfDark --color always {} 2>/dev/null"
+
+export FZF_CTRL_T_OPTS=""
+export FZF_ALT_C_OPTS="--preview 'bat --decorations=never --theme=OneHalfDark --color always {} 2>/dev/null'"
 
 source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
 source /opt/homebrew/opt/fzf/shell/completion.zsh
 
-_fzf_compgen_path() {
-  fd -HLi . "$1" 2>/dev/null
-}
-_fzf_compgen_dir() {
-  fd --type d -HLi . "$1" 2>/dev/null
+_fzf_compgen_path () {
+  fd --hidden --no-ignore-vcs --exclude .git . "$1"
 }
 
-bindkey '^O' fzf-cd-widget
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir () {
+  fd --type=d --hidden --no-ignore-vcs --exclude .git . "$1"
+}
 
-function fvim() {
-  file="$(fd -iLH -t file . . | fzf --reverse)"
+# bindkey '^O' fzf-cd-widget
+
+function fv() {
+  file="$(fd -iLH -t file . . | fzf --preview "bat --decorations=never --theme=OneHalfDark --color always {} 2>/dev/null" --reverse)"
   if [ -z "$file" ]; then
     return 0
   fi
   nvim "$file"
 }
 
-# faster to load projects before the script
-# projects=$(find "$HOME/Projects" -name .git | sed -E 's/.*\/dev\/(.*)\/\.git/\1/')
-# class=$(find "$HOME/Projects/class" -name .git | sed -E 's/.*\/dev\/(.*)\/\.git/\1/')
-# exts=$(find "$HOME/Projects/exts" -name .git | sed -E 's/.*\/dev\/(.*)\/\.git/\1/')
-# repos=$(find "$HOME/Projects/repos" -name .git | sed -E 's/.*\/dev\/(.*)\/\.git/\1/')
-# served=$(find "$HOME/Projects/served" -name .git | sed -E 's/.*\/dev\/(.*)\/\.git/\1/')
-
-# function projects() {
-#   cd "$HOME/Projects/$(echo $projects | fzf)"
-# }
-
-# function class() {
-#   cd "$HOME/Projects/class/$(echo $class | fzf)"
-# }
-
-# function exts() {
-#   cd "$HOME/Projects/exts/$(echo $exts | fzf)"
-# }
-
-# function repos() {
-#   cd "$HOME/Projects/repos/$(echo $repos | fzf)"
-# }
-
-# function served() {
-#   cd "$HOME/Projects/served/$(echo $served | fzf)"
-# }
+zle -N fv
+bindkey '^O' fv

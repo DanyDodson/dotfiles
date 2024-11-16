@@ -11,6 +11,10 @@ alias o='open'
 alias oo='open .'
 alias e='$EDITOR'
 
+alias 644='chmod 644'
+alias 755='chmod 755'
+alias 777='chmod 777'
+
 if _exists nvim; then
   alias nv='nvim'
   alias dotconf='cd ~/.dotfiles && nvim'
@@ -22,7 +26,7 @@ if _exists trash; then
 fi
 
 if _exists codium; then
-  alias cc='codium .'
+  alias cc='codium'
 fi
 
 if _exists wget; then

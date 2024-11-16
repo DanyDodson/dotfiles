@@ -8,5 +8,5 @@
 
 # dircolors
 if [ -f "/opt/homebrew/bin/gdircolors" ]; then
-  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors)"
+  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors-full)"
 fi
