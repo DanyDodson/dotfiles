@@ -39,7 +39,6 @@ on_start() {
   info " (_)\__,_/ \____/ \__//_/  /_//_/ \___//____/  "
   info "                                               "
   info "                                               "
-  echo
   read -rp "Do you want to proceed with installation? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then

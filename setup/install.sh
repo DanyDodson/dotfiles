@@ -11,14 +11,18 @@ trap on_error SIGTERM
 # install xcode tools and accept its license
 function install_xcode() {
   if ! exists xcode-select; then
+    read -rp "Do you want to install xcode tools? [y/N] " -n 1 answer
+    echo
+    if [ "${answer}" != "y" ]; then
+      return
+    fi
     info "\nInstalling XCode command line tools..."
     xcode-select --install
     echo
     info "Accepting XCode license..."
     xcodebuild -license
-    echo
   else
-    success "\nXcode Tools are already installed. Skipping..."
+    success "Xcode Tools are already installed. Skipping..."
   fi
   finish
 }
@@ -26,10 +30,15 @@ function install_xcode() {
 # install Homebrew
 function install_homebrew() {
   if ! command -v brew >/dev/null 2>&1; then
+    read -rp "Do you want to install homebrew? [y/N] " -n 1 answer
+    echo
+    if [ "${answer}" != "y" ]; then
+      return
+    fi
     info "\nInstalling Homebrew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   else
-    success "\nHomebrew is already installed. Skipping..."
+    success "Homebrew is already installed. Skipping..."
   fi
   finish
 }
@@ -43,11 +52,11 @@ function install_software() {
       return
     fi
     echo
-    info "Installing Brew Bundle apps..."
+    info "Installing brew bundle apps..."
     cd "$DOTFILES" || exit
     brew bundle install --file "$HOME"/.dotfiles/config/brew/brewfile
   else
-    error "Error: Brew is not available"
+    error "Error: brew is not available"
   fi
   finish
 }
@@ -74,16 +83,16 @@ function install_node_with_nvm() {
   finish
 }
 
-# install npm and packages
+# install npm packages
 function install_npm_deps() {
   if exists npm; then
-    read -rp "Do you want to install npm packages yet? [y/N] " -n 1 answer
+    read -rp "Do you want to install npm global packages yet? [y/N] " -n 1 answer
     echo
     if [ "${answer}" != "y" ]; then
       return
     fi
     echo
-    info "Installing Node.js dependencies..."
+    info "Installing npm global packages..."
     npm install -g bash-handbook
     npm install -g nodemon
     npm install -g pnpm
@@ -106,11 +115,27 @@ function install_python_with_pyenv() {
     info "Installing python with pyenv..."
     pyenv install 3.10.15
     pyenv global 3.10.15
+    echo
+  else
+    error "Error: pyenv is not available"
+  fi
+  finish
+}
+
+# install python packages
+function install_python_packages() {
+  if exists pyenv; then
+    read -rp "Do you want to install python packages yet? [y/N] " -n 1 answer
+    echo
+    if [ "${answer}" != "y" ]; then
+      return
+    fi
+    info "Installing python packages..."
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip setuptools
     echo
   else
-    error "Error: pyenv is not available"
+    error "Error: python is not available"
   fi
   finish
 }
@@ -123,6 +148,7 @@ main() {
   install_node_with_nvm "$*"
   install_npm_deps "$*"
   install_python_with_pyenv "$*"
+  install_python_packages "$*"
   on_finish "$*"
 }
 
