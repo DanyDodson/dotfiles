@@ -69,7 +69,6 @@ brew "openjdk@11" # Development kit for the Java programming language
 brew "osx-cpu-temp" # Outputs current CPU temperature for OSX
 brew "perl" # Highly capable, feature-rich programming language
 brew "pinentry-mac" # Pinentry for GPG on Mac
-brew "pnpm" # Fast, disk space efficient package manager
 brew "prettier" # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettyping" # Wrapper to colorize and simplify ping's output
 brew "protobuf" # Protocol buffers (Google's data interchange format)
@@ -101,7 +100,6 @@ brew "xclip" # Access X11 clipboards from the command-line
 brew "xsel" # Command-line program for getting and setting the contents of the X selection
 brew "koekeishiya/formulae/yabai" # A tiling window manager for macOS based on binary space partitioning.
 brew "yamllint" # Linter for YAML files
-brew "yarn" # JavaScript package manager
 brew "yazi" # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
 brew "zoxide" # Shell extension to navigate your filesystem faster

@@ -21,10 +21,6 @@ if _exists nvim; then
   alias nvc='cd ~/.config/nvim && nvim'
 fi
 
-if _exists trash; then
-  alias rm='trash .'
-fi
-
 if _exists codium; then
   alias cc='codium'
 fi

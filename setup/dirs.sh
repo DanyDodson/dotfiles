@@ -14,9 +14,9 @@ home_config="$HOME"/.config
 dots_shell="$DOTFILES"/shell
 
 function create_home_dirs() {
-  info "Creating $home directories..."
+  info "Creating $home/* directories..."
 
-  read -rp "Do you want to create $home directories ? [y/N] " -n 1 answer
+  read -rp "Do you want to create $home/* directories ? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then
     return
@@ -25,62 +25,66 @@ function create_home_dirs() {
   local dirs=(".config" ".ssh" ".tmux" ".vim")
 
   for d in "${dirs[@]}"; do
-    mkdir -p "$home/$d" || error "Failed to create ~/$d directory..."
-    success "created $d directory"
+    mkdir -p "$home/$d" || error "Failed to create $home/$d directory..."
+    success "created $home/$d directory"
   done
 
   finish
 }
 
 function link_home_files() {
-  info "Linking $home files..."
+  info "Linking $home/* files..."
 
-  read -rp "Do you want to link $home files ? [y/N] " -n 1 answer
+  read -rp "Do you want to link $home/* files ? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then
     return
   fi
 
   ln -sf "$dots_shell/zshrc" "$home/.zshrc" || error "Failed to link $home/.zshrc..."
-  success "linked ~/.zshrc file"
+  success "linked $home/.zshrc file"
   ln -sf "$dots_shell/zshenv" "$home/.zshenv" || error "Failed to link $home/.zshenv..."
-  success "linked ~/.zshenv file"
+  success "linked $home/.zshenv file"
   ln -sf "$dots_shell/zprofile" "$home/.zprofile" || error "Failed to link $home/.zprofile..."
-  success "linked ~/.zprofile file"
+  success "linked $home/.zprofile file"
   ln -sf "$dots_shell/zlogin" "$home/.zlogin" || error "Failed to link $home/.zlogin..."
-  success "linked ~/.zlogin files"
+  success "linked $home/.zlogin files"
   ln -sf "$dots_config/tmux/tmux.conf" "$home/.tmux.conf" || error "Failed to link $home/.tmux.conf..."
-  success "linked ~/.tmux.conf file"
+  success "linked $home/.tmux.conf file"
   ln -sf "$dots_config/vim/vimrc" "$home/.vimrc" || error "Failed to link $home/.vimrc..."
-  success "linked ~/.vimrc file"
+  success "linked $home/.vimrc file"
   ln -sf "$dots_config/git/gitconfig" "$home/.gitconfig" || error "Failed to link $home/.gitconfig..."
-  success "linked ~/.gitconfig files"
+  success "linked $home/.gitconfig file"
   ln -sf "$dots_config/git/gitignore" "$home/.gitignore" || error "Failed to link $home/.gitignore..."
-  success "linked ~/.gitignore files"
-  cp "$dots_config/ssh/config" "$home/.ssh/config" || error "Failed to copy to $home/.ssh/config"
-  success "coppied ~/.ssh/config file"
+  success "linked $home/.gitignore file"
+  ln -sf "$dots_config/ssh/config" "$home/.ssh/config" || error "Failed to link $home/.ssh/config"
+  success "linked $home/.ssh/config file"
+
   if [ ! -e "$home"/.gitsecret ]; then
     printf '[user]\n  signingkey = ' >"$home"/.gitsecret || error "Failed to create $home/.gitsecret file..."
-    success "created $home.gitsecret file"
+    success "created $home/.gitsecret file"
   fi
-  printf '' >"$home"/.hushlogin || error "Failed to create $home/.hushlogin file..."
-  success "created $home.hushlogin file"
+
+  if [ ! -e "$home"/.hushlogin ]; then
+    printf '' >"$home"/.hushlogin || error "Failed to create $home/.hushlogin file..."
+    success "created $home/.hushlogin file"
+  fi
 
   finish
 }
 
 function create_config_dirs() {
-  info "Creating config directories..."
+  info "Creating $home_config/* directories..."
 
-  read -rp "Do you want create config directories ? [y/N] " -n 1 answer
+  read -rp "Do you want create $home_config/* directories ? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then
     return
   fi
 
-  local dirs=("alacritty" "atuin" "gh" "kitty" "ranger" "skhd" "wezterm" "yabai" "yazi")
+  local dirs=("alacritty" "gh" "kitty" "ranger" "skhd" "wezterm" "yabai" "yazi")
   for d in "${dirs[@]}"; do
-    mkdir -p "$home_config/$d" || error "Failed to create $d directory..."
+    mkdir -p "$home_config/$d" || error "Failed to create $home_config/$d directory..."
     success "created $home_config/$d directory"
   done
 
@@ -98,8 +102,6 @@ function link_config_files() {
 
   ln -sf "$dots_config/alacritty/alacritty.toml" "$home_config/alacritty/alacritty.toml" || error "Failed to link $home_config/alacritty/alacritty.toml..."
   success "linked $dots_config/alacritty/alacritty.toml"
-  ln -sf "$dots_config/atuin/config.toml" "$home_config/atuin/config.toml" || error "Failed to link $home_config/atuin/config.toml..."
-  success "linked $dots_config/atuin/config.toml"
   ln -sf "$dots_config/gh/config.yml" "$home_config/gh/config.yml" || error "Failed to link $home_config/gh/config.yml..."
   success "linked $dots_config/gh/config.yml"
   ln -sf "$dots_config/kitty/kitty.conf" "$home_config/kitty/kitty.conf" || error "Failed to link $home_config/kitty/kitty.conf..."
@@ -125,9 +127,9 @@ function link_config_files() {
 }
 
 function create_work_dirs() {
-  info "Creating working directories..."
+  info "Creating $home/Project/* directories..."
 
-  read -rp "Do you want to create working directories ? [y/N] " -n 1 answer
+  read -rp "Do you want to create $home/Project/* directories ? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then
     return
@@ -136,7 +138,7 @@ function create_work_dirs() {
   local dirs=("Projects" "Projects/class" "Projects/exts" "Projects/repos" "Projects/served")
 
   for d in "${dirs[@]}"; do
-    mkdir -p "$home/$d" || error "Failed to create ~/$d directory ..."
+    mkdir -p "$home/$d" || error "Failed to create $home/$d directory ..."
     success "created $home/$d directory"
   done
 

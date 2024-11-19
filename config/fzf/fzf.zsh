@@ -87,12 +87,12 @@ export FZF_ALT_C_OPTS=" \
 #   fd --type=d --hidden --no-ignore-vcs --exclude .git . "$1"
 # }
 
-function open_file_in_nvim() {
-  file="$(fd -iLH -t file --exclude .git --exclude node_modules . /Users/$(whoami)/Projects | fzf --preview "bat --tabs=4 --style=plain --wrap=never --theme=OneHalfDark --color=always --decorations=never {} 2>/dev/null")"
-  if [[ -n $file ]]; then
-    nvim "$file"
-  fi
-}
+# function open_file_in_nvim() {
+#   file="$(fd -iLH -t file --exclude .git --exclude node_modules . /Users/$(whoami)/Projects | fzf --preview "bat --tabs=4 --style=plain --wrap=never --theme=OneHalfDark --color=always --decorations=never {} 2>/dev/null")"
+#   if [[ -n $file ]]; then
+#     nvim "$file"
+#   fi
+# }
 
 # zle -N fv
 # bindkey '^O' open_file_in_nvim
