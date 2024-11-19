@@ -7,12 +7,7 @@ setopt noglobalrcs
 export ZSH="$HOME/.omz"
 export DOTFILES=$HOME/.dotfiles
 
-if [[ -n "$SSH_CONNECTION" ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
-
+export EDITOR='nvim'
 export LANG='en_US.UTF-8'
 export BROWSER="open"
 export PAGER='less'
