@@ -8,35 +8,29 @@ RED="${e}[0;91m"
 YELLOW="${e}[0;93m"
 GREEN="${e}[0;92m"
 
-_exists() {
+exists() {
   command -v "$1" >/dev/null 2>&1
 }
 
-# Success reporter
 info() {
   echo -e "${CYAN}${*}${RESET}"
 }
 
-# Error reporter
 error() {
   echo -e "${RED}${*}${RESET}"
 }
 
-# Success reporter
 success() {
   echo -e "${GREEN}${*}${RESET}"
 }
 
-# End reporter
 finish() {
   success "Done!"
   echo
   sleep 1
 }
 
-# Start reporter
 on_start() {
-  info "                                               "
   info "                                               "
   info "           __        __   ____ _  __           "
   info "      ____/ /____   / /_ / __/(_)/ /___   _____"
@@ -53,7 +47,6 @@ on_start() {
   fi
 }
 
-# Finished reporter
 on_finish() {
   success "Everything was successfully done!"
   success "Happy Coding!"
@@ -69,4 +62,12 @@ on_finish() {
   echo
   info "P.S: Don't forget to restart a terminal :)"
   echo
+}
+
+on_error() {
+  echo
+  error "Wow... Something serious happened!"
+  error "Though, I don't know what really happened :("
+  echo
+  exit 1
 }

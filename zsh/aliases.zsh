@@ -4,11 +4,11 @@ _exists() {
   command -v $1 >/dev/null 2>&1
 }
 
-alias c='clear'
-alias x='exit'
 alias o='open'
 alias oo='open .'
 alias src='omz reload'
+alias c='clear'
+alias x='exit'
 alias e='$EDITOR'
 
 alias 644='chmod 644'
@@ -17,8 +17,8 @@ alias 777='chmod 777'
 
 if _exists nvim; then
   alias nv='nvim'
-  alias dotconf='cd ~/.dotfiles && nvim'
-  alias nvconf='cd ~/.config/nvim && nvim'
+  alias dotc='cd ~/.dotfiles && nvim'
+  alias nvc='cd ~/.config/nvim && nvim'
 fi
 
 if _exists trash; then
@@ -83,14 +83,7 @@ if _exists brew; then
   alias bleavesc='brew ls --casks | xargs brew desc --eval-all'
 fi
 
-# GNU ls aliases
-if _exists gls; then
-  alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first'
-  alias ll='ls -lAh'
-  alias l='ll'
-fi
-
-# Folders Shortcuts
+# folders Shortcuts
 [ -d ~/.dotfiles ] && alias dots='cd ~/.dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'
 [ -d ~/Projects ] && alias proj='cd ~/Projects'
@@ -99,11 +92,31 @@ fi
 [ -d ~/Projects/repos ] && alias repos='cd ~/Projects/repos'
 [ -d ~/Projects/served ] && alias served='cd ~/Projects/served'
 
-# Prints a cleaner $PATH and $FPATH
+# canonical hex dump
+command -v hd >/dev/null || alias hd="hexdump -C"
+
+# macos has no md5sum, so use md5 as a fallback
+command -v md5sum >/dev/null || alias md5sum="md5"
+
+# macos has no sha1sum, so use shasum as a fallback
+command -v sha1sum >/dev/null || alias sha1sum="shasum"
+
+# prints a cleaner $PATH and $FPATH
 alias path='echo -e ${PATH//:/\\n}'
 alias fpath='echo -e ${FPATH//:/\\n}'
 
-# Get system info
+# JavaScriptCore REPL
+jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
+[ -e "${jscbin}" ] && alias jsc="${jscbin}"
+unset jscbin
+
+# launch macos apps
+alias ios='open -a Simulator.app'
+alias xcode='open -a Xcode.app'
+alias mon_icloud="brctl monitor com.apple.CloudDocs | grep %"
+alias chrome-dev='open -a "Brave Browser" --args --remote-debugging-port=9229'
+
+# scutil shortcuts
 alias sc_computername='scutil --get ComputerName'
 alias sc_localhostname='scutil --get LocalHostName'
 alias sc_hostname='scutil --get HostName'
@@ -111,7 +124,10 @@ alias sc_dns='scutil --dns'
 alias sc_proxy='scutil --proxy'
 alias sc_net_info='scutil --nwi'
 
-# OSX's launchctl
+# sysctl shortcuts
+alias sys_cpu='sysctl -n machdep.cpu.brand_string'
+
+# osx's launchctl
 alias launch_list='launchctl list '
 alias launch_load='launchctl load '
 alias launch_unload='launchctl unload '
@@ -119,24 +135,24 @@ alias launch_getenv='launchctl getenv '
 alias launch_start='launchctl start '
 alias launch_stop='launchctl stop '
 
-# List installed Packages
+# list installed packages
 alias sys_pkg_list='pkgutil --pkgs'
 
-# OSX's Launch Services
+# osx's launch services
 alias lsregister='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister'
 
-# Get kMDItemContentTypeTree metadata for file
+# get kMDItemContentTypeTree metadata for file
 alias sys_uti_file='mdls -name kMDItemContentTypeTree '
 
-# Turn spotlight on/off
+# turn spotlight on/off
 alias spotlight_off='sudo mdutil -a -i off'
 alias spotlight_on='sudo mdutil -a -i on'
 
-# Spotlight Exclusions
+# spotlight exclusions
 alias spotlight_exclusion_show='sudo defaults read /.Spotlight-V100/VolumeConfiguration.plist Exclusions'
 alias spotlight_exclusion_add='sudo defaults write /.Spotlight-V100/VolumeConfiguration.plist Exclusions -array-add '
 
-# Spotlight Meta-data indexing (MDS)
+# spotlight meta-data indexing (mds)
 alias spotlight_indexing_stop='sudo launchctl stop com.apple.metadata.mds'
 alias spotlight_indexing_start='sudo launchctl start com.apple.metadata.md'
 alias spotlight_indexing_restart='spotlight.indexing.stop && spotlight.indexing.start'

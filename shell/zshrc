@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 # zsh files
 source ${DOTFILES}/zsh/functions.zsh
 source ${DOTFILES}/zsh/aliases.zsh
+source ${DOTFILES}/zsh/colors.zsh
 source ${DOTFILES}/zsh/settings.zsh
 
 # start ssh-agent
@@ -46,8 +47,9 @@ if [[ -d "$PYENV_ROOT" ]] && \
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# shell history
-eval "$(atuin init zsh)"
+if [ $(command -v atuin) ]; then
+  eval "$(atuin init zsh)"
+fi
 
 # fzf
 if [ $(command -v fzf) ]; then

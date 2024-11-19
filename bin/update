@@ -3,13 +3,12 @@
 # Gets macOS software updates, updates Homebrew, npm packages, dotfiles, and some other software.
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/tools/reporter.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
-sudo -v
-echo
+trap on_error SIGTERM
 
 # dotfiles
-dotfiles
+# dotfiles
 
 # Update oh-my-zsh
 function update_omz() {
@@ -47,6 +46,7 @@ function update_npm() {
 # Clear trash and log files
 function clean_up() {
   info "Emptying trash and cleaning logs..."
+  sudo -v
   sudo command rm -rf ~/.Trash/*
   sudo command rm -rfv /Volumes/*/.Trashes
   sudo command rm -rfv /private/var/log/asl/*.asl
@@ -54,6 +54,9 @@ function clean_up() {
 }
 
 update() {
+  echo "Before we proceed, please type your sudo password:"
+  sudo -v
+  
   update_omz "$*"
   update_macos "$*"
   update_homebrew "$*"

@@ -3,16 +3,14 @@
 # Installs Homebrew, Xcode tools
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/tools/reporter.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 set -e
 trap on_error SIGTERM
 
-sudo -v
-
 # Install Xcode tools and accept its license
 function install_xcode() {
-  if ! _exists xcode-select; then
+  if ! exists xcode-select; then
     info "\nInstalling XCode command line tools..."
 
     xcode-select --install
@@ -40,7 +38,7 @@ function install_homebrew() {
 
 # Homebrew
 function install_software() {
-  if _exists brew; then
+  if exists brew; then
     info "Installing Brew Bundle apps..."
 
     read -rp "Do you want to install apps from brewfile? [y/N] " -n 1 answer
@@ -58,7 +56,7 @@ function install_software() {
 
 # Install npm and packages
 function install_npm_deps() {
-  if _exists npm; then
+  if exists npm; then
     info "Installing Node.js dependencies..."
 
     read -rp "Do you want to install npm packages yet? [y/N] " -n 1 answer
@@ -67,6 +65,7 @@ function install_npm_deps() {
       return
     fi
     npm config set loglevel warn
+    npm install -g bash-handbook
     npm install -g nodemon
     npm install -g typescript
     echo
