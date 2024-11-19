@@ -46,10 +46,6 @@ if [[ -d "$PYENV_ROOT" ]] && \
     eval "$(pyenv virtualenv-init -)"
 fi
 
-if [ $(command -v atuin) ]; then
-  eval "$(atuin init zsh)"
-fi
-
 # fzf
 if [ $(command -v fzf) ]; then
   source $DOTFILES/config/fzf/fzf.zsh

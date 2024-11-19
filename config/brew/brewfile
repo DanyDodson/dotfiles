@@ -12,7 +12,6 @@ tap "thezoraiz/ascii-image-converter"
 
 # Packages
 brew "thezoraiz/ascii-image-converter/ascii-image-converter" # Convert images into ascii art
-brew "atuin" # Improved shell history for zsh, bash, fish and nushell
 brew "bash" # Bourne-Again SHell, a UNIX command interpreter
 brew "bat" # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat-extras" # Bash scripts that integrate bat with various command-line tools
@@ -51,6 +50,7 @@ brew "hub" # Add GitHub support to git on the command-line
 brew "huggingface-cli" # Client library for huggingface.co hub
 brew "irssi" # Modular IRC client
 brew "jq" # Lightweight and flexible command-line JSON processor
+brew "keychain" # User-friendly front-end to ssh-agent
 brew "koekeishiya/formulae/krp" # Utility to adjust keyrepeat settings for MacOS.
 brew "libyaml" # YAML Parser
 brew "lolcat" # Rainbows and unicorns in your console!
@@ -64,9 +64,11 @@ brew "mas" # Mac App Store command-line interface
 brew "mongosh" # MongoDB Shell to connect, configure, query, and work with your MongoDB database
 brew "moreutils" # Collection of tools that nobody wrote when UNIX was young
 brew "neovim" # Ambitious Vim-fork focused on extensibility and agility
+brew "nvm" # Manage multiple Node.js versions
 brew "openjdk@11" # Development kit for the Java programming language
 brew "osx-cpu-temp" # Outputs current CPU temperature for OSX
 brew "perl" # Highly capable, feature-rich programming language
+brew "pinentry-mac" # Pinentry for GPG on Mac
 brew "pnpm" # Fast, disk space efficient package manager
 brew "prettier" # Code formatter for JavaScript, CSS, JSON, GraphQL, Markdown, YAML
 brew "prettyping" # Wrapper to colorize and simplify ping's output
@@ -88,6 +90,7 @@ brew "telnet" # User interface to the TELNET protocol
 brew "tlrc" # Simplified and community-driven man pages. Its tldr (in rust)
 brew "tmux" # Terminal multiplexer
 brew "trash-cli" # Command-line interface to the freedesktop.org trashcan
+brew "transmission-cli" # Lightweight BitTorrent client
 brew "tree" # Display directories as trees (with optional color/HTML output)
 brew "tty-clock" # Digital clock in ncurses
 brew "vim" # Vi 'workalike' with many additional features
@@ -101,14 +104,16 @@ brew "yamllint" # Linter for YAML files
 brew "yarn" # JavaScript package manager
 brew "yazi" # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
-
+brew "zoxide" # Shell extension to navigate your filesystem faster
 # Casks
+cask "1password" # (1Password) Password manager that keeps all passwords secure behind one password
 cask "1password-cli" # (1Password CLI) Command-line interface for 1Password
 cask "adium" # (Adium) Instant messaging application
-cask "alacritty" # 
+cask "alacritty" # GPU-accelerated terminal emulator
 cask "apparency" # (Apparency) Inspect application bundles
 cask "betterdisplay" # (BetterDisplay) Display management tool
 cask "brave-browser" # (Brave) Web browser focusing on privacy
+cask "devtoys" # Utilities designed to make common development tasks easier
 cask "docker" # Pack, ship and run any application as a lightweight container
 cask "firefox" # (Mozilla Firefox) Web browser
 cask "font-cascadia-code-pl" # (Cascadia Code PL) [no description]
@@ -118,6 +123,7 @@ cask "font-caskaydia-mono-nerd-font" # (CaskaydiaMono Nerd Font (Cascadia Mono))
 cask "font-fira-code-nerd-font" # (FiraCode Nerd Font (Fira Code)) [no description]
 cask "font-fira-mono-nerd-font" # (FiraMono Nerd Font (Fira)) [no description]
 cask "iina" # (IINA) Free and open-source media player
+cask "iterm2" # (iTerm2) Terminal emulator as alternative to Apple's Terminal app
 cask "karabiner-elements" # (Karabiner Elements) Keyboard customiser
 cask "kitty" # GPU-based terminal emulator
 cask "macs-fan-control" # (Macs Fan Control) Controls and monitors all fans on Apple computers
