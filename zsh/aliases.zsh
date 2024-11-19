@@ -4,11 +4,11 @@ _exists() {
   command -v $1 >/dev/null 2>&1
 }
 
-alias src='omz reload'
-
 alias c='clear'
+alias x='exit'
 alias o='open'
 alias oo='open .'
+alias src='omz reload'
 alias e='$EDITOR'
 
 alias 644='chmod 644'
@@ -62,7 +62,7 @@ if _exists ranger; then
 fi
 
 if _exists bat; then
-  alias bat='bat --tabs=4 --wrap=never --style=plain --color=always'
+  alias bat='bat--tabs=4 --wrap=never --style=plain --color=always'
   alias cat='bat'
 fi
 

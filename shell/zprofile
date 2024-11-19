@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 
-# system Executables
+# system executables
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
     
 # local system binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# dotfile bin
+# dotfiles bin
 export PATH=$PATH:${DOTFILES}/bin
 
 # homebrew
@@ -16,22 +16,21 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH=$PATH:$GO_PATH/bin
 export PATH=$PATH:$GOROOT/bin
 
-# add zsh completions to fpath
+# add zsh-completions to fpath
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.omz}/custom}/plugins/zsh-completions/src
 
-# check and source nvm.sh
+# nvm and completions
 [[ -f "/opt/homebrew/opt/nvm/nvm.sh" ]] && . "/opt/homebrew/opt/nvm/nvm.sh"
-
-# check and source nvm bash_completion
 [[ -f "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ]] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
 
-# paths
+# macos paths
 for path_file in /etc/paths.d/*(.N); do
   path+=($(<$path_file))
 done
 unset path_file
 
+# clear duplicates
 typeset -gU fpath path
 
-# after all, set the PATH for macOS
+# set the path for macos
 [[ -x /bin/launchctl ]] && /bin/launchctl setenv PATH $PATH

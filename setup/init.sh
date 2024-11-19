@@ -66,7 +66,6 @@ function install_npm_deps() {
     if [ "${answer}" != "y" ]; then
       return
     fi
-
     npm config set loglevel warn
     npm install -g nodemon
     npm install -g typescript

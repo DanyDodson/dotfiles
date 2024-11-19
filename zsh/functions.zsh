@@ -19,4 +19,3 @@ function clone() {
     npm install
   fi
 }
-

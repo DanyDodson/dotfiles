@@ -1,0 +1,2 @@
+[38;2;220;223;228m#compdef cargo[0m
+[38;2;220;223;228msource "$(rustc +${${(z)$(rustup default)}[1]} --print sysroot)"/share/zsh/site-functions/_cargo[0m
