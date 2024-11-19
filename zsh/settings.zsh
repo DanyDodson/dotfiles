@@ -17,6 +17,11 @@ setopt HIST_SAVE_NO_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt HIST_VERIFY
 
+# ls colors - https://geoff.greer.fm/lscolors/
+if [ -f "/opt/homebrew/bin/gdircolors" ]; then
+  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors-full)"
+fi
+
 # color complist
 zmodload -i zsh/complist
 autoload -Uz colors && colors

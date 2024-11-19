@@ -83,6 +83,12 @@ if _exists brew; then
   alias bleavesc='brew ls --casks | xargs brew desc --eval-all'
 fi
 
+if _exists '/opt/homebrew/bin/gls'; then
+  alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
+  alias l='ls -A'
+  alias ll='ls -Algoh'
+  alias la='ls -Al'
+fi
 # folders Shortcuts
 [ -d ~/.dotfiles ] && alias dots='cd ~/.dotfiles'
 [ -d ~/Downloads ] && alias dl='cd ~/Downloads'

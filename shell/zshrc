@@ -30,7 +30,6 @@ source $ZSH/oh-my-zsh.sh
 # zsh files
 source ${DOTFILES}/zsh/functions.zsh
 source ${DOTFILES}/zsh/aliases.zsh
-source ${DOTFILES}/zsh/colors.zsh
 source ${DOTFILES}/zsh/settings.zsh
 
 # start ssh-agent
