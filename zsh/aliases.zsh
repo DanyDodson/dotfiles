@@ -83,6 +83,13 @@ if _exists "/opt/homebrew/bin/gls"; then
   alias la="ls -Al"
 fi
 
+if _exists "/opt/homebrew/bin/transmission-remote"; then
+  alias tr='transmission-remote'
+  alias tra='transmission-remote -a'
+  alias trl='transmission-remote -l'
+  alias tdd='transmission-daemon --dump-settings'
+fi
+
 # folder shortcuts
 [ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
 
