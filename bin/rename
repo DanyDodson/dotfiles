@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 
-# Change macos system names
+# Change macOS system names
 
-computername='Mac'
-localhostname='mac'
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 computername localhostname"
+    exit 1
+fi
+computername=$1
+localhostname=$2
 
 echo "Setting the name to $computername"
 sudo scutil --set ComputerName "$computername" 
