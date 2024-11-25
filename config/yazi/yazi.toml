@@ -1,13 +1,13 @@
 "$schema" = "https://yazi-rs.github.io/schemas/yazi.json"
 
 [manager]
+# ratio = [1, 5, 4]
 show_symlink = false
+show_hidden = true
 
 [plugin]
-
 prepend_previewers = [
-  { name = "*.csv", run = "rich-preview"},
+  { name = "*.csv", run = "rich-preview" },
   { name = "*.md", run = "rich-preview" },
-  { mime = "application/xbittorrent", run = "torrent-preview" }
+  { mime = "application/xbittorrent", run = "torrent-preview" },
 ]
-

@@ -88,7 +88,6 @@ zstyle ':completion:*:rm:*' file-patterns '*:all-files'
 
 # location for completions
 zcompdump="${HOME}/.zcompdump"
-# zcompdump="${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/.zcompdump"
 
 # if completions present, then load them
 if [ -f $zsh_dump_file ]; then

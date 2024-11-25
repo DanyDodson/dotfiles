@@ -102,7 +102,6 @@ brew "koekeishiya/formulae/yabai" # A tiling window manager for macOS based on b
 brew "yamllint" # Linter for YAML files
 brew "yazi" # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yt-dlp" # Feature-rich command-line audio/video downloader
-brew "zoxide" # Shell extension to navigate your filesystem faster
 # Casks
 cask "1password" # (1Password) Password manager that keeps all passwords secure behind one password
 cask "1password-cli" # (1Password CLI) Command-line interface for 1Password

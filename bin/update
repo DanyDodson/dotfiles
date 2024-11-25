@@ -1,32 +1,29 @@
 #!/usr/bin/env bash
 
-# Gets macOS software updates, updates Homebrew, npm packages, dotfiles, and some other software.
+# Gets macOS software, Homebrew and npm updates and cleans trash and logs.
 
 # shellcheck disable=SC1091
 . "$HOME/.dotfiles/tools/reports.sh"
 
 trap on_error SIGTERM
 
-# dotfiles
-# dotfiles
-
-# Update oh-my-zsh
+# update oh-my-zsh
 function update_omz() {
   info "Updating oh-my-zsh..."
   "$ZSH/tools/upgrade.sh"
   finish
 }
 
-# Update macOS system apps
-function update_macos() {
+# update macos system apps
+function update_macos_apps() {
   info "Updating macOS..."
   sudo -v
   sudo softwareupdate -i -a
   finish
 }
 
-# Update and clean Homebrew
-function update_homebrew() {
+# update and clean Homebrew
+function update_homebrew_packages() {
   info "Updating Homebrew packages..."
   sudo -v
   brew update
@@ -36,14 +33,23 @@ function update_homebrew() {
   finish
 }
 
-# Update npm packages
-function update_npm() {
+# update npm packages
+function update_npm_packages() {
   info "Updating npm modules..."
   npm update -g
   finish
 }
 
-# Clear trash and log files
+# update pip packages
+function update_pip_packages() {
+  info "Updating pip packages..."
+  pip --disable-pip-version-check list --outdated --format=json |
+    python -c "import json, sys; print('\n'.join([x['name'] for x in json.load(sys.stdin)]))" |
+    xargs -n1 pip install -U
+  finish
+}
+
+# clean trash and log files
 function clean_up() {
   info "Emptying trash and cleaning logs..."
   sudo -v
@@ -54,16 +60,13 @@ function clean_up() {
 }
 
 update() {
-  echo "Before we proceed, please type your sudo password:"
-  sudo -v
-  
   update_omz "$*"
-  update_macos "$*"
-  update_homebrew "$*"
-  update_npm "$*"
+  update_macos_apps "$*"
+  update_homebrew_packages "$*"
+  update_npm_packages "$*"
+  update_pip_packages
   clean_up "$*"
   on_finish "$*"
 }
 
 update "$*"
-

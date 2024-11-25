@@ -95,6 +95,7 @@ function install_npm_deps() {
     info "Installing npm global packages..."
     npm install -g bash-handbook
     npm install -g nodemon
+    npm install -g neovim
     npm install -g pnpm
     npm install -g yarn
     echo
@@ -103,6 +104,10 @@ function install_npm_deps() {
   fi
   finish
 }
+
+# TODO create function to auto install tmux and packages like this:
+# if "test ! -d ~/.tmux/plugins/tpm" \
+#  "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 # install python with pyenv
 function install_python_with_pyenv() {
@@ -133,9 +138,32 @@ function install_python_packages() {
     info "Installing python packages..."
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip setuptools
+    "$HOME"/.pyenv/shims/python -m pip install --upgrade pip pynvim
     echo
   else
     error "Error: python is not available"
+  fi
+  finish
+}
+
+# install go packages
+function install_go_packages() {
+  if exists pyenv; then
+    read -rp "Do you want to install go packages yet? [y/N] " -n 1 answer
+    echo
+    if [ "${answer}" != "y" ]; then
+      return
+    fi
+    info "Installing go packages..."
+    go install golang.org/x/tools/gopls@latest
+    go install github.com/cweill/gotests/gotests@latest
+    go install github.com/fatih/gomodifytags@latest
+    go install github.com/josharian/impl@latest
+    go install github.com/go-delve/delve/cmd/dlv@latest
+    go install honnef.co/go/tools/cmd/staticcheck@latest
+    echo
+  else
+    error "Error: go is not available"
   fi
   finish
 }
@@ -149,6 +177,7 @@ main() {
   install_npm_deps "$*"
   install_python_with_pyenv "$*"
   install_python_packages "$*"
+  install_go_packages "$*"
   on_finish "$*"
 }
 

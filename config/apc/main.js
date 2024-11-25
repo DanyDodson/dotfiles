@@ -1,4 +1,4 @@
-
+// codium extention config file
 
 //  create a frameless window
 const { BrowserWindow } = require('electron')

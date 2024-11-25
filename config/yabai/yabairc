@@ -31,6 +31,7 @@ yabai -m rule --add app=".*" sub-layer=normal
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Adium$" manage=off
 yabai -m rule --add app="^AppJournal$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Aiko$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
@@ -93,6 +94,7 @@ yabai -m rule --add app="^Podcasts$" manage=off
 yabai -m rule --add app="^Postbox$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
 yabai -m rule --add app="^Qutebrowser$" manage=off
+yabai -m rule --add app="^Reminders$" manage=off
 yabai -m rule --add app="^RiseupVPN$" manage=off
 yabai -m rule --add app="^Software Update$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off

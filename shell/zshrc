@@ -2,7 +2,7 @@
 
 DEFAULT_USER=$(whoami)
 
-# consistent colouring
+# colouring
 export CLICOLOR=1
 
 # p10k instant prompt
@@ -10,10 +10,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# run p10k configure or edit p10k.zsh
+# run p10k configure
 [[ ! -f ${HOME}/.cache/p10k.zsh ]] || source ${HOME}/.cache/p10k.zsh
 
-# omz theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
@@ -28,7 +27,6 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # zsh files
-source ${DOTFILES}/zsh/functions.zsh
 source ${DOTFILES}/zsh/aliases.zsh
 source ${DOTFILES}/zsh/settings.zsh
 
@@ -38,6 +36,11 @@ eval "$(ssh-agent -s)" >/dev/null 2>&1
 # rust
 [[ ! -f $HOME/.cargo/env ]] || . $HOME/.cargo/env
 
+# fzf
+if [ $(command -v fzf) ]; then
+  source $DOTFILES/config/fzf/fzf.zsh
+fi
+
 # pyenv
 if [[ -d "$PYENV_ROOT" ]] && \
   command -v pyenv >/dev/null 2>&1 && \
@@ -46,13 +49,11 @@ if [[ -d "$PYENV_ROOT" ]] && \
     eval "$(pyenv virtualenv-init -)"
 fi
 
-# fzf
-if [ $(command -v fzf) ]; then
-  source $DOTFILES/config/fzf/fzf.zsh
-fi
-
 # iterm2 integration
 [[ -f "${DOTFILES}/config/iterm/iterm.zsh" ]] && . "${DOTFILES}/config/iterm/iterm.zsh"
+
+# used with magick rock
+export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 
 # 
 autoload -Uz compinit

@@ -82,7 +82,7 @@ function create_config_dirs() {
     return
   fi
 
-  local dirs=("alacritty" "gh" "kitty" "ranger" "skhd" "wezterm" "yabai" "yazi")
+  local dirs=("1password" "alacritty" "gh" "kitty" "ranger" "skhd" "wezterm" "yabai" "yazi")
   for d in "${dirs[@]}"; do
     mkdir -p "$home_config/$d" || error "Failed to create $home_config/$d directory..."
     success "created $home_config/$d directory"
@@ -92,36 +92,38 @@ function create_config_dirs() {
 }
 
 function link_config_files() {
-  info "Linking $dots_config files..."
+  info "Linking $home_config files..."
 
-  read -rp "Do you want to link $dots_config files ? [y/N] " -n 1 answer
+  read -rp "Do you want to link $home_config files ? [y/N] " -n 1 answer
   echo
   if [ "${answer}" != "y" ]; then
     return
   fi
 
+  ln -sf "$dots_config/1password/ssh/agent.toml" "$home_config/1password/ssh/agent.toml" || error "Failed to link $home_config/1password/ssh/agent.toml..."
+  success "linked $home_config/1password/ssh/agent.toml"
   ln -sf "$dots_config/alacritty/alacritty.toml" "$home_config/alacritty/alacritty.toml" || error "Failed to link $home_config/alacritty/alacritty.toml..."
-  success "linked $dots_config/alacritty/alacritty.toml"
+  success "linked $home_config/alacritty/alacritty.toml"
   ln -sf "$dots_config/gh/config.yml" "$home_config/gh/config.yml" || error "Failed to link $home_config/gh/config.yml..."
-  success "linked $dots_config/gh/config.yml"
+  success "linked $home_config/gh/config.yml"
   ln -sf "$dots_config/kitty/kitty.conf" "$home_config/kitty/kitty.conf" || error "Failed to link $home_config/kitty/kitty.conf..."
-  success "linked $dots_config/kitty/kitty.conf"
+  success "linked $home_config/kitty/kitty.conf"
   ln -sf "$dots_config/ranger/rc.conf" "$home_config/ranger/rc.conf" || error "Failed to link $home_config/ranger/rc.conf..."
-  success "linked $dots_config/ranger/rc.conf"
+  success "linked $home_config/ranger/rc.conf"
   ln -sf "$dots_config/skhd/skhdrc" "$home_config/skhd/skhdrc" || error "Failed to link $home_config/skhd/skhdrc..."
-  success "linked $dots_config/skhd/skhdrc"
+  success "linked $home_config/skhd/skhdrc"
   ln -sf "$dots_config/wezterm/wezterm.lua" "$home_config/wezterm/wezterm.lua" || error "Failed to link $home_config/wezterm/wezterm.lua..."
-  success "linked $dots_config/wezterm/wezterm.lua"
+  success "linked $home_config/wezterm/wezterm.lua"
   ln -sf "$dots_config/yabai/yabairc" "$home_config/yabai/yabairc" || error "Failed to link $home_config/yabai/yabairc..."
-  success "linked $dots_config/yabai/yabairc"
+  success "linked $home_config/yabai/yabairc"
   ln -sf "$dots_config/yazi/yazi.toml" "$home_config/yazi/yazi.toml" || error "Failed to link $home_config/yazi/yazi.toml..."
-  success "linked $dots_config/yazi/yazi.toml"
+  success "linked $home_config/yazi/yazi.toml"
   ln -sf "$dots_config/yazi/theme.toml" "$home_config/yazi/theme.toml" || error "Failed to link $home_config/yazi/theme.toml..."
-  success "linked $dots_config/yazi/theme.toml"
+  success "linked $home_config/yazi/theme.toml"
   ln -sf "$dots_config/yazi/keymap.toml" "$home_config/yazi/keymap.toml" || error "Failed to link $home_config/yazi/keymap.toml..."
-  success "linked $dots_config/yazi/keymap.toml"
+  success "linked $home_config/yazi/keymap.toml"
   ln -sf "$dots_config/yazi/init.lua" "$home_config/yazi/init.lua" || error "Failed to link $home_config/yazi/init.lua..."
-  success "linked $dots_config/yazi/init.lua"
+  success "linked $home_config/yazi/init.lua"
 
   finish
 }

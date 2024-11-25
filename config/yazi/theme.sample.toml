@@ -1,18 +1,11 @@
-# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
-# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+# Schema
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-# vim:fileencoding=utf-8:foldmethod=marker
-
-# : Flavor {{{
-
+# Flavor
 [flavor]
 use = ""
 
-# : }}}
-
-# : Manager {{{
-
+# Manager
 [manager]
 cwd = { fg = "cyan" }
 
@@ -47,11 +40,7 @@ border_style = { fg = "darkgray" }
 # Highlighting
 syntect_theme = ""
 
-# : }}}
-
-
-# : Status {{{
-
+# Status
 [status]
 separator_open = "󽠄"
 separator_close = "󽟸"
@@ -74,32 +63,20 @@ permissions_w = { fg = "red" }
 permissions_x = { fg = "cyan" }
 permissions_s = { fg = "darkgray" }
 
-# : }}}
-
-
-# : Select {{{
-
+# Select
 [select]
 border = { fg = "blue" }
 active = { fg = "magenta", bold = true }
 inactive = {}
 
-# : }}}
-
-
-# : Input {{{
-
+# Input
 [input]
 border = { fg = "blue" }
 title = {}
 value = {}
 selected = { reversed = true }
 
-# : }}}
-
-
-# : Completion {{{
-
+# Completion
 [completion]
 border = { fg = "blue" }
 active = { reversed = true }
@@ -110,21 +87,13 @@ icon_file = "󾷟 "
 icon_folder = "󾮸 "
 icon_command = "󾳞 "
 
-# : }}}
-
-
-# : Tasks {{{
-
+# Tasks
 [tasks]
 border = { fg = "blue" }
 title = {}
 hovered = { fg = "magenta", underline = true }
 
-# : }}}
-
-
-# : Which {{{
-
+# Which
 [which]
 cols = 3
 mask = { bg = "black" }
@@ -134,11 +103,7 @@ desc = { fg = "lightmagenta" }
 separator = " 󳷰 "
 separator_style = { fg = "darkgray" }
 
-# : }}}
-
-
-# : Help {{{
-
+# Help
 [help]
 on = { fg = "cyan" }
 run = { fg = "magenta" }
@@ -146,11 +111,7 @@ desc = {}
 hovered = { reversed = true, bold = true }
 footer = { fg = "black", bg = "white" }
 
-# : }}}
-
-
-# : Notify {{{
-
+# Notify
 [notify]
 title_info = { fg = "green" }
 title_warn = { fg = "yellow" }
@@ -161,11 +122,7 @@ icon_info = "󾲍 "
 icon_warn = "󾵁 "
 icon_error = "󾴆 "
 
-# : }}}
-
-
-# : File-specific styles {{{
-
+# File-specific
 [filetype]
 
 rules = [
@@ -199,8 +156,8 @@ rules = [
 ]
 
 [icon]
-
 globs = []
+
 dirs = [
     { name = ".config", text = "󳿲 " },
     { name = ".git", text = "󳿵 " },
@@ -341,6 +298,7 @@ files = [
     { name = "xorg.conf", text = "󹣕 ", fg_dark = "#e54d18", fg_light = "#ac3a12" },
     { name = "xsettingsd.conf", text = "󹣕 ", fg_dark = "#e54d18", fg_light = "#ac3a12" },
 ]
+
 exts = [
     { name = "3gp", text = "󾲑 ", fg_dark = "#fd971f", fg_light = "#7e4c10" },
     { name = "3mf", text = "󾰸 ", fg_dark = "#888888", fg_light = "#5b5b5b" },
@@ -767,6 +725,7 @@ exts = [
     { name = "zsh", text = "󾳞 ", fg_dark = "#89e051", fg_light = "#447028" },
     { name = "zst", text = "󳾙 ", fg_dark = "#eca517", fg_light = "#76520c" },
 ]
+
 conds = [
     # Special files
     { if = "orphan", text = "󾵁 " },
@@ -783,5 +742,3 @@ conds = [
     { if = "exec", text = "󾳞 " },
     { if = "!dir", text = "󾷟 " },
 ]
-
-# : }}}
