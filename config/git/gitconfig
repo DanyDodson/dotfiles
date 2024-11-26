@@ -3,9 +3,6 @@
   email ="2219168+danydodson@users.noreply.github.com"
   signingkey = op://Personal/id_ed25519/public_key
 
-[includeIf "gitdir:/Users/"]
-  path = "~/.gitsecret"
-
 [commit]
   gpgsign = true
 
@@ -17,8 +14,7 @@
 
 [gpg "ssh"]
   program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-  allowedSignersFile = ~/.dotfiles/config/git/signers
-  
+
 [core]
   pager = delta
   editor = nvim
