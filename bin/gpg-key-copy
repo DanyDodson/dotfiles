@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Copies gpg public key to clipboard
+#
+# > gpg --list-secret-keys --keyid-format SHORT <EMAIL>
+# > gpg-key-copy [key ID]
+# 
+
+if command -v gpg >/dev/null 2>&1; then
+	if [ -z "$1" ]; then
+		echo "Please provide a key ID as an argument"
+		exit 1
+	fi
+
+	short_key_id=$1
+	gpg --armor --export "$short_key_id" | pbcopy
+	echo "The key with ID:$short_key_id has been copied"
+else
+	echo "gpg is not installed"
+	exit 1
+fi
