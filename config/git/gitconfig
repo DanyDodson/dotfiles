@@ -1,19 +1,18 @@
 [user]
   name = "danydodson"
-  email ="2219168+danydodson@users.noreply.github.com"
-  signingkey = op://Personal/id_ed25519/public_key
-
-[commit]
-  gpgsign = true
-
-[tag]
-  gpgSign = true
+  email ="danydodson@gmail.com"
 
 [gpg]
   format = ssh
 
 [gpg "ssh"]
-  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+  
+[includeIf "gitdir:/Users/"]
+  path = "~/.gitsecret"
 
 [core]
   pager = delta

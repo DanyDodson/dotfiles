@@ -3,7 +3,7 @@
 # Installs Homebrew, Xcode tools
 
 # shellcheck disable=SC1091
-. "$HOME/.dotfiles/tools/reports.sh"
+. "$HOME/.dotfiles/setup/reports.sh"
 
 set -e
 trap on_error SIGTERM

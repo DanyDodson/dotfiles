@@ -15,12 +15,12 @@ export PATH=$PATH:${DOTFILES}/bin
 # local scripts
 # export PATH=$PATH:$HOME/.local/scripts
 
-# gpg
-export GPG_TTY=$(tty)
-
 # go path
 export PATH=$PATH:$GO_PATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# jaro mail
+export PATH=/Applications/JaroMail.app/Contents/Resources/jaro/bin:$PATH
 
 # add zsh-completions to fpath
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.omz}/custom}/plugins/zsh-completions/src

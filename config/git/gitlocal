@@ -1,3 +1,6 @@
+[user]
+  signingkey = op://Personal/id_ed25519/public_key
+	
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
