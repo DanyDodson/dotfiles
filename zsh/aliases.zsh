@@ -4,27 +4,11 @@ _exists() {
   command -v $1 >/dev/null 2>&1
 }
 
-alias src="omz reload"
-
 alias o="open"
 alias oo="open ."
 alias c="clear"
-alias e="$EDITOR"
 
-alias 644="chmod 644"
-alias 755="chmod 755"
-alias 777="chmod 777"
-
-if _exists git; then
-  alias ggc="git commit -S -m"
-fi
-
-if _exists nvim; then
-  alias v="nvim"
-  alias dotconf="cd $DOTFILES && nvim"
-  alias nvconf="cd $HOME/.config/nvim && nvim"
-  [ -d $HOME/.config/nvim ] && alias nvc="cd $HOME/.config/nvim"
-fi
+alias src="omz reload"
 
 if _exists codium; then
   alias cc="codium"
@@ -53,6 +37,21 @@ fi
 if _exists bat; then
   alias bat="bat --tabs=4 --wrap=never --style=plain --color=always"
   alias cat="bat"
+fi
+
+if _exists git; then
+  alias ga="git add ."
+  alias gc="git commit -m"
+  alias gp="git push -u origin main"
+  alias gs="git status"
+fi
+
+if _exists nvim; then
+  alias v="nvim"
+  alias e="$EDITOR"
+  alias dotconf="cd $DOTFILES && nvim"
+  alias nvconf="cd $HOME/.config/nvim && nvim"
+  [ -d $HOME/.config/nvim ] && alias nvc="cd $HOME/.config/nvim"
 fi
 
 if _exists tmux; then
@@ -85,6 +84,10 @@ fi
 if _exists curl; then
   alias get="curl -O -L --silent"
 fi
+
+alias 644="chmod 644"
+alias 755="chmod 755"
+alias 777="chmod 777"
 
 if _exists "/opt/homebrew/bin/gls"; then
   alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
