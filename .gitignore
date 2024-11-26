@@ -53,8 +53,3 @@ pids
 # Homebrew
 brewfile.lock.json
 
-# Other
-icons-default.lua
-icons-light.lua
-icons-nvim.lua
-yazi-colors.lua

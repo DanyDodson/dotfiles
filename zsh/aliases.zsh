@@ -15,11 +15,15 @@ alias 644="chmod 644"
 alias 755="chmod 755"
 alias 777="chmod 777"
 
+if _exists git; then
+  alias ggc="git commit -S -m"
+fi
+
 if _exists nvim; then
   alias v="nvim"
-  alias nvk="NVIM_APPNAME=nvim-nik nvim"
   alias dotconf="cd $DOTFILES && nvim"
   alias nvconf="cd $HOME/.config/nvim && nvim"
+  [ -d $HOME/.config/nvim ] && alias nvc="cd $HOME/.config/nvim"
 fi
 
 if _exists codium; then
@@ -53,11 +57,17 @@ fi
 
 if _exists tmux; then
   alias tn="tmux new"
-  alias tls="tmux ls"
+  alias tl="tmux ls"
   alias tk="tmux kill-session"
   alias td="tmux detach"
   alias ta="tmux a"
-  alias tms="tmux source-file $HOME/.tmux.conf"
+  alias tr="tmux source $HOME/.tmux.conf"
+
+  bindkey -s ^f "tms\n"
+
+  alias tpi="~/.tmux/plugins/tpm/scripts/install_plugins"
+  alias tpu="~/.tmux/plugins/tpm/scripts/update_plugins all"
+  alias tpc="~/.tmux/plugins/tpm/scripts/clean_plugins"
 fi
 
 if _exists brew; then
@@ -78,32 +88,22 @@ fi
 
 if _exists "/opt/homebrew/bin/gls"; then
   alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
-  alias l="ls -A"
-  alias ll="ls -Algoh"
+  alias l="ls -Algoh"
+  alias ll="ls -A"
   alias la="ls -Al"
 fi
 
 if _exists "/opt/homebrew/bin/transmission-remote"; then
-  alias tr='transmission-remote'
-  alias tra='transmission-remote -a'
-  alias trl='transmission-remote -l'
-  alias tdd='transmission-daemon --dump-settings'
+  alias tran='transmission-remote'
+  alias trand='transmission-daemon --dump-settings'
 fi
 
 # folder shortcuts
-[ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
-
-[ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
-[ -d $HOME/.ssh ] && alias ss="cd $HOME/.ssh"
-[ -d $HOME/.tmux ] && alias tmx="cd $HOME/.tmux"
-[ -d $HOME/.omz/custom ] && alias omzc="cd $HOME/.omz/custom"
-[ -d $HOME/.config ] && alias cfg="cd $HOME/.config"
-
 [ -d $HOME/Projects ] && alias pj="cd $HOME/Projects"
-[ -d $HOME/Projects/class ] && alias class="cd $HOME/Projects/class"
-[ -d $HOME/Projects/exts ] && alias exts="cd $HOME/Projects/exts"
-[ -d $HOME/Projects/repos ] && alias repos="cd $HOME/Projects/repos"
-[ -d $HOME/Projects/served ] && alias served="cd $HOME/Projects/served"
+[ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
+[ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
+[ -d $HOME/served ] && alias served="cd $HOME/served"
+[ -d $HOME/temp ] && alias temp="cd $HOME/temp"
 
 # create and cd into directory
 function mkd() {
@@ -125,11 +125,7 @@ if _exists sha1sum; then
   alias sha1sum="shasum"
 fi
 
-# prints a cleaner $PATH and $FPATH
-alias path="echo -e ${PATH//:/\\n}"
-alias fpath="echo -e ${FPATH//:/\\n}"
-
-# JavaScriptCore REPL
+# js core repl
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"
 [ -e "${jscbin}" ] && alias jsc="${jscbin}"
 unset jscbin

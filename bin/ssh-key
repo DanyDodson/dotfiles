@@ -8,4 +8,4 @@ if [ ! -f "$file" ]; then
 	ssh-keygen -t rsa -f "$file" -q -P ""
 fi
 
-cat "$file.pub"
+bat --style=plain "$file.pub"

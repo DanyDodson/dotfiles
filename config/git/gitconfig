@@ -1,6 +1,7 @@
 [user]
   name = "danydodson"
-  email ="danydodson@gmail.com"
+  email ="2219168+danydodson@users.noreply.github.com"
+  signingkey = 58865CCCCFAB6E43
 
 [includeIf "gitdir:/Users/"]
   path = "~/.gitsecret"
@@ -8,29 +9,34 @@
 [commit]
   gpgsign = true
 
-[gpg]
-  format = ssh
+[tag]
+  gpgSign = true
 
-[gpg "ssh"]
-  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[gpg]
+  program = gpg
+
+# [gpg "ssh"]
+#   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 
 [credential "https://github.com"]
-  helper = !/opt/homebrew/bin/gh auth git-credential
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
 
 [credential "https://gist.github.com"]
-  helper = !/opt/homebrew/bin/gh auth git-credential
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
   
 [core]
-  editor = nvim
   pager = delta
+  editor = nvim
   excludesfile = ~/.gitignore
   compression = -1
   sharedRepository = 0664
   commentchar = ";"
   ignorecase = false
-
-[interactive]
-  diffFilter = delta --color-only
+  
+[pager]
+  status = true
 
 [delta]
   navigate = true
@@ -44,9 +50,6 @@
   renames = true
   renameLimit = 12650
 
-[init]
-  defaultBranch = main
-
 [difftool]
   prompt = false
 
@@ -56,8 +59,8 @@
 [mergetool]
   prompt = false
 
-[pager]
-  status = true
+[rebase]
+  stat = true
 
 [blame]
   date = short
@@ -72,36 +75,27 @@
   smudge = git media smudge %f
   required  = true
 
-[filter "lfs"]
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
-  required = true
-  process = git-lfs filter-process
-
-[rebase]
-  stat = true
-
 [rerere]
   enabled = 1
+
+[url "ssh://git@"]
+  insteadOf = https://
+
+[url "git://github.com/"]
+  insteadOf = "github:"
 
 [url "git@github.com:"]
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 
-[url "git://github.com/"]
-  insteadOf = "github:"
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
 
 [url "git@gist.github.com:"]
   insteadOf = "gst:"
   pushInsteadOf = "gist:"
   pushInsteadOf = "git://gist.github.com/"
 
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
-
-[url "ssh://git@"]
-  insteadOf = https://

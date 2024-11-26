@@ -12,7 +12,6 @@ export LANG='en_US.UTF-8'
 export BROWSER="open"
 export PAGER='less'
 
-# fix - https://github.com/npm/cli/issues/7857
 export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
 
 export OP_BIOMETRIC_UNLOCK_ENABLED=true
@@ -29,5 +28,4 @@ export CURL_HOME="${DOTFILES}/config/curl"
 export WGETRC="${DOTFILES}/config/wget/wgetrc"
 export INPUTRC="${DOTFILES}/config/readline/inputrc"
 
-# better formatting for time command
 export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'

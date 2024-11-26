@@ -1,16 +1,22 @@
 #!/usr/bin/env zsh
 
-# system executables
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
-    
+# gpg
+export GPG_TTY=$(tty)
+
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# system executables
+export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
+    
 # local system binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# dotfiles bin
+# dotfiles
 export PATH=$PATH:${DOTFILES}/bin
+
+# local scripts
+# export PATH=$PATH:$HOME/.local/scripts
 
 # go path
 export PATH=$PATH:$GO_PATH/bin
