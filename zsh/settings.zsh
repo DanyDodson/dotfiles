@@ -22,6 +22,17 @@ if [ -f "/opt/homebrew/bin/gdircolors" ]; then
   eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors-full)"
 fi
 
+# history search
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+# vim keymaps history search
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# nvim autoload
+zstyle ':omz:plugins:nvm' autoload yes
+
 # color complist
 zmodload -i zsh/complist
 autoload -Uz colors && colors

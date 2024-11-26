@@ -1,7 +1,7 @@
 [user]
   name = "danydodson"
   email ="2219168+danydodson@users.noreply.github.com"
-  signingkey = 58865CCCCFAB6E43
+  signingkey = op://Personal/id_ed25519/public_key
 
 [includeIf "gitdir:/Users/"]
   path = "~/.gitsecret"
@@ -13,18 +13,11 @@
   gpgSign = true
 
 [gpg]
-  program = gpg
+  format = ssh
 
-# [gpg "ssh"]
-#   program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-
-[credential "https://github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
-
-[credential "https://gist.github.com"]
-	helper = 
-	helper = !/opt/homebrew/bin/gh auth git-credential
+[gpg "ssh"]
+  program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+  allowedSignersFile = ~/.dotfiles/config/git/signers
   
 [core]
   pager = delta

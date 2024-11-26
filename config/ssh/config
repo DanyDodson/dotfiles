@@ -3,10 +3,10 @@ Host *
 
 Host github.com
   Hostname ssh.github.com
-  Port 443
   User git
-	AddKeysToAgent yes
+  Port 443
   UseKeychain yes
+	AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
 
 Host rawdog-server

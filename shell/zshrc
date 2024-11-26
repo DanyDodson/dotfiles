@@ -16,11 +16,15 @@ fi
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-  git
+  vi-mode
   brew
+  nvm
+  go
   1password-op
+  tldr
   zsh-autosuggestions
   zsh-syntax-highlighting
+  zsh-history-substring-search
 )
 
 # source oh-my-zsh.
