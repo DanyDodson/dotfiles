@@ -1,0 +1,35 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "cmd+p",
+    "command": "markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "shift+cmd+v",
+    "command": "-markdown.showPreview",
+    "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+  },
+  {
+    "key": "f3",
+    "command": "workbench.action.toggleStatusbarVisibility"
+  },
+  {
+    "key": "f2",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
+    "key": "cmd+l cmd+o",
+    "command": "-extension.liveServer.goOnline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+l cmd+c",
+    "command": "-extension.liveServer.goOffline",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "f9",
+    "command": "vscode-neovim.stop"
+  }
+]

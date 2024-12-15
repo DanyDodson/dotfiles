@@ -1,9 +1,13 @@
 /* codium extention config file */
 
 .monaco-editor .margin-view-overlays .line-numbers {
-  font-size: 0.9rem !important;
+  font-size: 0.8rem !important;
 }
 
 .relative-current-line-number {
   text-align: unset !important;
+}
+
+.mynah-chat-wrapper>.mynah-chat-prompt-input-info>* {
+  display: none !important;
 }

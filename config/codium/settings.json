@@ -1,0 +1,236 @@
+{
+  "update.mode": "manual",
+  //
+  "security.workspace.trust.enabled": false,
+  //
+  "telemetry.telemetryLevel": "off",
+  //
+  "continue.telemetryEnabled": false,
+  "continue.enableTabAutocomplete": false,
+  //
+  "sync.autoUpload": false,
+  "sync.forceUpload": false,
+  "sync.quietSync": false,
+  "sync.gist": "71825053bddd9002c55a15962d1804cf",
+  //
+  "git.confirmSync": false,
+  "git.enableStatusBarSync": false,
+  "git.enableSmartCommit": true,
+  "git.openRepositoryInParentFolders": "never",
+  "git.defaultCloneDirectory": "/Users/dany/projects/github",
+  "git.decorations.enabled": true,
+  //
+  "scm.countBadge": "off",
+  "scm.repositories.visible": 0,
+  "scm.diffDecorations": "gutter",
+  "scm.diffDecorationsGutterWidth": 1,
+  "scm.diffDecorationsGutterVisibility": "hover",
+  // 
+  "autoOpenPreviewPanel.languages": "markdown,asciidoc",
+  // 
+  "amazonQ.telemetry": false,
+  "amazonQ.shareContentWithAWS": false,
+  "amazonQ.workspaceIndex": true,
+  // 
+  // "Lua.codeLens.enable": true,
+  // "Lua.hint.enable": true,
+  "Lua.runtime.version": "Lua 5.1",
+  //
+  "breadcrumbs.enabled": false,
+  //
+  "npm-intellisense.importLinebreak": "",
+  "npm-intellisense.packageSubfoldersIntellisense": true,
+  "npm-intellisense.scanDevDependencies": true,
+  //
+  "liveServer.settings.donotShowInfoMsg": true,
+  //
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  //
+  "explorer.incrementalNaming": "smart",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+  "explorer.compactFolders": false,
+  "explorer.decorations.badges": false,
+  //
+  "window.zoomLevel": 0.4,
+  "window.commandCenter": false,
+  "window.nativeFullScreen": false,
+  "window.titleBarStyle": "native",
+  "window.density.editorTabHeight": "compact",
+  "window.confirmSaveUntitledWorkspace": false,
+  //
+  "workbench.startupEditor": "none",
+  "workbench.panel.showLabels": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.list.fastScrollSensitivity": 5,
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.settings.editor": "json",
+  "workbench.editor.decorations.badges": false,
+  "workbench.colorTheme": "One Dark Pro Darker",
+  //
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  //
+  "editor.fontSize": 14.3,
+  "editor.lineHeight": 26,
+  "editor.tabSize": 2,
+  "editor.folding": false,
+  "editor.padding.top": 15,
+  "editor.padding.bottom": 15,
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "solid",
+  "editor.renderLineHighlight": "none",
+  "editor.glyphMargin": false,
+  "editor.lineNumbers": "relative",
+  "editor.lineDecorationsWidth": 12,
+  "editor.stickyScroll.enabled": false,
+  "editor.fontWeight": 400,
+  // "editor.fontFamily": "Fira Code IF",
+  // "editor.fontFamily": "FiraCode Nerd Font Propo",
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 8,
+  //
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.fontWeightBold": "normal",
+  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Propo",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.stickyScroll.enabled": false,
+  "terminal.integrated.enableImages": true,
+  "terminal.integrated.scrollback": 100000,
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.allowedLinkSchemes": [
+    "file",
+    "http",
+    "https",
+    "mailto",
+    "vscode",
+    "vscode-insiders",
+    "docker-desktop"
+  ],
+  //
+  "extensions.ignoreRecommendations": true,
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+  //
+  "diffEditor.wordWrap": "off",
+  "diffEditor.renderGutterMenu": true,
+  //
+  "debug.toolBarLocation": "docked",
+  "debug.console.wordWrap": false,
+  "debug.javascript.codelens.npmScripts": "never",
+  //
+  "shellformat.path": "/opt/homebrew/bin/shfmt",
+  //
+  "json.format.keepLines": true,
+  //
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[lua]": {
+    "editor.wordWrap": "off",
+    "editor.defaultFormatter": "sumneko.lua"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockercompose]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.wordWrap": "off",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "[xml]": {
+    "breadcrumbs.showArrays": true
+  },
+  //
+  "workbench.colorCustomizations": {
+    "[Learn with Sumit Theme]": {
+      "statusBarItem.remoteBackground": "#ff000000",
+      "statusBarItem.remoteForeground": "#14939d",
+      "statusBar.focusBorder": "#ffffff00",
+      "focusBorder": "#ffffff00",
+      "activityBar.foreground": "#14939d"
+    },
+    "[One Dark Pro Darker]": {
+      "editorLineNumber.foreground": "#71717178",
+      "statusBarItem.remoteBackground": "#ff000000",
+      "statusBarItem.remoteForeground": "#7e8185",
+      "statusBar.foreground": "#7e8185",
+      "activityBar.background": "#22262d",
+      "statusBar.focusBorder": "#ffffff00",
+      "focusBorder": "#ffffff00"
+    },
+
+  },
+  "files.associations": {
+    "gitlocal": "properties",
+    "gitsecret": "properties",
+  },
+  //
+  "apc.electron": {
+    "frame": false
+  },
+  "apc.imports": [
+    "${userHome}/.dotfiles/.config/apc/main.js",
+    "${userHome}/.dotfiles/config/apc/styles.css"
+  ],
+  "apc.statusBar": {
+    "fontSize": 11,
+    "height": 17
+  },
+  "apc.activityBar": {
+    "size": 32,
+    "itemSize": 26,
+    "itemMargin": 10
+  },
+  "workbench.statusBar.visible": false,
+}
