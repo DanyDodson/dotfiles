@@ -18,7 +18,7 @@ info() {
 
 error() {
   echo -e "${RED}Error: ${*}${RESET}" >&2
-  exit 1
+  # exit 1
 }
 
 success() {

@@ -76,7 +76,7 @@ update() {
   update_npm_packages "$*"
   update_pip_packages
   clean_up "$*"
-  # on_finish "$*"
+  on_finish "$*"
 }
 
 update "$*"
