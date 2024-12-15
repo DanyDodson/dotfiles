@@ -47,6 +47,8 @@ yabai -m rule --add app="^Cake Wallet$" manage=off
 yabai -m rule --add app="^CleanMyMac X$" manage=off
 yabai -m rule --add app="^Canary Mail$" manage=off
 yabai -m rule --add app="^Console$" manage=off
+yabai -m rule --add app="^CodeEdit$" manage=off
+yabai -m rule --add app="^ChatGPT$" manage=off
 yabai -m rule --add app="^Contacts$" manage=off
 yabai -m rule --add app="^Dictionary$" manage=off
 yabai -m rule --add app="^DevTools$" manage=off

@@ -1,16 +1,16 @@
-Host *
-    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-    ForwardAgent yes
+Match host * exec "test -z $SSH_TTY"
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  ForwardAgent yes
 
 Host github.com
-    Hostname ssh.github.com
-    User git
-    Port 443
-    UseKeychain yes
-	  AddKeysToAgent yes
-    IdentityFile ~/.ssh/id_ed25519
+  Hostname ssh.github.com
+  User git
+  Port 443
+  UseKeychain yes
+  AddKeysToAgent yes
+  IdentityFile ~/.ssh/id_ed25519
 
 Host rawdog-server
-	HostName 54.235.104.180
-	User ubuntu
-	IdentityFile ~/.ssh/keys/rawdog.pem
+  HostName 54.235.104.180
+  User ubuntu
+  IdentityFile ~/.ssh/keys/rawdog.pem

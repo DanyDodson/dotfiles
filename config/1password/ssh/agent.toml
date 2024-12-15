@@ -7,3 +7,7 @@ item = "id_ed25519"
 vault = "Personal"
 account = "Dany Dodson"
 
+[[ssh-keys]]
+item = "aws-rawdog-key"
+vault = "Personal"
+account = "Dany Dodson"

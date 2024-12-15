@@ -2,158 +2,120 @@
 
 # Install dependencies and software
 
-# shellcheck disable=SC1091
 . "$HOME/.dotfiles/setup/reports.sh"
 
 set -e
-trap on_error SIGTERM
+trap 'on_error; exit 1' SIGTERM
 
 home="$HOME"
-dots_config="$DOTFILES"/config
-home_config="$HOME"/.config
-dots_shell="$DOTFILES"/shell
+dotfiles="$HOME/.dotfiles"
+home_config="$HOME/.config"
 
-function create_home_dirs() {
-  info "Creating $home/* directories..."
+create_dirs() {
+  local dir_array=("$@")
+  local prompt="Do you want to create the following directories? [y/N]: ${dir_array[@]}"
 
-  read -rp "Do you want to create $home/* directories ? [y/N] " -n 1 answer
+  read -r -p "$prompt" -n 1 answer
   echo
-  if [ "${answer}" != "y" ]; then
-    return
-  fi
 
-  local dirs=(".config" ".ssh" ".tmux" ".vim")
-
-  for d in "${dirs[@]}"; do
-    mkdir -p "$home/$d" || error "Failed to create $home/$d directory..."
-    success "created $home/$d directory"
-  done
-
-  finish
+  case "$answer" in
+  y | Y)
+    for dir in "${dir_array[@]}"; do
+      mkdir -p "$dir" || error "Failed to create directory: $dir"
+      success "Created directory: $dir"
+    done
+    ;;
+  esac
 }
 
-function link_home_files() {
-  info "Linking $home/* files..."
+create_symlinks() {
+  local link_array=("$@")
+  local prompt="Do you want to create the following symlinks? [y/N]: ${link_array[@]}"
 
-  read -rp "Do you want to link $home/* files ? [y/N] " -n 1 answer
+  read -r -p "$prompt" -n 1 answer
   echo
-  if [ "${answer}" != "y" ]; then
-    return
-  fi
 
-  ln -sf "$dots_shell/zshrc" "$home/.zshrc" || error "Failed to link $home/.zshrc..."
-  success "linked $home/.zshrc file"
-  ln -sf "$dots_shell/zshenv" "$home/.zshenv" || error "Failed to link $home/.zshenv..."
-  success "linked $home/.zshenv file"
-  ln -sf "$dots_shell/zprofile" "$home/.zprofile" || error "Failed to link $home/.zprofile..."
-  success "linked $home/.zprofile file"
-  ln -sf "$dots_shell/zlogin" "$home/.zlogin" || error "Failed to link $home/.zlogin..."
-  success "linked $home/.zlogin files"
-  ln -sf "$dots_config/tmux/tmux.conf" "$home/.tmux.conf" || error "Failed to link $home/.tmux.conf..."
-  success "linked $home/.tmux.conf file"
-  ln -sf "$dots_config/vim/vimrc" "$home/.vimrc" || error "Failed to link $home/.vimrc..."
-  success "linked $home/.vimrc file"
-  ln -sf "$dots_config/git/gitconfig" "$home/.gitconfig" || error "Failed to link $home/.gitconfig..."
-  success "linked $home/.gitconfig file"
-  ln -sf "$dots_config/git/gitignore" "$home/.gitignore" || error "Failed to link $home/.gitignore..."
-  success "linked $home/.gitignore file"
-  ln -sf "$dots_config/ssh/config" "$home/.ssh/config" || error "Failed to link $home/.ssh/config"
-  success "linked $home/.ssh/config file"
+  case "$answer" in
+  y | Y)
+    for link in "${link_array[@]}"; do
+      target=$(echo "$link" | cut -d' ' -f2-) # Extract target from space-separated string
+      source=$(echo "$link" | cut -d' ' -f1)  # Extract source from space-separated string
 
-  if [ ! -e "$home"/.gitsecret ]; then
-    printf '[user]\n  signingkey = ' >"$home"/.gitsecret || error "Failed to create $home/.gitsecret file..."
-    success "created $home/.gitsecret file"
-  fi
-
-  if [ ! -e "$home"/.hushlogin ]; then
-    printf '' >"$home"/.hushlogin || error "Failed to create $home/.hushlogin file..."
-    success "created $home/.hushlogin file"
-  fi
-
-  finish
+      ln -sf "$source" "$target" || error "Failed to create symlink: $link"
+      success "Created symlink: $link"
+    done
+    ;;
+  esac
 }
 
-function create_config_dirs() {
-  info "Creating $home_config/* directories..."
+home_dirs=(
+  "$home/.config"
+  "$home/.ssh"
+  "$home/.tmux"
+  "$home/.vim"
+)
 
-  read -rp "Do you want create $home_config/* directories ? [y/N] " -n 1 answer
-  echo
-  if [ "${answer}" != "y" ]; then
-    return
+home_symlinks=(
+  "$dotfiles/shell/zshrc $home/.zshrc"
+  "$dotfiles/shell/zshenv $home/.zshenv"
+  "$dotfiles/shell/zprofile $home/.zprofile"
+  "$dotfiles/shell/zlogin $home/.zlogin"
+  "$dotfiles/config/tmux/tmux.conf $home/.tmux.conf"
+  "$dotfiles/config/vim/vimrc $home/.vimrc"
+  "$dotfiles/config/git/gitconfig $home/.gitconfig"
+  "$dotfiles/config/git/gitignore $home/.gitignore"
+  "$dotfiles/config/ssh/config $home/.ssh/config"
+)
+
+config_dirs=(
+  "$home_config/1password" "$home_config/alacritty" "$home_config/gh" "$home_config/kitty"
+  "$home_config/ranger" "$home_config/skhd" "$home_config/wezterm" "$home_config/yabai"
+  "$home_config/yazi"
+)
+
+config_symlinks=(
+  "$dotfiles/config/1password/ssh/agent.toml $home_config/1password/ssh/agent.toml"
+  "$dotfiles/config/alacritty/alacritty.toml $home_config/alacritty/alacritty.toml"
+  "$dotfiles/config/gh/config.yml $home_config/gh/config.yml"
+  "$dotfiles/config/kitty/kitty.conf $home_config/kitty/kitty.conf"
+  "$dotfiles/config/ranger/rc.conf $home_config/ranger/rc.conf"
+  "$dotfiles/config/skhd/skhdrc $home_config/skhd/skhdrc"
+  "$dotfiles/config/wezterm/wezterm.lua $home_config/wezterm/wezterm.lua"
+  "$dotfiles/config/yabai/yabairc $home_config/yabai/yabairc"
+  "$dotfiles/config/yazi/yazi.toml $home_config/yazi/yazi.toml"
+  "$dotfiles/config/yazi/theme.toml $home_config/yazi/theme.toml"
+  "$dotfiles/config/yazi/keymap.toml $home_config/yazi/keymap.toml"
+  "$dotfiles/config/yazi/init.lua $home_config/yazi/init.lua"
+)
+
+work_dirs=(
+  "$home/Projects"
+  "$home/Projects/class"
+  "$home/Projects/exts"
+  "$home/Projects/repos"
+  "$home/Projects/served"
+)
+
+# Create empty files if they don't exist
+create_empty_file() {
+  local file="$1"
+  local content="$2"
+
+  if [ ! -e "$file" ]; then
+    printf "%s" "$content" >"$file" || error "Failed to create file: $file"
+    success "Created file: $file"
   fi
-
-  local dirs=("1password" "alacritty" "gh" "kitty" "ranger" "skhd" "wezterm" "yabai" "yazi")
-  for d in "${dirs[@]}"; do
-    mkdir -p "$home_config/$d" || error "Failed to create $home_config/$d directory..."
-    success "created $home_config/$d directory"
-  done
-
-  finish
 }
 
-function link_config_files() {
-  info "Linking $home_config files..."
-
-  read -rp "Do you want to link $home_config files ? [y/N] " -n 1 answer
-  echo
-  if [ "${answer}" != "y" ]; then
-    return
-  fi
-
-  ln -sf "$dots_config/1password/ssh/agent.toml" "$home_config/1password/ssh/agent.toml" || error "Failed to link $home_config/1password/ssh/agent.toml..."
-  success "linked $home_config/1password/ssh/agent.toml"
-  ln -sf "$dots_config/alacritty/alacritty.toml" "$home_config/alacritty/alacritty.toml" || error "Failed to link $home_config/alacritty/alacritty.toml..."
-  success "linked $home_config/alacritty/alacritty.toml"
-  ln -sf "$dots_config/gh/config.yml" "$home_config/gh/config.yml" || error "Failed to link $home_config/gh/config.yml..."
-  success "linked $home_config/gh/config.yml"
-  ln -sf "$dots_config/kitty/kitty.conf" "$home_config/kitty/kitty.conf" || error "Failed to link $home_config/kitty/kitty.conf..."
-  success "linked $home_config/kitty/kitty.conf"
-  ln -sf "$dots_config/ranger/rc.conf" "$home_config/ranger/rc.conf" || error "Failed to link $home_config/ranger/rc.conf..."
-  success "linked $home_config/ranger/rc.conf"
-  ln -sf "$dots_config/skhd/skhdrc" "$home_config/skhd/skhdrc" || error "Failed to link $home_config/skhd/skhdrc..."
-  success "linked $home_config/skhd/skhdrc"
-  ln -sf "$dots_config/wezterm/wezterm.lua" "$home_config/wezterm/wezterm.lua" || error "Failed to link $home_config/wezterm/wezterm.lua..."
-  success "linked $home_config/wezterm/wezterm.lua"
-  ln -sf "$dots_config/yabai/yabairc" "$home_config/yabai/yabairc" || error "Failed to link $home_config/yabai/yabairc..."
-  success "linked $home_config/yabai/yabairc"
-  ln -sf "$dots_config/yazi/yazi.toml" "$home_config/yazi/yazi.toml" || error "Failed to link $home_config/yazi/yazi.toml..."
-  success "linked $home_config/yazi/yazi.toml"
-  ln -sf "$dots_config/yazi/theme.toml" "$home_config/yazi/theme.toml" || error "Failed to link $home_config/yazi/theme.toml..."
-  success "linked $home_config/yazi/theme.toml"
-  ln -sf "$dots_config/yazi/keymap.toml" "$home_config/yazi/keymap.toml" || error "Failed to link $home_config/yazi/keymap.toml..."
-  success "linked $home_config/yazi/keymap.toml"
-  ln -sf "$dots_config/yazi/init.lua" "$home_config/yazi/init.lua" || error "Failed to link $home_config/yazi/init.lua..."
-  success "linked $home_config/yazi/init.lua"
-
-  finish
+main() {
+  create_dirs "${home_dirs[@]}"
+  create_symlinks "${home_symlinks[@]}"
+  create_dirs "${config_dirs[@]}"
+  create_symlinks "${config_symlinks[@]}"
+  create_dirs "${work_dirs[@]}"
+  create_empty_file "$home/.gitsecret" "[user]\n  signingkey ="
+  create_empty_file "$home/.hushlogin" ""
+  on_finish
 }
 
-function create_work_dirs() {
-  info "Creating $home/Project/* directories..."
-
-  read -rp "Do you want to create $home/Project/* directories ? [y/N] " -n 1 answer
-  echo
-  if [ "${answer}" != "y" ]; then
-    return
-  fi
-
-  local dirs=("Projects" "Projects/class" "Projects/exts" "Projects/repos" "Projects/served")
-
-  for d in "${dirs[@]}"; do
-    mkdir -p "$home/$d" || error "Failed to create $home/$d directory ..."
-    success "created $home/$d directory"
-  done
-
-  finish
-}
-
-function main() {
-  create_home_dirs "$*"
-  link_home_files "$*"
-  create_config_dirs "$*"
-  link_config_files "$*"
-  create_work_dirs "$*"
-  on_finish "$*"
-}
-
-main "$*"
+main

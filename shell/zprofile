@@ -9,11 +9,11 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # local system binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
-# dotfiles
+# my paths
 export PATH=$PATH:${DOTFILES}/bin
 
-# local scripts
-# export PATH=$PATH:$HOME/.local/scripts
+# lua path
+export PATH=$HOME/.local/share/lua/bin:$PATH
 
 # go path
 export PATH=$PATH:$GO_PATH/bin

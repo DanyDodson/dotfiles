@@ -2,6 +2,9 @@
   name = "danydodson"
   email ="danydodson@gmail.com"
 
+[includeIf "gitdir:/Users/"]
+  path = "~/.gitsecret"
+  
 [gpg]
   format = ssh
 
@@ -10,80 +13,65 @@
 
 [commit]
   gpgsign = true
-  
-[includeIf "gitdir:/Users/"]
-  path = "~/.gitsecret"
 
 [core]
-  pager = delta
-  editor = nvim
   excludesfile = ~/.gitignore
-  compression = -1
-  sharedRepository = 0664
-  commentchar = ";"
-  ignorecase = false
-  
-[pager]
-  status = true
+  editor = nvim
+  pager = diff-so-fancy | less --tabs=4 -RFX
+  fileMode = false
+	autocrlf = input
 
-[delta]
-  navigate = true
-
-[merge]
-  conflictstyle = diff3
-
-[diff]
-  colorMoved = default
-  compactionHeuristic = true
-  renames = true
-  renameLimit = 12650
-
-[difftool]
-  prompt = false
+[color]
+  ui = true
 
 [push]
   default = simple
+  autoSetupRemote = true
 
-[mergetool]
-  prompt = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
 
-[rebase]
-  stat = true
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
 
-[blame]
-  date = short
-  showEmail = true
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	commit = yellow bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+	func = 146 bold
 
-[branch]
-  autosetupmerge = always
-  autosetuprebase = always
+[diff-so-fancy]
+	markEmptyLines = false
+	changeHunkIndicators = false
+	stripLeadingSymbols = false
+	useUnicodeRuler = false
+	rulerWidth = 80
 
-[filter "media"]
-  clean = git media clean %f
-  smudge = git media smudge %f
-  required  = true
+[merge]
+  tool = vimdiff
 
-[rerere]
-  enabled = 1
+[pull]
+	rebase = false
 
-[url "ssh://git@"]
-  insteadOf = https://
+[init]
+	defaultBranch = main
 
-[url "git://github.com/"]
-  insteadOf = "github:"
+[interactive]
+	diffFilter = diff-so-fancy --patch
 
 [url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
+	insteadOf = https://github.com/
+  
+[url "git://"]
+	insteadOf = https://
 
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-
-[url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-
-[url "git@heroku.com:"]
-  insteadOf = "heroku:"
+[url "ssh://git@"]
+	insteadOf = https://

@@ -2,7 +2,7 @@
 
 [manager]
 # ratio = [1, 5, 4]
-show_symlink = true
+show_symlink = false
 show_hidden = true
 
 [plugin]

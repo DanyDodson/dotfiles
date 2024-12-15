@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Installs a version of VSCodium
+
+. "$HOME/.dotfiles/setup/reports.sh"
+
 version=1.92.2.24228
 
 wget --output-document=/tmp/vscodium.dmg https://github.com/VSCodium/vscodium/releases/download/$version/VSCodium.arm64.$version.dmg

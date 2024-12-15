@@ -2,7 +2,6 @@
 
 # Installs Homebrew, Xcode tools
 
-# shellcheck disable=SC1091
 . "$HOME/.dotfiles/setup/reports.sh"
 
 set -e

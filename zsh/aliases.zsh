@@ -6,9 +6,9 @@ _exists() {
 
 alias o="open"
 alias oo="open ."
-alias c="clear"
-
-alias src="omz reload"
+alias cl="clear"
+alias s="omz reload"
+alias c="cl && s"
 
 if _exists codium; then
   alias cc="codium"
@@ -61,12 +61,10 @@ if _exists tmux; then
   alias td="tmux detach"
   alias ta="tmux a"
   alias tr="tmux source $HOME/.tmux.conf"
-
   bindkey -s ^f "tms\n"
-
-  alias tpi="~/.tmux/plugins/tpm/scripts/install_plugins"
-  alias tpu="~/.tmux/plugins/tpm/scripts/update_plugins all"
-  alias tpc="~/.tmux/plugins/tpm/scripts/clean_plugins"
+  alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
+  alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
+  alias tpc="~/.tmux/plugins/tpm/bin/clean_plugins"
 fi
 
 if _exists brew; then
@@ -89,6 +87,9 @@ alias 644="chmod 644"
 alias 755="chmod 755"
 alias 777="chmod 777"
 
+alias path="printf '%s\n' $path"
+alias fpath="printf '%s\n' $fpath"
+
 if _exists "/opt/homebrew/bin/gls"; then
   alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
   alias l="ls -Algoh"
@@ -107,6 +108,8 @@ fi
 [ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
 [ -d $HOME/served ] && alias served="cd $HOME/served"
 [ -d $HOME/temp ] && alias temp="cd $HOME/temp"
+
+bindkey -s ^w "tmux new\n"
 
 # create and cd into directory
 function mkd() {
