@@ -1,7 +1,7 @@
 "$schema" = "https://yazi-rs.github.io/schemas/theme.json"
 
-[flavor]
-use = ""
+# [flavor]
+# use = ""
 
 [manager]
 cwd = { fg = "cyan" }
@@ -28,8 +28,12 @@ dirs = [
   { name = "Movies", text = "󰉋" },
   { name = "Music", text = "󰉋" },
   { name = "Pictures", text = "󰉋" },
-  { name = "Projects", text = "󰉋" },
-  { name = "Public", text = "󰉋" },
+  { name = "data", text = "󰉋" },
+  { name = "plugins", text = "󰉋" },
+  { name = "plugins", text = "󰉋" },
+  { name = "practice", text = "󰉋" },
+  { name = "repos", text = "󰉋" },
+  { name = "temp", text = "󰉋" },
   { name = "Videos", text = "󰉋" },
   { name = ".config", text = "󰉋", fg_dark = "dark-grey", fg_light = "white" },
   { name = ".git", text = "󰉋", fg_dark = "dark-grey", fg_light = "white" },

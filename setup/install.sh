@@ -2,7 +2,7 @@
 
 # Installs Homebrew, Xcode tools
 
-. "$HOME/.dotfiles/setup/reports.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 set -e
 trap on_error SIGTERM
@@ -138,6 +138,7 @@ function install_python_packages() {
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip setuptools
     "$HOME"/.pyenv/shims/python -m pip install --upgrade pip pynvim
+        "$HOME"/.pyenv/shims/python -m pip install --upgrade pip rich
     echo
   else
     error "Error: python is not available"

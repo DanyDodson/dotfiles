@@ -2,7 +2,7 @@
 
 # Installs neovim head
 
-. "$HOME/.dotfiles/setup/reports.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 target=nvim-macos-arm64
 filename="$target.tar.gz"

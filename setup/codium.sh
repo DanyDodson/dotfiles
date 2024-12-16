@@ -2,7 +2,7 @@
 
 # Installs a version of VSCodium
 
-. "$HOME/.dotfiles/setup/reports.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 version=1.92.2.24228
 

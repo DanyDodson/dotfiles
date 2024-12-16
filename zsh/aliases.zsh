@@ -6,9 +6,32 @@ _exists() {
 
 alias o="open"
 alias oo="open ."
+
 alias cl="clear"
-alias s="omz reload"
-alias c="cl && s"
+alias or="omz reload"
+alias c="cl && or"
+
+alias 644="chmod 644"
+alias 755="chmod 755"
+alias 777="chmod 777"
+
+alias path="printf '%s\n' $path"
+alias fpath="printf '%s\n' $fpath"
+
+# enable aliases to be sudo’ed
+alias sudo="sudo "
+
+# clean up .DS_Store files
+alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
+
+# go to folder
+[ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
+[ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
+[ -d $HOME/data ] && alias data="cd $HOME/data"
+[ -d $HOME/plugins ] && alias plugins="cd $HOME/plugins"
+[ -d $HOME/repos ] && alias repos="cd $HOME/repos"
+[ -d $HOME/served ] && alias served="cd $HOME/served"
+[ -d $HOME/temp ] && alias temp="cd $HOME/temp"
 
 if _exists codium; then
   alias cc="codium"
@@ -51,7 +74,6 @@ if _exists nvim; then
   alias e="$EDITOR"
   alias dotconf="cd $DOTFILES && nvim"
   alias nvconf="cd $HOME/.config/nvim && nvim"
-  [ -d $HOME/.config/nvim ] && alias nvc="cd $HOME/.config/nvim"
 fi
 
 if _exists tmux; then
@@ -59,12 +81,8 @@ if _exists tmux; then
   alias tl="tmux ls"
   alias tk="tmux kill-session"
   alias td="tmux detach"
-  alias ta="tmux a"
-  alias tr="tmux source $HOME/.tmux.conf"
-  bindkey -s ^f "tms\n"
-  alias tpi="~/.tmux/plugins/tpm/bin/install_plugins"
-  alias tpu="~/.tmux/plugins/tpm/bin/update_plugins all"
-  alias tpc="~/.tmux/plugins/tpm/bin/clean_plugins"
+  bindkey -s ^F "tms\n"
+  bindkey -s ^w "tmux new\n"
 fi
 
 if _exists brew; then
@@ -83,13 +101,6 @@ if _exists curl; then
   alias get="curl -O -L --silent"
 fi
 
-alias 644="chmod 644"
-alias 755="chmod 755"
-alias 777="chmod 777"
-
-alias path="printf '%s\n' $path"
-alias fpath="printf '%s\n' $fpath"
-
 if _exists "/opt/homebrew/bin/gls"; then
   alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
   alias l="ls -Algoh"
@@ -101,15 +112,6 @@ if _exists "/opt/homebrew/bin/transmission-remote"; then
   alias tran='transmission-remote'
   alias trand='transmission-daemon --dump-settings'
 fi
-
-# folder shortcuts
-[ -d $HOME/Projects ] && alias pj="cd $HOME/Projects"
-[ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
-[ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
-[ -d $HOME/served ] && alias served="cd $HOME/served"
-[ -d $HOME/temp ] && alias temp="cd $HOME/temp"
-
-bindkey -s ^w "tmux new\n"
 
 # create and cd into directory
 function mkd() {

@@ -12,8 +12,6 @@ export LANG='en_US.UTF-8'
 export BROWSER="open"
 export PAGER='less'
 
-export NODE_OPTIONS='--disable-warning=ExperimentalWarning'
-
 export LESSHISTFILE="-"
 
 export GOPATH="${HOME}/.go"
@@ -21,7 +19,6 @@ export GOROOT="/opt/homebrew/opt/go/libexec"
 
 export PYENV_ROOT="$HOME/.pyenv"
 
-export NVM_DIR="$HOME/.nvm"
 export NVM_HOMEBREW="/opt/homebrew/opt/nvm"
 
 export BAT_THEME="OneHalfDark"

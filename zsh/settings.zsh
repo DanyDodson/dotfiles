@@ -30,9 +30,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# nvim autoload
-zstyle ':omz:plugins:nvm' autoload yes
-
 # color complist
 zmodload -i zsh/complist
 autoload -Uz colors && colors
@@ -113,3 +110,27 @@ fi
 
 # disable extended globbing so that ^ will behave as normal.
 unsetopt extendedglob
+
+# nvim autoload
+# zstyle ':omz:plugins:nvm' lazy yes
+
+# nvm autoload node version
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local nvmrc_path="$(nvm_find_nvmrc)"
+  
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version="$(nvm version "$(<"$nvmrc_path")")"
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+      nvm use
+    fi
+  elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

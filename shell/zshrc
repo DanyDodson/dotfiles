@@ -17,9 +17,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
   brew
-  nvm
   golang
   1password-op
+  nvm
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search
@@ -35,9 +35,6 @@ source ${DOTFILES}/zsh/settings.zsh
 # gpg
 export GPG_TTY=$(tty)
 # gpgconf --launch gpg-agent >/dev/null 2>&1
-
-# start ssh-agent
-# eval "$(ssh-agent -s)" >/dev/null 2>&1
 
 # rust
 [[ ! -f $HOME/.cargo/env ]] || . $HOME/.cargo/env
@@ -60,6 +57,9 @@ fi
 
 # used with magick rock
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+
+# start ssh-agent
+# eval "$(ssh-agent -s)" >/dev/null 2>&1
 
 # 
 autoload -Uz compinit

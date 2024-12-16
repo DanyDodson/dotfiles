@@ -2,7 +2,7 @@
 
 # Download and install lua 5.1
 
-. "$HOME/.dotfiles/setup/reports.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 LUA_DIR="$HOME/.local/share/lua"
 

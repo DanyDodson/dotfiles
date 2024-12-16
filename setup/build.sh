@@ -2,7 +2,7 @@
 
 # Install dependencies and software
 
-. "$HOME/.dotfiles/setup/reports.sh"
+. "$HOME/.dotfiles/tools/reports.sh"
 
 set -e
 trap 'on_error; exit 1' SIGTERM

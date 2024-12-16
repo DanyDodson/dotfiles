@@ -5,9 +5,21 @@
 show_symlink = false
 show_hidden = true
 
-[plugin]
-prepend_previewers = [
-  { name = "*.csv", run = "rich-preview" },
-  { name = "*.md", run = "rich-preview" },
-  { mime = "application/xbittorrent", run = "torrent-preview" },
-]
+[[plugin.prepend_fetchers]]
+id   = "mime"
+if   = "!mime"
+name = "*"
+run  = "mime-ext"
+prio = "high"
+
+[[plugin.prepend_previewers]]
+name = "*.csv"
+run = "rich-preview"
+
+[[plugin.prepend_previewers]]
+name = "*.md"
+run = "rich-preview"
+
+[[plugin.prepend_previewers]]
+mime = "application/bittorrent"
+run = "torrent-preview"

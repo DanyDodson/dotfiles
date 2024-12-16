@@ -197,33 +197,15 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Set Desktop as the default location for new Finder windows
 # For other paths, use `PfLo` and `file:///full/path/here/`
-defaults write com.apple.finder NewWindowTarget -string "PfDe"
-defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+# defaults write com.apple.finder NewWindowTarget -string "PfDe"
+# defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
+defaults write com.apple.finder NewWindowTarget -string "PfLo"
+defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 
 # Disable disk image verification
 defaults write com.apple.frameworks.diskimages skip-verify -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-locked -bool true
 defaults write com.apple.frameworks.diskimages skip-verify-remote -bool true
-
-# Dont show item info below icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo false" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo false" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo false" ~/Library/Preferences/com.apple.finder.plist
-
-# Disable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy none" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy none" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy none" ~/Library/Preferences/com.apple.finder.plist
-
-# Change grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 69" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 69" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 69" ~/Library/Preferences/com.apple.finder.plist
-
-# Change the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 56" ~/Library/Preferences/com.apple.finder.plist
 
 # Use columns view in all Finder windows by default - other view modes: `icnv`, `clmv`, `Flwv`
 defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
@@ -310,14 +292,14 @@ defaults write com.apple.dock expose-group-by-app -bool false
 defaults write com.apple.dock mru-spaces -bool false
 
 # Add iOS Simulator to Launchpad
-# ln -s /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
-#sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
+ln -s /Applications/Xcode.app/Contents/Applications/iPhone\ Simulator.app /Applications/iOS\ Simulator.app
+sudo ln -sf "/Applications/Xcode.app/Contents/Developer/Applications/Simulator (Watch).app" "/Applications/Simulator (Watch).app"
 
 # Add a spacer to the left side of the Dock (where the applications are)
-# defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
+defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Add a spacer to the right side of the Dock (where the Trash is)
-# defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
+defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
@@ -344,12 +326,12 @@ defaults write com.apple.dock wvous-tr-corner -int 2
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom left screen corner → Mission Control
-defaults write com.apple.dock wvous-bl-corner -int 2
+defaults write com.apple.dock wvous-bl-corner -int 11
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Bottom right screen corner → disabled
-defaults write com.apple.dock wvous-bl-corner -int 0
-defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 0
+defaults write com.apple.dock wvous-br-modifier -int 0
 
 ###############################################################################
 # Misc                                                                        #
@@ -357,9 +339,6 @@ defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Disable spell check as you type
 defaults write -g CheckSpellingWhileTyping -boolean false
-
-# Disable Notification Center
-# launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 # Disable startup sound
 sudo nvram SystemAudioVolume=" "
@@ -381,43 +360,6 @@ defaults write NSGlobalDomain NSQuitAlwaysKeepsWindow -bool false
 # Spotlight window keyboard shortcut: none
 /usr/libexec/PlistBuddy "$HOME/Library/Preferences/com.apple.symbolichotkeys.plist" -c 'Delete AppleSymbolicHotKeys:65' >/dev/null 2>&1
 /usr/libexec/PlistBuddy "$HOME/Library/Preferences/com.apple.symbolichotkeys.plist" -c 'Add AppleSymbolicHotKeys:65:enabled bool false'
-
-# Remove Spotlight from menu bar (and subsequent helper)
-# sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-
-# Disable Spotlight indexing for any volume that gets mounted and has not yet been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-# Change indexing order and disable some search results
-# defaults write com.apple.spotlight orderedItems -array \
-# 	'{"enabled" = 1;"name" = "APPLICATIONS";}' \
-# 	'{"enabled" = 1;"name" = "SYSTEM_PREFS";}' \
-# 	'{"enabled" = 1;"name" = "DIRECTORIES";}' \
-# 	'{"enabled" = 1;"name" = "PDF";}' \
-# 	'{"enabled" = 1;"name" = "FONTS";}' \
-# 	'{"enabled" = 0;"name" = "DOCUMENTS";}' \
-# 	'{"enabled" = 0;"name" = "MESSAGES";}' \
-# 	'{"enabled" = 0;"name" = "CONTACT";}' \
-# 	'{"enabled" = 0;"name" = "EVENT_TODO";}' \
-# 	'{"enabled" = 0;"name" = "IMAGES";}' \
-# 	'{"enabled" = 0;"name" = "BOOKMARKS";}' \
-# 	'{"enabled" = 0;"name" = "MUSIC";}' \
-# 	'{"enabled" = 0;"name" = "MOVIES";}' \
-# 	'{"enabled" = 0;"name" = "PRESENTATIONS";}' \
-# 	'{"enabled" = 0;"name" = "SPREADSHEETS";}' \
-# 	'{"enabled" = 0;"name" = "SOURCE";}' \
-# 	'{"enabled" = 0;"name" = "MENU_DEFINITION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_OTHER";}' \
-# 	'{"enabled" = 0;"name" = "MENU_CONVERSION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_EXPRESSION";}' \
-# 	'{"enabled" = 0;"name" = "MENU_WEBSEARCH";}' \
-# 	'{"enabled" = 0;"name" = "MENU_SPOTLIGHT_SUGGESTIONS";}'
-# Load new settings before rebuilding the index
-# killall mds > /dev/null 2>&1
-# # Make sure indexing is enabled for the main volume
-# sudo mdutil -i on / > /dev/null
-# # Rebuild the index from scratch
-# sudo mdutil -E / > /dev/null
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -503,19 +445,6 @@ defaults write com.apple.Safari InstallExtensionUpdatesAutomatically -bool true
 defaults write com.apple.Music userWantsPlaybackNotifications -bool false
 
 ###############################################################################
-# Terminal                                                                    #
-###############################################################################
-
-# Only use UTF-8 in Terminal.app
-# defaults write com.apple.terminal StringEncodings -array 4
-
-# Use a modified version of the Pro theme by default in Terminal.app
-# open "$HOME/dotfiles/color/Squirrelsong.terminal"
-# sleep 1 # Wait a bit to make sure the theme is loaded
-# defaults write com.apple.terminal "Default Window Settings" -string "Squirrelsong"
-# defaults write com.apple.terminal "Startup Window Settings" -string "Squirrelsong"
-
-###############################################################################
 # Mail                                                                        #
 ###############################################################################
 
@@ -543,9 +472,6 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "SortOrder" -stri
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disable local Time Machine backups
-# hash tmutil &>/dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
