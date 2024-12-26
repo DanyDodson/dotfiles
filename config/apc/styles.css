@@ -7,7 +7,3 @@
 .relative-current-line-number {
   text-align: unset !important;
 }
-
-.mynah-chat-wrapper>.mynah-chat-prompt-input-info>* {
-  display: none !important;
-}

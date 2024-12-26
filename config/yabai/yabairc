@@ -74,6 +74,7 @@ yabai -m rule --add app="^Karabiner-MultitouchExtension$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
 yabai -m rule --add app="^LaunchBuddy$" manage=off
+yabai -m rule --add app="^Kerlig$" manage=off
 yabai -m rule --add app="^Marta$" manage=off
 yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^monero-wallet-gui$" manage=off

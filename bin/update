@@ -61,8 +61,7 @@ function update_pip_packages() {
 # clean trash and log files
 function clean_up() {
   info "Emptying trash and cleaning logs..."
-  command rm -rf ~/.Trash/*
-  command rm -rfv ~/Library/Mobile Documents/.Trash/*
+  command rm -rfv ~/.Trash/*
   command rm -rfv /Volumes/*/.Trashes
   # command rm -rfv /private/var/log/asl/*.asl
   finish

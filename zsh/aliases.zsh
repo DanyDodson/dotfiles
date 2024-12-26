@@ -27,11 +27,12 @@ alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 # go to folder
 [ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
 [ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
-[ -d $HOME/data ] && alias data="cd $HOME/data"
-[ -d $HOME/plugins ] && alias plugins="cd $HOME/plugins"
-[ -d $HOME/repos ] && alias repos="cd $HOME/repos"
-[ -d $HOME/served ] && alias served="cd $HOME/served"
-[ -d $HOME/temp ] && alias temp="cd $HOME/temp"
+[ -d $HOME/Developer ] && alias dev="cd $HOME/Developer"
+[ -d $HOME/Developer/data ] && alias data="cd $HOME/Developer/data"
+[ -d $HOME/Developer/plugins ] && alias plugins="cd $HOME/Developer/plugins"
+[ -d $HOME/Developer/courses ] && alias courses="cd $HOME/Developer/courses"
+[ -d $HOME/Developer/repos ] && alias repos="cd $HOME/Developer/repos"
+[ -d $HOME/Developer/temp ] && alias temp="cd $HOME/Developer/temp"
 
 if _exists codium; then
   alias cc="codium"
@@ -58,8 +59,9 @@ if _exists ranger; then
 fi
 
 if _exists bat; then
-  alias bat="bat --tabs=4 --wrap=never --style=plain --color=always"
   alias cat="bat"
+  alias -g :b='-h 2>&1 | bat --language=help --style=plain'
+  alias -g :b='--help 2>&1 | bat --language=help --style=plain'
 fi
 
 if _exists git; then
@@ -72,6 +74,7 @@ fi
 if _exists nvim; then
   alias v="nvim"
   alias e="$EDITOR"
+  alias vv="NVIM_APPNAME=nvim-normal/ nvim"
   alias dotconf="cd $DOTFILES && nvim"
   alias nvconf="cd $HOME/.config/nvim && nvim"
 fi

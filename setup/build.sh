@@ -68,8 +68,8 @@ home_symlinks=(
 )
 
 config_dirs=(
-  "$home_config/1password" "$home_config/alacritty" "$home_config/gh" "$home_config/kitty"
-  "$home_config/ranger" "$home_config/skhd" "$home_config/wezterm" "$home_config/yabai"
+  "$home_config/1password" "$home_config/alacritty" "$home_config/gh" "$home_config/"
+  "$home_config/ranger" "$home_config/skhd" "$home_config/" "$home_config/yabai"
   "$home_config/yazi"
 )
 
@@ -77,10 +77,7 @@ config_symlinks=(
   "$dotfiles/config/1password/ssh/agent.toml $home_config/1password/ssh/agent.toml"
   "$dotfiles/config/alacritty/alacritty.toml $home_config/alacritty/alacritty.toml"
   "$dotfiles/config/gh/config.yml $home_config/gh/config.yml"
-  "$dotfiles/config/kitty/kitty.conf $home_config/kitty/kitty.conf"
-  "$dotfiles/config/ranger/rc.conf $home_config/ranger/rc.conf"
   "$dotfiles/config/skhd/skhdrc $home_config/skhd/skhdrc"
-  "$dotfiles/config/wezterm/wezterm.lua $home_config/wezterm/wezterm.lua"
   "$dotfiles/config/yabai/yabairc $home_config/yabai/yabairc"
   "$dotfiles/config/yazi/yazi.toml $home_config/yazi/yazi.toml"
   "$dotfiles/config/yazi/theme.toml $home_config/yazi/theme.toml"

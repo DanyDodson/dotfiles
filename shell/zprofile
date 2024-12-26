@@ -2,15 +2,15 @@
 
 # system executables
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/libexec
-    
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # local system binaries
 export PATH=/usr/local/sbin:/usr/local/bin:$PATH
 
 # my paths
 export PATH=$PATH:${DOTFILES}/bin
+
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # lua path
 export PATH=$HOME/.local/share/lua/bin:$PATH
@@ -24,6 +24,9 @@ export PATH=/Applications/JaroMail.app/Contents/Resources/jaro/bin:$PATH
 
 # add zsh-completions to fpath
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.omz}/custom}/plugins/zsh-completions/src
+
+# php
+export PATH="/opt/homebrew/opt/php/bin:/$PATH"
 
 # nvm and completions
 [[ -f "/opt/homebrew/opt/nvm/nvm.sh" ]] && . "/opt/homebrew/opt/nvm/nvm.sh"
