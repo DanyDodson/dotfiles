@@ -1,0 +1,92 @@
+# shell
+shell-integration = zsh
+shell-integration-features = no-cursor,sudo,title
+
+# font
+font-family = FiraCode Nerd Font Mono Ret
+
+font-size = 15
+
+font-style = default
+font-style-bold = default
+font-style-italic = default
+font-style-bold-italic = default
+
+font-synthetic-style = false
+
+bold-is-bright = true
+
+# cursor
+cursor-style = block
+
+mouse-hide-while-typing = true
+
+# window
+window-padding-x = 2
+window-padding-y = 2
+
+window-save-state = always
+window-inherit-working-directory = true
+
+initial-window = false
+
+# opacity
+background-opacity = 0.85
+background-blur-radius = 20
+
+unfocused-split-opacity = 1
+
+# macos
+macos-non-native-fullscreen = true
+macos-titlebar-style = hidden
+macos-option-as-alt = true
+
+# quick-terminal
+quick-terminal-screen = main
+quick-terminal-autohide = false
+quick-terminal-animation-duration = 0.05
+
+# keybinds
+keybind = ctrl+a>d=new_split:down
+keybind = ctrl+a>r=new_split:right
+
+keybind = super+alt+k=goto_split:top
+keybind = super+alt+j=goto_split:bottom
+keybind = super+alt+l=goto_split:right
+keybind = super+alt+h=goto_split:left
+
+keybind = global:alt+`=toggle_quick_terminal
+keybind = global:ctrl+`=toggle_visibility
+
+# onedark theme
+background = #23272e
+foreground = #dcdfe4
+cursor-color = #73ade9
+selection-background = #555555
+selection-foreground = #dcdfe4
+
+# black
+palette = 0=#282c34
+palette = 8=#282c34
+# red
+palette = 1=#d17277
+palette = 9=#d17277
+# green
+palette = 2=#a0c180
+palette = 10=#a0c180
+# yellow
+palette = 3=#dfc184
+palette = 11=#dfc184
+# blue
+palette = 4=#73ade9
+palette = 12=#73ade9
+# purple
+palette = 5=#bb7bd7
+palette = 13=#bb7bd7
+# aqua
+palette = 6=#6fb3bf
+palette = 14=#6fb3bf
+# white
+palette = 7=#ededec
+palette = 15=#ededec
+

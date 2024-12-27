@@ -1,122 +1,96 @@
 #!/usr/bin/env bash
 
-# yabai signals
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
 # global settings
-yabai -m config layout bsp
-yabai -m config debug_output on
-yabai -m config external_bar all:0:0
-yabai -m config top_padding 5
-yabai -m config bottom_padding 6
-yabai -m config left_padding 6
-yabai -m config right_padding 6
-yabai -m config window_gap 8
-yabai -m config window_origin_display default
-yabai -m config window_placement second_child
-yabai -m config split_ratio 0.50
-yabai -m config auto_balance off
-yabai -m config window_shadow float
-yabai -m config window_zoom_persist on
-yabai -m config mouse_modifier fn
-yabai -m config mouse_action1 move
-yabai -m config mouse_action2 resize
-yabai -m config mouse_drop_action swap
-yabai -m config mouse_follows_focus on
-yabai -m config focus_follows_mouse off
+yabai -m config \
+  layout bsp \
+  external_bar all:0:0 \
+  top_padding 5 \
+  bottom_padding 6 \
+  left_padding 6 \
+  right_padding 6 \
+  window_gap 8 \
+  window_origin_display default \
+  window_placement second_child \
+  split_ratio 0.50 \
+  auto_balance off \
+  window_shadow float \
+  window_zoom_persist on \
+  mouse_modifier fn \
+  mouse_action1 move \
+  mouse_action2 resize \
+  mouse_drop_action swap \
+  mouse_follows_focus on \
+  focus_follows_mouse off
 
-# window rules
+# move apps to specific spaces
+# yabai -m rule --add app="^Ghostty$" space=2
+
+# hack for native tabs in ghostty
+# yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
+# yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
+
+# rules for all
 yabai -m rule --add app=".*" sub-layer=normal
-yabai -m rule --add app="^1Password$" manage=off
-yabai -m rule --add app="^Adium$" manage=off
-yabai -m rule --add app="^AppJournal$" manage=off
-yabai -m rule --add app="^AppCleaner$" manage=off
-yabai -m rule --add app="^Aiko$" manage=off
-yabai -m rule --add app="^Archive Utility$" manage=off
+
+# rules for macos default apps
 yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^Apparency$" manage=off
 yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Alacritty$" manage=off
-yabai -m rule --add app="^Alfred$" manage=off
-yabai -m rule --add app="^Better Display$" manage=off
 yabai -m rule --add app="^Bluetooth Inspector$" manage=off
-yabai -m rule --add app="^choose$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^Cake Wallet$" manage=off
-yabai -m rule --add app="^CleanMyMac X$" manage=off
-yabai -m rule --add app="^Canary Mail$" manage=off
+yabai -m rule --add app="^choose$" manage=off
 yabai -m rule --add app="^Console$" manage=off
-yabai -m rule --add app="^CodeEdit$" manage=off
-yabai -m rule --add app="^ChatGPT$" manage=off
 yabai -m rule --add app="^Contacts$" manage=off
 yabai -m rule --add app="^Dictionary$" manage=off
-yabai -m rule --add app="^DevTools$" manage=off
-yabai -m rule --add app="^DevCleaner$" manage=off
-yabai -m rule --add app="^Downie 4$" manage=off
-yabai -m rule --add app="^Enchanted$" manage=off
-yabai -m rule --add app="^Electron$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Find My$" manage=off
-yabai -m rule --add app="^Fantastical$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
-yabai -m rule --add app="^GPG Keychain$" manage=off
-yabai -m rule --add app="^GIMP$" manage=off
-yabai -m rule --add app="^Go Recipes$" manage=off
-yabai -m rule --add app="^IINA$" manage=off
-yabai -m rule --add app="^Instagram$" manage=off
 yabai -m rule --add app="^iPhone Mirroring$" manage=off
-yabai -m rule --add app="^System Designer$" manage=off
-yabai -m rule --add app="^JavaScript Recipes$" manage=off
-yabai -m rule --add app="^Key Codes$" manage=off
-yabai -m rule --add app="^Karabiner-Elements$" manage=off
-yabai -m rule --add app="^Karabiner-MultitouchExtension$" manage=off
-yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
-yabai -m rule --add app="^LaunchBuddy$" manage=off
-yabai -m rule --add app="^Kerlig$" manage=off
-yabai -m rule --add app="^Marta$" manage=off
 yabai -m rule --add app="^Messages$" manage=off
-yabai -m rule --add app="^monero-wallet-gui$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
-yabai -m rule --add app="^Manage WireGaurd Tunnels$" manage=off
-yabai -m rule --add app="^Mailspring$" manage=off
 yabai -m rule --add app="^Music$" manage=off
-yabai -m rule --add app="^Mpv$" manage=off
-yabai -m rule --add app="^Notion$" manage=off
-yabai -m rule --add app="^NVIDIA Gefore NOW$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
-yabai -m rule --add app="^Ollama$" manage=off
-yabai -m rule --add app="^Peek$" manage=off
-yabai -m rule --add app="^Pasteboard Viewer$" manage=off
-yabai -m rule --add app="^Postman$" manage=off
 yabai -m rule --add app="^Photo Booth$" manage=off
-yabai -m rule --add app="^Permute 3$" manage=off
-yabai -m rule --add app="^Pixelmator Pro$" manage=off
-yabai -m rule --add app="^Podcasts$" manage=off
-yabai -m rule --add app="^Postbox$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^Qutebrowser$" manage=off
 yabai -m rule --add app="^Reminders$" manage=off
-yabai -m rule --add app="^RiseupVPN$" manage=off
-yabai -m rule --add app="^Software Update$" manage=off
-yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Shortcuts$" manage=off
-yabai -m rule --add app="^Stack Wallet$" manage=off
-yabai -m rule --add app="^Source$" manage=off
-yabai -m rule --add app="^Secure ShellFish$" manage=off
-yabai -m rule --add app="^Suspicious Package$" manage=off
-yabai -m rule --add app="^TablePlus$" manage=off
-yabai -m rule --add app="^TikTok$" manage=off
-yabai -m rule --add app="^Transmission$" manage=off
-yabai -m rule --add app="^Terminal$" manage=off
-yabai -m rule --add app="^UTM$" manage=off
-yabai -m rule --add app="^Vesktop$" manage=off
-yabai -m rule --add app="^VLC$" manage=off
-yabai -m rule --add app="^WireGaurd$" manage=off
-yabai -m rule --add app="^Zoom$" manage=off
+yabai -m rule --add app="^Software Update$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Information$" manage=off sub-layer=above
 yabai -m rule --add app="^System Preferences$" manage=off sub-layer=above
 
-printf '%s' "$(date '+%F %T%z') yabai configuration loaded...\\n"
+# rules for third party apps
+yabai -m rule --add app="^1Password$" manage=off
+yabai -m rule --add app="^Adium$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
+yabai -m rule --add app="^Apparency$" manage=off
+yabai -m rule --add app="^Alacritty$" manage=off
+yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^Better Display$" manage=off
+yabai -m rule --add app="^ChatGPT$" manage=off
+yabai -m rule --add app="^DevTools$" manage=off
+yabai -m rule --add app="^Downie 4$" manage=off
+yabai -m rule --add app="^GPG Keychain$" manage=off
+yabai -m rule --add app="^GIMP$" manage=off
+yabai -m rule --add app="^IINA$" manage=off
+yabai -m rule --add app="^Karabiner-Elements$" manage=off
+yabai -m rule --add app="^Karabiner-MultitouchExtension$" manage=off
+yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^Manage WireGaurd Tunnels$" manage=off
+yabai -m rule --add app="^Mpv$" manage=off
+yabai -m rule --add app="^Ollama$" manage=off
+yabai -m rule --add app="^Peek$" manage=off
+yabai -m rule --add app="^Postman$" manage=off
+yabai -m rule --add app="^Permute 3$" manage=off
+yabai -m rule --add app="^RiseupVPN$" manage=off
+yabai -m rule --add app="^Spotify$" manage=off
+yabai -m rule --add app="^Source$" manage=off
+yabai -m rule --add app="^Suspicious Package$" manage=off
+yabai -m rule --add app="^Transmission$" manage=off
+yabai -m rule --add app="^UTM$" manage=off
+yabai -m rule --add app="^Vesktop$" manage=off
+yabai -m rule --add app="^VLC$" manage=off
+yabai -m rule --add app="^WireGaurd$" manage=off

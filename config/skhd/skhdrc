@@ -53,16 +53,16 @@ lalt - d : yabai -m window --toggle zoom-parent
 lalt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle float
-lctrl + alt - space : yabai -m window --toggle float
+lctrl + shift + alt - space : yabai -m window --toggle float
 
 # toggle sticky
-lctrl + shift + alt - space : yabai -m window --toggle sticky
+lctrl + alt - space : yabai -m window --toggle sticky
 
 # resize based on defined grid.        r:c:x:y:w:h
-lctrl - up    : yabai -m window --grid 2:2:1:2:2:3
-lctrl - down  : yabai -m window --grid 5:5:4:0:1:1
-lctrl - left  : yabai -m window --grid 1:2:0:0:1:1
-lctrl - right : yabai -m window --grid 1:2:1:0:1:1
+# lctrl - up    : yabai -m window --grid 2:2:1:2:2:3
+# lctrl - down  : yabai -m window --grid 5:5:4:0:1:1
+# lctrl - left  : yabai -m window --grid 1:2:0:0:1:1
+# lctrl - right : yabai -m window --grid 1:2:1:0:1:1
 
 # equalize size of windows
 lctrl + alt - e : yabai -m space --balance
@@ -88,6 +88,17 @@ lalt - k : yabai -m window --resize top:0:-12; \
   yabai -m window --resize bottom:0:-12
 lalt - l : yabai -m window --resize right:12:0; \
   yabai -m window --resize left:12:0
+
+# open apps
+# hyper - z : open -a /Applications/iTerm.app
+# hyper - x : open "/Applications/VSCodium.app"
+# hyper - c : alacritty --
+# hyper - v : open -a /Applications/kitty.app
+# hyper - b : open -a "Brave Browser.app"
+# hyper - n : open -a "Finder.app"
+
+# toggle kitty
+# alt - 0x32 : ~/.dotfiles/config/skhd/scripts/kitty.sh
 
 # restart all wm services
 hyper - r : \

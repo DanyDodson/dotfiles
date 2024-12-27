@@ -32,6 +32,7 @@ alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 [ -d $HOME/Developer/plugins ] && alias plugins="cd $HOME/Developer/plugins"
 [ -d $HOME/Developer/courses ] && alias courses="cd $HOME/Developer/courses"
 [ -d $HOME/Developer/repos ] && alias repos="cd $HOME/Developer/repos"
+[ -d $HOME/Developer/served ] && alias served="cd $HOME/Developer/served"
 [ -d $HOME/Developer/temp ] && alias temp="cd $HOME/Developer/temp"
 
 if _exists codium; then
