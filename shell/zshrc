@@ -1,10 +1,5 @@
 #!/usr/bin/env zsh
 
-DEFAULT_USER=$(whoami)
-
-# colouring
-export CLICOLOR=1
-
 # p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -29,8 +24,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # zsh files
-source ${DOTFILES}/zsh/aliases.zsh
 source ${DOTFILES}/zsh/settings.zsh
+source ${DOTFILES}/zsh/aliases.zsh
 
 # rust
 [[ ! -f $HOME/.cargo/env ]] || . $HOME/.cargo/env
