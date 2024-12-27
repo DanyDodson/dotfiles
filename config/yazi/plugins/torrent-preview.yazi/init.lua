@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-global
 local M = {}
 
 function M:peek(job)
