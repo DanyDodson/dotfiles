@@ -2,6 +2,7 @@
 
 # Installs a version of VSCodium
 
+# shellcheck disable=SC1091
 . "$HOME/.dotfiles/tools/reports.sh"
 
 version=1.92.2.24228
