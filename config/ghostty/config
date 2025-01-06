@@ -5,7 +5,7 @@ shell-integration-features = no-cursor,sudo,title
 # font
 font-family = FiraCode Nerd Font Mono Ret
 
-font-size = 16
+font-size = 15
 
 font-style = default
 font-style-bold = default
@@ -30,8 +30,11 @@ window-inherit-working-directory = true
 
 initial-window = false
 
+# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield-colors.glsl
+# custom-shader-animation = false
+
 # opacity
-background-opacity = 0.85
+background-opacity = 0.99
 background-blur-radius = 20
 
 unfocused-split-opacity = 1

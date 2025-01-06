@@ -11,6 +11,6 @@ Host github.com
   IdentityFile ~/.ssh/id_ed25519
 
 Host rawdog-server
-  HostName 54.235.104.180
+  HostName ec2-52-91-39-244.compute-1.amazonaws.com
   User ubuntu
-  IdentityFile ~/.ssh/keys/rawdog.pem
+  IdentityFile ~/.ssh/rawdog.pem
