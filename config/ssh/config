@@ -10,7 +10,7 @@ Host github.com
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
 
-Host rawdog-server
-  HostName ec2-52-91-39-244.compute-1.amazonaws.com
+Host rawdog-instance
+  HostName 18.235.113.176
   User ubuntu
   IdentityFile ~/.ssh/rawdog.pem
