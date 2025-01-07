@@ -14,7 +14,7 @@ home_config="$HOME/.config"
 
 create_dirs() {
   local dir_array=("$@")
-  local prompt="Do you want to create the following directories? [y/N]: ${dir_array[@]}"
+  local prompt="Do you want to create the following directories? [y/N]: ${dir_array[*]}"
 
   read -r -p "$prompt" -n 1 answer
   echo
@@ -31,7 +31,7 @@ create_dirs() {
 
 create_symlinks() {
   local link_array=("$@")
-  local prompt="Do you want to create the following symlinks? [y/N]: ${link_array[@]}"
+  local prompt="Do you want to create the following symlinks? [y/N]: ${link_array[*]}"
 
   read -r -p "$prompt" -n 1 answer
   echo
