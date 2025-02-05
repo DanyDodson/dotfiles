@@ -1,25 +1,25 @@
 {
-    "var": {
-        "prefix": "var",
-        "body": [
-            "var ${1:name}: ${2:type} = ${3:value};$0"
-        ],
-        "description": "var decl"
-    },
-    "const": {
-        "prefix": "const",
-        "body": [
-            "const ${1:name}: ${2:type} = ${3:value};$0"
-        ],
-        "description": "const decl"
-    },
-    "arr_init": {
-        "prefix": "arr_init",
-        "body": [
-            "[_:${1:sentinel}]${1:type}{${2:val1}, ${3:val2}, ${4:val3}};$0"
-        ],
-        "description": "array/sentinel init"
-    },
+    // "var": {
+    //     "prefix": "var",
+    //     "body": [
+    //         "var ${1:name}: ${2:type} = ${3:value};$0"
+    //     ],
+    //     "description": "var decl"
+    // },
+    // "const": {
+    //     "prefix": "const",
+    //     "body": [
+    //         "const ${1:name}: ${2:type} = ${3:value};$0"
+    //     ],
+    //     "description": "const decl"
+    // },
+    // "arr_init": {
+    //     "prefix": "arr_init",
+    //     "body": [
+    //         "[_:${1:sentinel}]${1:type}{${2:val1}, ${3:val2}, ${4:val3}};$0"
+    //     ],
+    //     "description": "array/sentinel init"
+    // },
     "list": {
         "prefix": "list",
         "body": [
@@ -27,67 +27,67 @@
         ],
         "description": "anonymous list"
     },
-    "fn": {
-        "prefix": "fn",
-        "body": [
-            "fn ${1:name}() ${2:return_type} {",
-            "    $0",
-            "}"
-        ],
-        "description": "fn decl"
-    },
-    "generic_fn": {
-        "prefix": "fn_T",
-        "body": [
-            "fn ${1:name}(comptime T: type) ${2:return_type} {",
-            "    $0",
-            "}"
-        ],
-        "description": "generic fn decl"
-    },
-    "pub_fn": {
-        "prefix": "pub_fn",
-        "body": [
-            "pub fn ${1:main}() ${2:void} {",
-            "    $0",
-            "}"
-        ],
-        "description": "pub fn decl"
-    },
-    "extern_fn": {
-        "prefix": "ext_fn",
-        "body": [
-            "extern \"${1:sourceName}\" stdcallcc fn ${2:name}() ${3:return_type};$0"
-        ],
-        "description": "extern fn"
-    },
-    "exp_fn": {
-        "prefix": "exp_fn",
-        "body": [
-            "export fn ${1:name}() ${2:return_type} {",
-            "    $0",
-            "}"
-        ],
-        "description": "export fn"
-    },
-    "inl_fn": {
-        "prefix": "inline",
-        "body": [
-            "inline fn ${1:name}() ${2:return_type} {",
-            "    $0",
-            "}"
-        ],
-        "description": "inline fn"
-    },
-    "nakedcc_fn": {
-        "prefix": "naked",
-        "body": [
-            "nakedcc fn _${1:name}() ${2:return_type} {",
-            "    $0",
-            "}"
-        ],
-        "description": "nakedcc fn"
-    },
+    // "fn": {
+    //     "prefix": "fn",
+    //     "body": [
+    //         "fn ${1:name}() ${2:return_type} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "fn decl"
+    // },
+    // "generic_fn": {
+    //     "prefix": "fn_T",
+    //     "body": [
+    //         "fn ${1:name}(comptime T: type) ${2:return_type} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "generic fn decl"
+    // },
+    // "pub_fn": {
+    //     "prefix": "pub_fn",
+    //     "body": [
+    //         "pub fn ${1:main}() ${2:void} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "pub fn decl"
+    // },
+    // "extern_fn": {
+    //     "prefix": "ext_fn",
+    //     "body": [
+    //         "extern \"${1:sourceName}\" stdcallcc fn ${2:name}() ${3:return_type};$0"
+    //     ],
+    //     "description": "extern fn"
+    // },
+    // "exp_fn": {
+    //     "prefix": "exp_fn",
+    //     "body": [
+    //         "export fn ${1:name}() ${2:return_type} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "export fn"
+    // },
+    // "inl_fn": {
+    //     "prefix": "inline",
+    //     "body": [
+    //         "inline fn ${1:name}() ${2:return_type} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "inline fn"
+    // },
+    // "nakedcc_fn": {
+    //     "prefix": "naked",
+    //     "body": [
+    //         "nakedcc fn _${1:name}() ${2:return_type} {",
+    //         "    $0",
+    //         "}"
+    //     ],
+    //     "description": "nakedcc fn"
+    // },
     "block": {
         "prefix": "block",
         "body": [
@@ -118,26 +118,26 @@
         ],
         "description": "struct decl"
     },
-    "enum": {
-        "prefix": "enum",
-        "body": [
-            "const ${1:EnumName} = enum(${2:type}) {",
-            "    ${3:variant} = ${4:count},",
-            "    ${5:variant} = ${6:count},$0",
-            "};"
-        ],
-        "description": "enum decl"
-    },
-    "union": {
-        "prefix": "union",
-        "body": [
-            "const ${1:UnionName} = union(${2:enum}) {",
-            "    ${3:variant} : ${4:type},",
-            "    ${5:variant} : ${6:type},$0",
-            "};"
-        ],
-        "description": "tagged union decl"
-    },
+    // "enum": {
+    //     "prefix": "enum",
+    //     "body": [
+    //         "const ${1:EnumName} = enum(${2:type}) {",
+    //         "    ${3:variant} = ${4:count},",
+    //         "    ${5:variant} = ${6:count},$0",
+    //         "};"
+    //     ],
+    //     "description": "enum decl"
+    // },
+    // "union": {
+    //     "prefix": "union",
+    //     "body": [
+    //         "const ${1:UnionName} = union(${2:enum}) {",
+    //         "    ${3:variant} : ${4:type},",
+    //         "    ${5:variant} : ${6:type},$0",
+    //         "};"
+    //     ],
+    //     "description": "tagged union decl"
+    // },
     "for_val": {
         "prefix": "for_v",
         "body": [
@@ -685,5 +685,151 @@
             "}"
         ],
         "description": "Algebraic Data Type"
+    },
+    // 
+    // 
+    // 
+    "import std library": {
+        "prefix": "imstd",
+        "body": "const std = @import(\"std\");",
+        "description": "@import the standard library into the current scope. The standard library in Zig is a collection of modules that provide basic functionality, such as string manipulation, I/O, and memory management."
+    },
+    "add standard out writer": {
+        "prefix": "writer",
+        "body": "const stdout = std.io.getStdOut().writer();",
+        "description": "This is a writer for Standard Out that can print() to it. Unlike std.debug.print(), the Standard Out writer can fail with an error."
+    },
+
+    "declare const": {
+        "prefix": "const",
+        "body": "const ${1:name}: ${2:type} = $0;",
+        "description": "\"const\" declares a variable that cannot be reassigned a new value once it has been initialized (immutable)."
+    },
+    "declare var": {
+        "prefix": "var",
+        "body": "var ${1:name}: ${2:type} = $0;",
+        "description": "A pointer is a reference to the memory space of a variable that the pointer is pointing to. \"var\" declares a variable that can be reassigned a new value at any time (mutable)."
+    },
+
+    "declare a pointer": {
+        "prefix": "ptr",
+        "body": "${1|const,var|} ${2:name_ptr}: *${3:type} = &${0};",
+        "description": "A pointer in Zig is a variable that stores the memory address of another variable (reference). Pointers are useful for accessing and manipulating data that is stored in other parts of memory."
+    },
+    "declare a pointer to constants": {
+        "prefix": "ptrλ",
+        "body": "${1:const} ${2:name_ptr}: *const ${3:type} = &${0};",
+        "description": "A pointer in Zig is a variable that stores the memory address of another variable (reference). Pointers are useful for accessing and manipulating data that is stored in other parts of memory. Pointer with a \"*const\" keywords is used when pointing to constants (immutable)"
+    },
+    "declare a function": {
+        "prefix": "fn",
+        "body": [
+            "fn ${1:name}($2) ${3:void} {",
+            "    $0",
+            "}"
+        ],
+        "description": "A Function is a block of code that can be reused by other parts of your program. Functions can take arguments and can return values"
+    },
+    "declare a public function": {
+        "prefix": "pfn",
+        "body": [
+            "pub fn ${1:name}($2) ${3:void} {",
+            "    $0",
+            "}"
+        ],
+        "description": "A Function is a block of code that can be reused by other parts of your program. A Public Function is a function that can be accessed from anywhere in your program."
+    },
+    "declare a function with an error union type": {
+        "prefix": "fn!",
+        "body": [
+            "fn ${1:name}($2) !${3:void} {",
+            "    $0",
+            "}"
+        ],
+        "description": "A Function is a block of code that can be reused by other parts of your program. Functions can take arguments and can return values. A Function with a '!void' return type in Zig is a function that can either return a value or return an error"
+    },
+    "declare a public function with an error union type": {
+        "prefix": "pfn!",
+        "body": [
+            "pub fn ${1:name}($2) !${3:void} {",
+            "    $0",
+            "}"
+        ],
+        "description": "A Function is a block of code that can be reused by other parts of your program. A Public Function is a function that can be accessed from anywhere in your program. Functions can take arguments and can return values. A Function with a '!void' return type in Zig is a function that can either return a value or return an error"
+    },
+    "declare an array": {
+        "prefix": "arr",
+        "body": "${1|const,var|} ${2:name} = [${3:_}]${4:type}{$0};",
+        "description": "An array in Zig is a sequential collection of elements of the same type. When Zig can infer the size of the array, you can use '_' for the size."
+    },
+    "declare a multidimensional array": {
+        "prefix": "matrix",
+        "body": [
+            "${1|const,var|} ${2:name} = [${3:_}][${4:_}]${5:type}{",
+            "    [${6:_}]${7:type}{$0}",
+            "};"
+        ],
+        "description": "A multidimensional array is an array that has more than one dimension. In other words, it is an array of arrays. Multidimensional arrays can be created by nesting arrays."
+    },
+    "declare an error set": {
+        "prefix": "err",
+        "body": [
+            "const ${1:Error} = error {",
+            "    $0",
+            "};"
+        ],
+        "description": "In Zig, an error is a value. Errors are named so we can identify things that can go wrong. Errors are created in \"error sets\", which are just a collection of named errors."
+    },
+    "declare an optional": {
+        "prefix": "opt",
+        "body": "${1|const,var|} ${2:name}: ?${3:type} = $0;",
+        "description": "Sometimes a variable might hold a value or it might not. Zig has a way of expressing this idea called Optionals. An optional type has a \\'?\\' infront of it\\'s data type."
+    },
+    "declare an enum": {
+        "prefix": "enum",
+        "body": [
+            "const ${1:Enum} = enum {",
+            "    $0",
+            "};"
+        ],
+        "description": "An \"enum\" is a Zig construct that lets you give names to numeric values and store them in a set. They look a lot like error sets."
+    },
+    "declare an union": {
+        "prefix": "union",
+        "body": [
+            "const ${1:Union} = union {",
+            "    ${2:name}: ${3:type},",
+            "};"
+        ],
+        "description": "Sometimes a variable might hold a value or it might not. Zig has a way of expressing this idea called Optionals. An optional type has a \\'?\\' infront of it\\'s data type."
+    },
+    "declare a struct": {
+        "prefix": "struct",
+        "body": [
+            "const ${1:Struct} = struct {",
+            "    $0",
+            "};"
+        ],
+        "description": "A struct in Zig is a type that can be used to represent a collection of data. Structs are useful for representing things like people, places, and things."
+    },
+
+    "add a while loop": {
+        "prefix": "while",
+        "body": [
+            "while($1) : ($2) {",
+            "   $0",
+            "}"
+        ],
+        "description": "Zig 'while' statements create a loop that runs while the condition is true. 'while' statements can have an optional 'continue expression' which runs every time the while loop continues (either at the end of the loop or when an explicit 'continue' is invoked)"
+    },
+    "add a switch statement": {
+        "prefix": "switch",
+        "body": [
+            "switch ($1) {",
+            "\t$2 => $3,",
+            "\telse => $0,",
+            "}"
+        ],
+        "description": "The \"switch\" statement lets you match the possible values of an expression and perform a different action for each."
     }
 }

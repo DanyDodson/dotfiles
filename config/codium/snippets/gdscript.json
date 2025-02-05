@@ -2,7 +2,7 @@
 	"cn": {
 		"prefix": "cn",
 		"body": [
-			"class_name ${1:SomeClass}",
+			"class_name ${1:SomeClass}"
 		],
 		"description": "Class Name"
 	},
@@ -41,5 +41,5 @@
 			"\t\t_${1:target} = weakref(value)"
 		],
 		"description": "WeakRef"
-	},
+	}
 }

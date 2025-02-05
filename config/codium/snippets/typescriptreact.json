@@ -1,43 +1,38 @@
 {
-	// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-	// same ids are connected.
-	// Example:
 	"XXX Debug": {
 		"prefix": "xxx",
 		"body": [
-			"console.log(\"XXX \" + $1)",
-		],
+			"console.log(\"XXX \" + $1)"
+		]
 	},
 	"XXX Debug Stringify": {
 		"prefix": "xxs",
 		"body": [
-			"console.log(\"XXX \" + JSON.stringify($1, null, 2))",
-		],
+			"console.log(\"XXX \" + JSON.stringify($1, null, 2))"
+		]
 	},
 	"YYY Debug": {
 		"prefix": "yyy",
 		"body": [
-			"console.log(\"YYY \" + $1)",
-		],
+			"console.log(\"YYY \" + $1)"
+		]
 	},
 	"ZZZ Debug": {
 		"prefix": "zzz",
 		"body": [
-			"console.log(\"ZZZ \" + $1)",
-		],
+			"console.log(\"ZZZ \" + $1)"
+		]
 	},
 	"Stringify": {
 		"prefix": "sss",
 		"body": [
-			"<Stringify>{$1}</Stringify>",
-		],
+			"<Stringify>{$1}</Stringify>"
+		]
 	},
 	"className": {
 		"prefix": "cn=",
 		"body": [
-			"className=\"$1\"$2",
-		],
-	},
+			"className=\"$1\"$2"
+		]
+	}
 }
