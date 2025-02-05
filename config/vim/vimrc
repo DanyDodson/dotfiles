@@ -2,6 +2,8 @@ set viminfo+=n~/.vim/viminfo
 
 let mapleader =" "
 
+"  set rtp^="~/.opam/default/share/ocp-indent/vim"
+
 set term=xterm-256color
 filetype plugin indent on
 
