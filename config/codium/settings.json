@@ -4,20 +4,23 @@
   "security.workspace.trust.enabled": false,
   //
   "telemetry.telemetryLevel": "off",
-  //
+  // 
+  "redhat.telemetry.enabled": false,
+  // 
+  "continue.enableQuickActions": false,
+  "continue.enableDebugLogs": true,
   "continue.telemetryEnabled": false,
   "continue.enableTabAutocomplete": false,
-  //
-  "sync.autoUpload": false,
-  "sync.forceUpload": false,
-  "sync.quietSync": false,
-  "sync.gist": "71825053bddd9002c55a15962d1804cf",
+  // 
+  "amazonQ.telemetry": false,
+  "amazonQ.shareContentWithAWS": false,
+  "amazonQ.workspaceIndex": true,
   //
   "git.confirmSync": false,
   "git.enableStatusBarSync": false,
   "git.enableSmartCommit": true,
   "git.openRepositoryInParentFolders": "never",
-  "git.defaultCloneDirectory": "/Users/dany/projects/github",
+  "git.defaultCloneDirectory": "/Users/dany/repos",
   "git.decorations.enabled": true,
   //
   "scm.countBadge": "off",
@@ -26,14 +29,13 @@
   "scm.diffDecorationsGutterWidth": 1,
   "scm.diffDecorationsGutterVisibility": "hover",
   // 
+  "sync.autoUpload": false,
+  "sync.forceUpload": false,
+  "sync.quietSync": false,
+  "sync.gist": "71825053bddd9002c55a15962d1804cf",
+  //
   "autoOpenPreviewPanel.languages": "markdown,asciidoc",
   // 
-  "amazonQ.telemetry": false,
-  "amazonQ.shareContentWithAWS": false,
-  "amazonQ.workspaceIndex": true,
-  // 
-  // "Lua.codeLens.enable": true,
-  // "Lua.hint.enable": true,
   "Lua.runtime.version": "Lua 5.1",
   //
   "breadcrumbs.enabled": false,
@@ -71,17 +73,15 @@
   "workbench.editor.decorations.badges": false,
   "workbench.colorTheme": "One Dark Pro Darker",
   //
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always"
-  },
-  //
+  "editor.autoClosingQuotes": "never",
+  "editor.autoClosingBrackets": "never",
   "editor.fontSize": 14.3,
   "editor.lineHeight": 26,
   "editor.tabSize": 2,
   "editor.folding": false,
   "editor.padding.top": 15,
   "editor.padding.bottom": 15,
-  "editor.cursorStyle": "block",
+  // "editor.cursorStyle": "block",
   "editor.cursorBlinking": "solid",
   "editor.renderLineHighlight": "none",
   "editor.glyphMargin": false,
@@ -89,8 +89,6 @@
   "editor.lineDecorationsWidth": 12,
   "editor.stickyScroll.enabled": false,
   "editor.fontWeight": 400,
-  // "editor.fontFamily": "Fira Code IF",
-  // "editor.fontFamily": "FiraCode Nerd Font Propo",
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -101,7 +99,6 @@
   "terminal.integrated.fontSize": 14,
   "terminal.integrated.lineHeight": 1.2,
   "terminal.integrated.fontWeightBold": "normal",
-  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Propo",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.drawBoldTextInBrightColors": false,
   "terminal.integrated.inheritEnv": false,
@@ -133,26 +130,40 @@
   //
   "shellformat.path": "/opt/homebrew/bin/shfmt",
   //
-  "json.format.keepLines": true,
-  //
+  "files.associations": {
+    "gitlocal": "properties",
+    "gitsecret": "properties",
+    "*tmpl": "html",
+    "dircolors*": "dircolors"
+  },
+  // 
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "[scss]": {
+  "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[javascript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+  "[dockerfile]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-  "[typescript]": {
+  "go.enableCodeLens": {
+    "runtest": false
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "html.format.wrapLineLength": 9999,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "javascript.format.semicolons": "insert",
+  "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
+  "json.format.keepLines": true,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features",
   },
@@ -163,27 +174,25 @@
     "editor.wordWrap": "off",
     "editor.defaultFormatter": "sumneko.lua"
   },
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
-  "[handlebars]": {
+  "[markdown]": {
+    "editor.wordWrap": "off",
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[python]": {
     "editor.defaultFormatter": "ms-python.autopep8"
   },
-  "[yaml]": {
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[dockerfile]": {
-    "editor.defaultFormatter": "foxundermoon.shell-format"
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
-  "[dockercompose]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "typescript.format.semicolons": "insert",
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "[markdown]": {
-    "editor.wordWrap": "off",
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[vue]": {
     "editor.defaultFormatter": "Vue.volar"
@@ -191,15 +200,13 @@
   "[xml]": {
     "breadcrumbs.showArrays": true
   },
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.codeLens": false,
+  },
+  "zig.zls.enabled": "on",
   //
   "workbench.colorCustomizations": {
-    "[Learn with Sumit Theme]": {
-      "statusBarItem.remoteBackground": "#ff000000",
-      "statusBarItem.remoteForeground": "#14939d",
-      "statusBar.focusBorder": "#ffffff00",
-      "focusBorder": "#ffffff00",
-      "activityBar.foreground": "#14939d"
-    },
     "[One Dark Pro Darker]": {
       "editorLineNumber.foreground": "#71717178",
       "statusBarItem.remoteBackground": "#ff000000",
@@ -209,13 +216,7 @@
       "statusBar.focusBorder": "#ffffff00",
       "focusBorder": "#ffffff00"
     },
-
   },
-  "files.associations": {
-    "gitlocal": "properties",
-    "gitsecret": "properties",
-  },
-  //
   "apc.electron": {
     "frame": false
   },
@@ -232,5 +233,17 @@
     "itemSize": 26,
     "itemMargin": 10
   },
-  "workbench.statusBar.visible": false,
+  // 
+  "settings.cycle": [
+    {
+      "id": "lineNumbers",
+      "overrideWorkspaceSettings": false,
+      "values": [ { "editor.lineNumbers": "relative" }, { "editor.lineNumbers": "off" } ]
+    },
+    {
+      "id": "continueCompletions",
+      "overrideWorkspaceSettings": false,
+      "values": [ { "continue.enableTabAutocomplete": true }, { "continue.enableTabAutocomplete": false } ]
+    }
+  ]
 }

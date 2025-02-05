@@ -11,12 +11,29 @@
     "when": "!notebookEditorFocused && editorLangId == 'markdown'"
   },
   {
+    "key": "f2",
+    "command": "workbench.action.toggleActivityBarVisibility"
+  },
+  {
     "key": "f3",
     "command": "workbench.action.toggleStatusbarVisibility"
   },
   {
-    "key": "f2",
-    "command": "workbench.action.toggleActivityBarVisibility"
+    "key": "f4",
+    "command": "settings.cycle.lineNumbers",
+  },
+  {
+    "key": "f6",
+    "command": "settings.cycle.continueCompletions",
+  },
+  {
+    "key": "f9",
+    "command": "vscode-neovim.stop"
+  },
+  {
+    "key": "cmd+l",
+    "command": "-expandLineSelection",
+    "when": "textInputFocus"
   },
   {
     "key": "cmd+l cmd+o",
@@ -27,9 +44,5 @@
     "key": "cmd+l cmd+c",
     "command": "-extension.liveServer.goOffline",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "f9",
-    "command": "vscode-neovim.stop"
   }
 ]
