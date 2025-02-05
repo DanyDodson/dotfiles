@@ -46,6 +46,9 @@ fi
 # iterm2 integration
 [[ -f "${DOTFILES}/config/iterm/iterm.zsh" ]] && . "${DOTFILES}/config/iterm/iterm.zsh"
 
+# opam ocaml
+[[ ! -r '/Users/dany/.opam/opam-init/init.zsh' ]] || source '/Users/dany/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+
 # used with magick rock
 export DYLD_FALLBACK_LIBRARY_PATH="$(brew --prefix)/lib:$DYLD_FALLBACK_LIBRARY_PATH"
 
