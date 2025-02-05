@@ -56,3 +56,10 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
+
+# fastdetch
+# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo.jsonc
+# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_nologo.jsonc
+# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_ansi_shadow.jsonc
+# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_bloody.jsonc
+# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
