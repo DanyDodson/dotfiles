@@ -90,11 +90,8 @@ lalt - l : yabai -m window --resize right:12:0; \
   yabai -m window --resize left:12:0
 
 # open apps
-# hyper - z : open -a /Applications/iTerm.app
-# hyper - x : open "/Applications/VSCodium.app"
-# hyper - c : alacritty --
-# hyper - v : open -a /Applications/kitty.app
-# hyper - b : open -a "Brave Browser.app"
+hyper - z : open -a /Applications/Ghostty.app
+hyper - x : open "/Applications/VSCodium.app"
 # hyper - n : open -a "Finder.app"
 
 # toggle kitty
