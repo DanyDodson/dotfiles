@@ -69,6 +69,7 @@ fi
 if _exists git; then
   alias ga="git add ."
   alias gc="git commit -m"
+  alias gd="git clone"
   alias gp="git push -u origin main"
   alias gs="git status"
 fi
