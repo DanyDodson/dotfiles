@@ -8,13 +8,9 @@
   "redhat.telemetry.enabled": false,
   // 
   "continue.enableQuickActions": false,
-  "continue.enableDebugLogs": true,
+  "continue.showInlineTip": true,
   "continue.telemetryEnabled": false,
-  "continue.enableTabAutocomplete": false,
-  // 
-  "amazonQ.telemetry": false,
-  "amazonQ.shareContentWithAWS": false,
-  "amazonQ.workspaceIndex": true,
+  "continue.enableTabAutocomplete": true,
   //
   "git.confirmSync": false,
   "git.enableStatusBarSync": false,
@@ -22,6 +18,8 @@
   "git.openRepositoryInParentFolders": "never",
   "git.defaultCloneDirectory": "/Users/dany/repos",
   "git.decorations.enabled": true,
+  // 
+  "github.gitProtocol": "ssh",
   //
   "scm.countBadge": "off",
   "scm.repositories.visible": 0,
@@ -73,6 +71,7 @@
   "workbench.editor.decorations.badges": false,
   "workbench.colorTheme": "One Dark Pro Darker",
   //
+  "editor.codeLens": false,
   "editor.autoClosingQuotes": "never",
   "editor.autoClosingBrackets": "never",
   "editor.fontSize": 14.3,
@@ -81,7 +80,7 @@
   "editor.folding": false,
   "editor.padding.top": 15,
   "editor.padding.bottom": 15,
-  // "editor.cursorStyle": "block",
+  "editor.cursorStyle": "line",
   "editor.cursorBlinking": "solid",
   "editor.renderLineHighlight": "none",
   "editor.glyphMargin": false,
@@ -132,6 +131,7 @@
   //
   "files.associations": {
     "gitlocal": "properties",
+    "gitalias": "",
     "gitsecret": "properties",
     "*tmpl": "html",
     "dircolors*": "dircolors"
@@ -171,8 +171,7 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[lua]": {
-    "editor.wordWrap": "off",
-    "editor.defaultFormatter": "sumneko.lua"
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
   "[markdown]": {
     "editor.wordWrap": "off",
@@ -202,21 +201,9 @@
   },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml",
-    "editor.codeLens": false,
   },
   "zig.zls.enabled": "on",
   //
-  "workbench.colorCustomizations": {
-    "[One Dark Pro Darker]": {
-      "editorLineNumber.foreground": "#71717178",
-      "statusBarItem.remoteBackground": "#ff000000",
-      "statusBarItem.remoteForeground": "#7e8185",
-      "statusBar.foreground": "#7e8185",
-      "activityBar.background": "#22262d",
-      "statusBar.focusBorder": "#ffffff00",
-      "focusBorder": "#ffffff00"
-    },
-  },
   "apc.electron": {
     "frame": false
   },
@@ -225,11 +212,11 @@
     "${userHome}/.dotfiles/config/apc/styles.css"
   ],
   "apc.statusBar": {
-    "fontSize": 11,
-    "height": 17
+    "fontSize": 10.5,
+    "height": 18
   },
   "apc.activityBar": {
-    "size": 32,
+    "size": 30,
     "itemSize": 26,
     "itemMargin": 10
   },
@@ -245,5 +232,53 @@
       "overrideWorkspaceSettings": false,
       "values": [ { "continue.enableTabAutocomplete": true }, { "continue.enableTabAutocomplete": false } ]
     }
-  ]
+  ],
+  // 
+  "oneDarkPro.editorTheme": "One Dark Pro Darker",
+  //
+  "workbench.colorCustomizations": {
+    "editorLineNumber.foreground": "#71717178",
+    "statusBarItem.remoteBackground": "#ff000000",
+    "statusBarItem.remoteForeground": "#7e8185",
+    "statusBar.foreground": "#7e8185",
+    "activityBar.background": "#22262d",
+    "statusBar.focusBorder": "#ffffff00",
+    "focusBorder": "#ffffff00"
+  },
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "comment",
+          "meta.var.expr storage.type",
+          "keyword.control.flow",
+          "keyword.control.return",
+          "meta.directive.vue punctuation.separator.key-value.html",
+          "meta.directive.vue entity.other.attribute-name.html",
+          "tag.decorator.js entity.name.tag.js",
+          "tag.decorator.js punctuation.definition.tag.js",
+          "storage.modifier"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [ "comment keyword.codetag.notation", "comment.block.documentation keyword", "comment.block.documentation storage.type.class" ],
+        "settings": { "foreground": "#bb9af7" }
+      },
+      {
+        "scope": [ "comment.block.documentation entity.name.type.instance" ],
+        "settings": { "foreground": "#73daca", "fontStyle": "italic" }
+      },
+      {
+        "scope": [ "comment.block.documentation entity.name.type punctuation.definition.bracket" ],
+        "settings": { "foreground": "#bb9af7" }
+      },
+      {
+        "scope": [ "comment.block.documentation variable" ],
+        "settings": { "foreground": "#e0af68", "fontStyle": "italic" }
+      }
+    ]
+  }
 }

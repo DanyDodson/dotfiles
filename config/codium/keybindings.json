@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaults
 [
   {
     "key": "cmd+p",
@@ -20,11 +19,11 @@
   },
   {
     "key": "f4",
-    "command": "settings.cycle.lineNumbers",
+    "command": "settings.cycle.lineNumbers"
   },
   {
     "key": "f6",
-    "command": "settings.cycle.continueCompletions",
+    "command": "settings.cycle.continueCompletions"
   },
   {
     "key": "f9",

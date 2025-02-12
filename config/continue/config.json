@@ -15,7 +15,7 @@
       "title": "Claude-3.5-Sonnet",
       "model": "claude-3-5-sonnet-20241022",
       "provider": "anthropic",
-      "apiKey": "",
+      "apiKey": "op://Personal/anthropic api key/credential",
       "cacheBehavior": {
         "cacheSystemMessage": true,
         "cacheConversation": true
@@ -25,7 +25,7 @@
       "title": "Claude-3-Haiku",
       "model": "claude-3-5-haiku-20241022",
       "provider": "anthropic",
-      "apiKey": "",
+      "apiKey": "op://Personal/anthropic api key/credential",
       "cacheBehavior": {
         "cacheSystemMessage": true,
         "cacheConversation": true
@@ -35,14 +35,14 @@
       "title": "Gemini-1.5-Flash",
       "model": "gemini-1.5-flash",
       "provider": "gemini",
-      "apiKey": ""
+      "apiKey": "op://Personal/sr6kkf6fkpp5fhjkgs2wlzf4zy/credential"
     },
     {
       "title": "Codestral",
       "provider": "mistral",
       "model": "codestral-latest",
       "contextLength": 32000,
-      "apiKey": "",
+      "apiKey": "op://Personal/mistral codestral api key/credential",
       "apiBase": "https://codestral.mistral.ai/v1"
     },
     {
@@ -50,7 +50,7 @@
       "model": "mistral-large-latest",
       "provider": "mistral",
       "contextLength": 32000,
-      "apiKey": "",
+      "apiKey": "op://Personal/mistral api key/credential",
       "apiBase": "https://api.mistral.ai/v1"
     }
     // {
@@ -73,13 +73,13 @@
   //   "title": "Codestral",
   //   "provider": "mistral",
   //   "model": "codestral-latest",
-  //   "apiKey": "",
+  //   "apiKey": "op://Personal/mistral api key/credential",
   //   "apiBase": "https://codestral.mistral.ai/v1"
   // },
   "embeddingsProvider": {
     "provider": "mistral",
     "model": "mistral-embed",
-    "apiKey": "",
+    "apiKey": "op://Personal/mistral api key/credential",
     "apiBase": "https://api.mistral.ai/v1"
   },
   "tabAutocompleteOptions": {
@@ -101,7 +101,7 @@
     { "name": "url" },
     { "name": "tree" },
     { "name": "os" },
-    { "name": "google", "params": { "serperApiKey": "" } },
+    { "name": "google", "params": { "serperApiKey": "op://Personal/serper api key/credential" } },
     { "name": "codebase" },
     { "name": "folder" },
     { "name": "terminal" },
