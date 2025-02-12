@@ -1,6 +1,17 @@
 {
   "models": [
     {
+      "title": "DeepSeek-r1",
+      "model": "deepseek-r1:latest",
+      "provider": "ollama"
+    },
+    {
+      "title": "Deepseek-Coder-v2",
+      "model": "deepseek-coder-v2:latest",
+      "provider": "ollama",
+      "contextLength": 32000
+    },
+    {
       "title": "Claude-3.5-Sonnet",
       "model": "claude-3-5-sonnet-20241022",
       "provider": "anthropic",
@@ -41,23 +52,17 @@
       "contextLength": 32000,
       "apiKey": "",
       "apiBase": "https://api.mistral.ai/v1"
-    },
-    {
-      "title": "Deepseek-Coder-v2",
-      "model": "deepseek-coder-v2:latest",
-      "provider": "ollama",
-      "contextLength": 32000
-    },
-    {
-      "title": "phi3:14b",
-      "model": "phi3:14b",
-      "provider": "ollama"
-    },
-    {
-      "title": "Llama 3.1 8B",
-      "model": "llama3.1:8b",
-      "provider": "ollama"
     }
+    // {
+    //   "title": "phi3:14b",
+    //   "model": "phi3:14b",
+    //   "provider": "ollama"
+    // },
+    // {
+    //   "title": "Llama 3.1 8B",
+    //   "model": "llama3.1:8b",
+    //   "provider": "ollama"
+    // }
   ],
   "tabAutocompleteModel": {
     "title": "Qwen2.5-Coder 1.5B",

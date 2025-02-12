@@ -2,14 +2,14 @@
 
 # open-shell-here
 [[manager.prepend_keymap]]
-on   = "!"
-run  = 'shell "$SHELL" --block'
+on = "!"
+run = 'shell "$SHELL" --block'
 desc = "Open shell here"
 
 # close after 1 esc
 [[input.prepend_keymap]]
-on   = "<Esc>"
-run  = "close"
+on = "<Esc>"
+run = "close"
 desc = "Cancel input"
 
 # quicklook
@@ -27,7 +27,7 @@ desc = "Chmod on selected files"
 
 # sudo-demo
 [[manager.prepend_keymap]]
-on  = "<C-t>"
+on = "<C-t>"
 run = "plugin sudo-demo"
 
 # hide-preview
@@ -36,8 +36,15 @@ on = "T"
 run = "plugin --@sync hide-preview"
 desc = "Hide or show preview"
 
-# boydaihungst/file-extra-metadata
+# max-preview
+[[manager.prepend_keymap]]
+on = "t"
+run = "plugin max-preview"
+desc = "Maximize or restore preview"
+
+# file-extra-metadata
 [[manager.prepend_keymap]]
 on = "<Tab>"
 run = "spot"
 desc = "Spot hovered file"
+

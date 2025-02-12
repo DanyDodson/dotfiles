@@ -8,6 +8,11 @@ vault = "Personal"
 account = "Dany Dodson"
 
 [[ssh-keys]]
-item = "aws-rawdog-key"
+item = "rawdog.pem"
+vault = "Personal"
+account = "Dany Dodson"
+
+[[ssh-keys]]
+item = "ollama"
 vault = "Personal"
 account = "Dany Dodson"

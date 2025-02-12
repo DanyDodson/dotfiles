@@ -15,6 +15,7 @@ export LESSHISTFILE="-"
 export HOMEBREW_NO_ENV_HINTS=true
 
 export GOPATH="${HOME}/.go"
+export GOBIN="${HOME}/.go/bin"
 export GOROOT="/opt/homebrew/opt/go/libexec"
 
 export PYENV_ROOT="$HOME/.pyenv"

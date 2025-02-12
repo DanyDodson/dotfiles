@@ -19,11 +19,23 @@ export PATH=$HOME/.local/share/lua/bin:$PATH
 export PATH=$PATH:$GO_PATH/bin
 export PATH=$PATH:$GOROOT/bin
 
+# java path
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+
 # jaro mail
 export PATH=/Applications/JaroMail.app/Contents/Resources/jaro/bin:$PATH
 
 # add zsh-completions to fpath
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.omz}/custom}/plugins/zsh-completions/src
+
+# global yarn bin
+export PATH="$HOME/.yarn/bin:$PATH"
+
+# global go bin
+export PATH="$HOME/.go/bin:$PATH"
+
+# nvim nightly
+# export PATH="$HOME/.nvim/bin:$PATH"
 
 # php
 export PATH="/opt/homebrew/opt/php/bin:/$PATH"

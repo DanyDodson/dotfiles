@@ -7,10 +7,10 @@ sudo yabai --load-sa
 yabai -m config \
   layout bsp \
   external_bar all:0:0 \
-  top_padding 5 \
-  bottom_padding 6 \
-  left_padding 6 \
-  right_padding 6 \
+  top_padding 2 \
+  bottom_padding 3 \
+  left_padding 3 \
+  right_padding 3 \
   window_gap 8 \
   window_origin_display default \
   window_placement second_child \
@@ -23,7 +23,7 @@ yabai -m config \
   mouse_action2 resize \
   mouse_drop_action swap \
   mouse_follows_focus off \
-  focus_follows_mouse off
+  focus_follows_mouse of
 
 # move apps to specific spaces
 # yabai -m rule --add app="^Ghostty$" space=2
@@ -49,8 +49,8 @@ yabai -m rule --add app="^Find My$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^iPhone Mirroring$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
-yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Music$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Photo Booth$" manage=off
@@ -73,6 +73,7 @@ yabai -m rule --add app="^Better Display$" manage=off
 yabai -m rule --add app="^ChatGPT$" manage=off
 yabai -m rule --add app="^DevTools$" manage=off
 yabai -m rule --add app="^Downie 4$" manage=off
+# yabai -m rule --add app="^Ghostty$" manage=off
 yabai -m rule --add app="^GPG Keychain$" manage=off
 yabai -m rule --add app="^GIMP$" manage=off
 yabai -m rule --add app="^IINA$" manage=off

@@ -1,9 +1,13 @@
 /* codium extention config file */
 
 .monaco-editor .margin-view-overlays .line-numbers {
-  font-size: 0.8rem !important;
+  font-size: 0.7rem !important;
 }
 
 .relative-current-line-number {
   text-align: unset !important;
+}
+
+div.sc-eBMEME.iovIio {
+  color: #787c99 !important;
 }

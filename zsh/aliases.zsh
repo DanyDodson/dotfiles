@@ -77,9 +77,8 @@ fi
 if _exists nvim; then
   alias v="nvim"
   alias e="$EDITOR"
-  alias nv-normal="NVIM_APPNAME=nvim-normal/ nvim"
-  alias nv-astro="NVIM_APPNAME=nvim-astro/ nvim"
-  alias nv-lunar="NVIM_APPNAME=nvim-lunar/ nvim"
+  alias nv="NVIM_APPNAME=nvim-normal nvim"
+  alias nf="NVIM_APPNAME=nvim-fredrik nvim"
   alias dotconf="cd $DOTFILES && nvim"
   alias nvconf="cd $HOME/.config/nvim && nvim"
 fi

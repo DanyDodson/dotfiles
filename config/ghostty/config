@@ -1,3 +1,9 @@
+# docs
+# ghostty +show-config --default --docs | nvim
+
+# examples
+# https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
+
 # shell
 shell-integration = zsh
 shell-integration-features = no-cursor,sudo,title
@@ -12,9 +18,9 @@ font-style-bold = default
 font-style-italic = default
 font-style-bold-italic = default
 
-font-synthetic-style = false
+# font-synthetic-style = false
 
-bold-is-bright = true
+bold-is-bright = false
 
 # cursor
 cursor-style = block
@@ -22,8 +28,8 @@ cursor-style = block
 mouse-hide-while-typing = true
 
 # window
-window-padding-x = 2
-window-padding-y = 2
+window-padding-x = 1
+window-padding-y = 1
 
 window-save-state = always
 window-inherit-working-directory = true
@@ -34,14 +40,13 @@ initial-window = false
 # custom-shader-animation = false
 
 # opacity
-background-opacity = 0.99
-background-blur-radius = 20
-
+background-opacity = 1
 unfocused-split-opacity = 1
 
 # macos
 macos-non-native-fullscreen = true
 macos-titlebar-style = hidden
+macos-titlebar-proxy-icon = hidden
 macos-option-as-alt = true
 
 # quick-terminal
@@ -61,9 +66,13 @@ keybind = super+alt+h=goto_split:left
 keybind = global:alt+`=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_visibility
 
-# onedark theme
-theme = OneHalfDark
+# tokyo night theme
+# theme = tokyonight_night
 
+# onedark theme
+# theme = OneHalfDark
+
+# onedark
 background = #23272e
 foreground = #dcdfe4
 cursor-color = #73ade9
@@ -71,27 +80,29 @@ selection-background = #555555
 selection-foreground = #dcdfe4
 
 # black
-palette = 0=#1e2024
-palette = 8=#1e2024
+ palette = 0=#1e2024
+ palette = 8=#1e2024
 # red
-palette = 1=#d17277
-palette = 9=#d17277
+ palette = 1=#d17277
+ palette = 9=#d17277
 # green
-palette = 2=#a0c180
-palette = 10=#a0c180
+ palette = 2=#a0c180
+ palette = 10=#a0c180
 # yellow
-palette = 3=#dfc184
-palette = 11=#dfc184
+ palette = 3=#dfc184
+ palette = 11=#dfc184
 # blue
-palette = 4=#73ade9
-palette = 12=#73ade9
+ palette = 4=#73ade9
+ palette = 12=#73ade9
 # purple
-palette = 5=#bb7bd7
-palette = 13=#bb7bd7
+ palette = 5=#bb7bd7
+ palette = 13=#bb7bd7
 # aqua
-palette = 6=#6fb3bf
-palette = 14=#6fb3bf
+ palette = 6=#6fb3bf
+ palette = 14=#6fb3bf
 # white
-palette = 7=#ededec
-palette = 15=#ededec
+ palette = 7=#ededec
+ palette = 15=#ededec
 
+# vim:syntax=ghostty
+# vim:filetype=ghostty
