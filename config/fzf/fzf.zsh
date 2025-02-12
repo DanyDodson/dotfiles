@@ -78,21 +78,39 @@ export FZF_ALT_C_OPTS=" \
   --preview 'bat -n --decorations=never --color=always {} 2>/dev/null' \
   --bind 'enter:execute(nvim {} +1)'"
 
-# _fzf_compgen_path() {
-#   fd --hidden --no-ignore-vcs --exclude .git . "$1"
-# }
+_fzf_compgen_path() {
+  fd --hidden --no-ignore-vcs --exclude .git . "$1"
+}
 
 # # Use fd to generate the list for directory completion
-# _fzf_compgen_dir() {
-#   fd --type=d --hidden --no-ignore-vcs --exclude .git . "$1"
+_fzf_compgen_dir() {
+  fd --type=d --hidden --no-ignore-vcs --exclude .git . "$1"
+}
+
+function open_file_in_nvim() {
+  file="$(fd -iLH -t file --exclude .git --exclude node_modules . /Users/$(whoami)/Developer | fzf --preview "bat --tabs=4 --style=plain --wrap=never --theme=OneHalfDark --color=always --decorations=never {} 2>/dev/null")"
+  if [[ -n $file ]]; then
+    nvim "$file"
+  fi
+}
+
+zle -N fv
+bindkey '^O' open_file_in_nvim
+
+# # fvim -> find and open a file in vim
+# function fvim() {
+#     if [[ $# -eq 0 ]]; then
+#         fd -t f | fzf --header "Open File in Vim" --preview "bat --color=always {}" | xargs nvim
+#     else
+#         fd -t f | fzf --header "Open File in Vim" --preview "bat --color=always {}" -q "$@" | xargs nvim
+#     fi
 # }
 
-# function open_file_in_nvim() {
-#   file="$(fd -iLH -t file --exclude .git --exclude node_modules . /Users/$(whoami)/Projects | fzf --preview "bat --tabs=4 --style=plain --wrap=never --theme=OneHalfDark --color=always --decorations=never {} 2>/dev/null")"
-#   if [[ -n $file ]]; then
-#     nvim "$file"
-#   fi
+# # vim -> open vim in the current directory or open the target file
+# function vim() {
+#     if [[ $# -eq 0 ]]; then
+#         nvim .
+#     else
+#         nvim "$@"
+#     fi
 # }
-
-# zle -N fv
-# bindkey '^O' open_file_in_nvim

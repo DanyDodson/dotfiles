@@ -30,7 +30,7 @@ export CLICOLOR=1
 
 # ls colors - https://geoff.greer.fm/lscolors/
 if [ -f "/opt/homebrew/bin/gdircolors" ]; then
-  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors-full)"
+  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors)"
 fi
 
 # color complist

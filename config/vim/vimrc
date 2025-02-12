@@ -1,8 +1,8 @@
 set viminfo+=n~/.vim/viminfo
 
-let mapleader =" "
+source ~/.vim/setup-plug.vim
 
-"  set rtp^="~/.opam/default/share/ocp-indent/vim"
+let mapleader =" "
 
 set term=xterm-256color
 filetype plugin indent on
@@ -12,8 +12,6 @@ syntax on
 set history=1000
 
 set termguicolors
-set rtp+=~/.local/share/nvim/lazy/tokyonight.nvim/extras/vim
-colorscheme tokyonight
 
 set nobackup
 set autoread

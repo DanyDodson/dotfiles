@@ -73,7 +73,7 @@ yabai -m rule --add app="^Better Display$" manage=off
 yabai -m rule --add app="^ChatGPT$" manage=off
 yabai -m rule --add app="^DevTools$" manage=off
 yabai -m rule --add app="^Downie 4$" manage=off
-# yabai -m rule --add app="^Ghostty$" manage=off
+yabai -m rule --add app="^Ghostty$" manage=off
 yabai -m rule --add app="^GPG Keychain$" manage=off
 yabai -m rule --add app="^GIMP$" manage=off
 yabai -m rule --add app="^IINA$" manage=off

@@ -8,6 +8,7 @@ export ZSH="$HOME/.omz"
 export DOTFILES=$HOME/.dotfiles
 
 export EDITOR='nvim'
+export GIT_EDITOR=nvim
 export PAGER='less'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export LESSHISTFILE="-"

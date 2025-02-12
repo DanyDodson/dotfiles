@@ -27,6 +27,10 @@ source $ZSH/oh-my-zsh.sh
 source ${DOTFILES}/zsh/settings.zsh
 source ${DOTFILES}/zsh/aliases.zsh
 
+# start ssh and load identities
+eval "$(ssh-agent -s)" > /dev/null 2>&1
+# ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+
 # rust
 [[ ! -f $HOME/.cargo/env ]] || . $HOME/.cargo/env
 

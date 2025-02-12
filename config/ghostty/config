@@ -1,60 +1,89 @@
-# docs
-# ghostty +show-config --default --docs | nvim
+# shell -----------------------------------------------------------
 
-# examples
-# https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
-
-# shell
 shell-integration = zsh
 shell-integration-features = no-cursor,sudo,title
 
-# font
-font-family = FiraCode Nerd Font Mono Ret
+working-directory = home
 
-font-size = 15
+quit-after-last-window-closed = true
 
-font-style = default
-font-style-bold = default
-font-style-italic = default
-font-style-bold-italic = default
+# fonts -----------------------------------------------------------
 
-# font-synthetic-style = false
+font-family = "FiraCode Nerd Font Mono"
+font-style = "Retina"
+font-style-italic = "Retina"
+font-style-bold = "Retina"
+font-style-bold-italic = "Retina"
+
+font-size = 17
 
 bold-is-bright = false
 
-# cursor
+font-thicken = false
+font-synthetic-style = false
+
+adjust-cell-width = 1
+adjust-underline-thickness = 20%
+adjust-box-thickness = 20%
+adjust-cursor-thickness = 2
+
+# font-codepoint-map = U+F5D0-U+F60D="Flog Symbols"
+# font-codepoint-map = U+E000-U+E00A,U+EA60-U+EBEB,U+E0A0-U+E0C8,U+E0CA,U+E0CC-U+E0D7,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6B1,U+E700-U+E7C5,U+ED00-U+EFC1,U+F000-U+F2FF,U+F000-U+F2E0,U+F300-U+F372,U+F400-U+F533,U+F0001-U+F1AF0="Symbols Nerd Font Mono"
+
+# cursor -----------------------------------------------------------
+
 cursor-style = block
+cursor-invert-fg-bg = true
+cursor-opacity = 0.75
 
 mouse-hide-while-typing = true
 
-# window
-window-padding-x = 1
-window-padding-y = 1
+# clipboard
 
-window-save-state = always
+clipboard-read = allow
+clipboard-write = allow
+
+# window -----------------------------------------------------------
+
+window-height = 51
+window-width = 156
+
+window-padding-x = 0
+window-padding-y = 0
+
+window-padding-color = background
+window-padding-balance = true
+
+window-decoration = false
+
+title = ghostty 
+
+# window-save-state = always
 window-inherit-working-directory = true
 
-initial-window = false
+resize-overlay = never
 
-# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield-colors.glsl
-# custom-shader-animation = false
+# opacity -----------------------------------------------------------
 
-# opacity
-background-opacity = 1
+background-opacity = 0.95
 unfocused-split-opacity = 1
+background-blur-radius = 20
 
-# macos
-macos-non-native-fullscreen = true
-macos-titlebar-style = hidden
-macos-titlebar-proxy-icon = hidden
+# macos -------------------------------------------------------------
+
 macos-option-as-alt = true
+macos-non-native-fullscreen = true
+macos-window-shadow = false
+# macos-titlebar-style = hidden
 
 # quick-terminal
+
 quick-terminal-screen = main
 quick-terminal-autohide = false
 quick-terminal-animation-duration = 0.05
 
-# keybinds
+# keybinds -----------------------------------------------------------
+
 keybind = ctrl+a>d=new_split:down
 keybind = ctrl+a>r=new_split:right
 
@@ -66,43 +95,43 @@ keybind = super+alt+h=goto_split:left
 keybind = global:alt+`=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_visibility
 
-# tokyo night theme
-# theme = tokyonight_night
+# shader -------------------------------------------------------------
 
-# onedark theme
-# theme = OneHalfDark
+# custom-shader-animation = false
+# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield-colors.glsl
 
-# onedark
+# theme --------------------------------------------------------------
+
 background = #23272e
 foreground = #dcdfe4
-cursor-color = #73ade9
+
+cursor-color = #e0def4
+
 selection-background = #555555
 selection-foreground = #dcdfe4
 
-# black
- palette = 0=#1e2024
- palette = 8=#1e2024
-# red
- palette = 1=#d17277
- palette = 9=#d17277
-# green
- palette = 2=#a0c180
- palette = 10=#a0c180
-# yellow
- palette = 3=#dfc184
- palette = 11=#dfc184
-# blue
- palette = 4=#73ade9
- palette = 12=#73ade9
-# purple
- palette = 5=#bb7bd7
- palette = 13=#bb7bd7
-# aqua
- palette = 6=#6fb3bf
- palette = 14=#6fb3bf
-# white
- palette = 7=#ededec
- palette = 15=#ededec
+palette = 0=#1e2024
+palette = 8=#1e2024
+palette = 1=#d17277
+palette = 9=#d17277
+palette = 2=#a0c180
+palette = 10=#a0c180
+palette = 3=#dfc184
+palette = 11=#dfc184
+palette = 4=#73ade9
+palette = 12=#73ade9
+palette = 5=#bb7bd7
+palette = 13=#bb7bd7
+palette = 6=#6fb3bf
+palette = 14=#6fb3bf
+palette = 7=#ededec
+palette = 15=#ededec
+
+# docs --------------------------------------------------------------
+# ghostty +list-fonts
+# ghostty +show-config --default --docs | nvim
+
+# examples: https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
 
 # vim:syntax=ghostty
 # vim:filetype=ghostty
