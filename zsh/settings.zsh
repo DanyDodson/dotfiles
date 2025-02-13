@@ -30,7 +30,8 @@ export CLICOLOR=1
 
 # ls colors - https://geoff.greer.fm/lscolors/
 if [ -f "/opt/homebrew/bin/gdircolors" ]; then
-  eval "$(gdircolors -b "${DOTFILES}"/config/dircolors/dircolors)"
+  source "${DOTFILES}"/config/lscolors/lscolors.sh
+  eval "$(gdircolors -b "${DOTFILES}"/config/lscolors/LS_COLORS)"
 fi
 
 # color complist
@@ -47,11 +48,11 @@ zstyle ':completion:*:matches' group yes
 zstyle ':completion:*:options' description yes
 zstyle ':completion:*:options' auto-description '%d'
 zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'
-zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
+# zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'
-zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
+# zstyle ':completion:*' format ' %F{yellow}-- %d --%f'
 zstyle ':completion:*' list-dirs-first yes
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' verbose yes
@@ -114,14 +115,11 @@ fi
 # disable extended globbing so that ^ will behave as normal.
 unsetopt extendedglob
 
-# nvim autoload
-# zstyle ':omz:plugins:nvm' lazy yes
-
 # nvm autoload node version
 autoload -U add-zsh-hook
 load-nvmrc() {
   local nvmrc_path="$(nvm_find_nvmrc)"
-  
+
   if [ -n "$nvmrc_path" ]; then
     local nvmrc_node_version="$(nvm version "$(<"$nvmrc_path")")"
 

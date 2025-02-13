@@ -34,9 +34,6 @@ export PATH="$HOME/.yarn/bin:$PATH"
 # global go bin
 export PATH="$HOME/.go/bin:$PATH"
 
-# nvim nightly
-# export PATH="$HOME/.nvim/bin:$PATH"
-
 # php
 export PATH="/opt/homebrew/opt/php/bin:/$PATH"
 

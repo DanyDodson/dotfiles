@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 source ${DOTFILES}/zsh/settings.zsh
 source ${DOTFILES}/zsh/aliases.zsh
 
-# start ssh and load identities
+# start ssh
 eval "$(ssh-agent -s)" > /dev/null 2>&1
 # ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
 
@@ -65,8 +65,4 @@ else
 fi
 
 # fastdetch
-# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo.jsonc
-# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_nologo.jsonc
-# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_ansi_shadow.jsonc
-# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_bloody.jsonc
-# fastfetch --config $HOME/.dotfiles/config/fastfetch/boxes_logo_text_blurvision-ascii.jsonc
+# fastfetch

@@ -1,10 +1,46 @@
 set viminfo+=n~/.vim/viminfo
 
-source ~/.vim/setup-plug.vim
+source ~/.vim/plug.vim
 
-let mapleader =" "
+call plug#begin(vim_plug_plugins_dir)
+  " Light-weight status line
+  Plug 'vim-airline/vim-airline'
+  " A tree explorer plugin for vim
+  Plug 'preservim/nerdtree'
+  " Highlight, navigate, and operate on sets of matching text
+  Plug 'andymass/vim-matchup'
+  " Displays and browse tags in a file
+  Plug 'preservim/tagbar'
+  " Fuzzy-file finder in vim
+  Plug 'junegunn/fzf'
+  " Smoothe scrolling
+  Plug 'psliwka/vim-smoothie'
+  " File icons for most languages
+  Plug 'ryanoasis/vim-devicons'
+  " Easy comments in most languages
+  Plug 'preservim/nerdcommenter'
+  " Check syntax in real-time
+  Plug 'dense-analysis/ale'
+  " Surround selected text with brackets, quotes, tags etc
+  Plug 'tpope/vim-surround'
+  " Better incremenal searching
+  Plug 'haya14busa/incsearch.vim'
+  " Multi-cursor support
+  Plug 'mg979/vim-visual-multi'
+  " Easily generate number/ letter sequences
+  Plug 'triglav/vim-visual-increment'
+  " Wraper for running tests
+  Plug 'janko/vim-test'
+  " Plugin for recording coding metrics
+  Plug 'wakatime/vim-wakatime'
+call plug#end()
+
+let g:airline#extensions#tabline#enabled = 1
+
+let mapleader=" "
 
 set term=xterm-256color
+
 filetype plugin indent on
 
 syntax on
@@ -26,8 +62,5 @@ set hlsearch
 set incsearch
 set ignorecase
 
-"  set statusline=
-"  set statusline+=\ %F\ %M\ %Y\ %R
-"  set statusline+=%=
-"  set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
-"  set laststatus=1
+nmap <F8> :TagbarToggle<CR>
+nmap <leader>f :FZF<CR>

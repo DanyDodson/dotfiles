@@ -5,8 +5,6 @@ shell-integration-features = no-cursor,sudo,title
 
 working-directory = home
 
-quit-after-last-window-closed = true
-
 # fonts -----------------------------------------------------------
 
 font-family = "FiraCode Nerd Font Mono"
@@ -15,20 +13,17 @@ font-style-italic = "Retina"
 font-style-bold = "Retina"
 font-style-bold-italic = "Retina"
 
-font-size = 17
+font-size = 14
 
 bold-is-bright = false
 
-font-thicken = false
+font-thicken = true
 font-synthetic-style = false
 
 adjust-cell-width = 1
 adjust-underline-thickness = 20%
 adjust-box-thickness = 20%
 adjust-cursor-thickness = 2
-
-# font-codepoint-map = U+F5D0-U+F60D="Flog Symbols"
-# font-codepoint-map = U+E000-U+E00A,U+EA60-U+EBEB,U+E0A0-U+E0C8,U+E0CA,U+E0CC-U+E0D7,U+E200-U+E2A9,U+E300-U+E3E3,U+E5FA-U+E6B1,U+E700-U+E7C5,U+ED00-U+EFC1,U+F000-U+F2FF,U+F000-U+F2E0,U+F300-U+F372,U+F400-U+F533,U+F0001-U+F1AF0="Symbols Nerd Font Mono"
 
 # cursor -----------------------------------------------------------
 
@@ -38,15 +33,17 @@ cursor-opacity = 0.75
 
 mouse-hide-while-typing = true
 
-# clipboard
+# clipboard --------------------------------------------------------
 
 clipboard-read = allow
 clipboard-write = allow
 
 # window -----------------------------------------------------------
 
-window-height = 51
-window-width = 156
+title = ghostty
+
+window-height = 61
+window-width = 181
 
 window-padding-x = 0
 window-padding-y = 0
@@ -56,12 +53,12 @@ window-padding-balance = true
 
 window-decoration = false
 
-title = ghostty 
-
-# window-save-state = always
+window-save-state = always
 window-inherit-working-directory = true
 
-resize-overlay = never
+quit-after-last-window-closed = true
+
+resize-overlay = always
 
 # opacity -----------------------------------------------------------
 
@@ -76,16 +73,16 @@ macos-non-native-fullscreen = true
 macos-window-shadow = false
 # macos-titlebar-style = hidden
 
-# quick-terminal
+# quick-terminal ---------------------------------------------------
 
 quick-terminal-screen = main
 quick-terminal-autohide = false
 quick-terminal-animation-duration = 0.05
 
-# keybinds -----------------------------------------------------------
+# keybinds ---------------------------------------------------------
 
-keybind = ctrl+a>d=new_split:down
-keybind = ctrl+a>r=new_split:right
+keybind = ctrl+b>d=new_split:down
+keybind = ctrl+b>r=new_split:right
 
 keybind = super+alt+k=goto_split:top
 keybind = super+alt+j=goto_split:bottom
@@ -98,40 +95,38 @@ keybind = global:ctrl+`=toggle_visibility
 # shader -------------------------------------------------------------
 
 # custom-shader-animation = false
-# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield-colors.glsl
+# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/gradient-background.glsl
 
 # theme --------------------------------------------------------------
 
-background = #23272e
-foreground = #dcdfe4
+theme = Atom
 
-cursor-color = #e0def4
+background = #1f2328
+foreground = #eaf0f8
 
-selection-background = #555555
-selection-foreground = #dcdfe4
+# cursor-color = #e0def4
 
-palette = 0=#1e2024
-palette = 8=#1e2024
+# selection-background = #555555
+# selection-foreground = #dcdfe4
+
+# palette = 0=#1e2024
+# palette = 8=#1e2024
 palette = 1=#d17277
-palette = 9=#d17277
-palette = 2=#a0c180
-palette = 10=#a0c180
-palette = 3=#dfc184
-palette = 11=#dfc184
-palette = 4=#73ade9
-palette = 12=#73ade9
-palette = 5=#bb7bd7
-palette = 13=#bb7bd7
-palette = 6=#6fb3bf
-palette = 14=#6fb3bf
-palette = 7=#ededec
-palette = 15=#ededec
+# palette = 9=#d17277
+# palette = 2=#a0c180
+# palette = 10=#a0c180
+# palette = 3=#dfc184
+# palette = 11=#dfc184
+# palette = 4=#73ade9
+# palette = 12=#73ade9
+# palette = 5=#bb7bd7
+# palette = 13=#bb7bd7
+# palette = 6=#6fb3bf
+# palette = 14=#6fb3bf
+# palette = 7=#ededec
+# palette = 15=#ededec
 
 # docs --------------------------------------------------------------
-# ghostty +list-fonts
-# ghostty +show-config --default --docs | nvim
+# https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
 
-# examples: https://github.com/search?q=path%3Aghostty%2Fconfig&type=code
-
-# vim:syntax=ghostty
-# vim:filetype=ghostty
+# vim:filetype=ghostty:syntax=ghostty

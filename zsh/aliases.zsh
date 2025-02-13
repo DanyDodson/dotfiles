@@ -86,9 +86,10 @@ fi
 if _exists tmux; then
   alias tn="tmux new"
   alias tl="tmux ls"
+  alias ta="tmux attach"
   alias tk="tmux kill-session"
   alias td="tmux detach"
-  bindkey -s ^F "tms\n"
+  bindkey -s ^p "tms\n"
   bindkey -s ^w "tmux new\n"
 fi
 
@@ -110,9 +111,9 @@ fi
 
 if _exists "/opt/homebrew/bin/gls"; then
   alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
-  alias l="ls -Algoh"
-  alias ll="ls -A"
-  alias la="ls -Al"
+  alias l="ls -gol"
+  alias ll="ls -AlgoL"
+  alias la="ls -Algo"
 fi
 
 if _exists "/opt/homebrew/bin/transmission-remote"; then

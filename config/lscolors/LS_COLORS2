@@ -825,4 +825,4 @@ TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
 
-#  vim:set ft=dircolors:
+# vim:ft=dircolors
