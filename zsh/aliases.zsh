@@ -1,9 +1,5 @@
 #!/usr/bin/env zsh
 
-_exists() {
-  command -v $1 >/dev/null 2>&1
-}
-
 alias o="open"
 alias oo="open ."
 
@@ -11,20 +7,54 @@ alias cl="clear"
 alias or="omz reload"
 alias c="cl && or"
 
-alias 644="chmod 644"
-alias 755="chmod 755"
-alias 777="chmod 777"
-
 alias path="printf '%s\n' $path"
 alias fpath="printf '%s\n' $fpath"
 
-# enable aliases to be sudo’ed
 alias sudo="sudo "
 
-# clean up .DS_Store files
 alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 
-# go to folder
+alias yy="yazi"
+
+alias cat="bat"
+alias -g :b='-h 2>&1 | bat --language=help --style=plain'
+alias -g :b='--help 2>&1 | bat --language=help --style=plain'
+
+alias cc="codium"
+
+alias v="nvim"
+alias e="$EDITOR"
+alias nv="NVIM_APPNAME=nvim-normal nvim"
+alias nf="NVIM_APPNAME=nvim-fredrik nvim"
+alias dotconf="cd $DOTFILES && nvim"
+alias nvconf="cd $HOME/.config/nvim && nvim"
+
+alias tn="tmux new"
+alias tl="tmux ls"
+alias ta="tmux attach"
+alias tk="tmux kill-session"
+alias td="tmux detach"
+bindkey -s ^p "tms\n"
+bindkey -s ^w "tmux new\n"
+
+alias lsg-npm="npm ls -g --depth 0"
+alias lsg-yarn="yarn global list"
+alias lsg-pnpm="pnpm ls -g"
+
+alias bbin="brew bundle install --file=~/.dotfiles/config/brew/brewfile"
+alias bbcl="brew bundle cleanup --file=~/.dotfiles/config/brew/brewfile"
+alias bbch="brew bundle check --file=~/.dotfiles/config/brew/brewfile"
+alias bleaves="brew leaves | xargs brew desc --eval-all"
+alias bleavesc="brew ls --casks | xargs brew desc --eval-all"
+
+alias get="curl -O -L --silent"
+alias wget="wget --no-check-certificate"
+
+alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
+alias l="ls -gol"
+alias ll="ls -AlgoL"
+alias la="ls -Algo"
+
 [ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
 [ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
 [ -d $HOME/Developer ] && alias dev="cd $HOME/Developer"
@@ -36,110 +66,19 @@ alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 [ -d $HOME/Developer/served ] && alias served="cd $HOME/Developer/served"
 [ -d $HOME/Developer/temp ] && alias temp="cd $HOME/Developer/temp"
 
-if _exists codium; then
-  alias cc="codium"
-fi
-
-if _exists npm; then
-  alias lsg-npm="npm ls -g --depth 0"
-fi
-
-if _exists yarn; then
-  alias lsg-yarn="yarn global list"
-fi
-
-if _exists pnpm; then
-  alias lsg-pnpm="pnpm ls -g"
-fi
-
-if _exists yazi; then
-  alias yy="yazi"
-fi
-
-if _exists ranger; then
-  alias rr="ranger"
-fi
-
-if _exists bat; then
-  alias cat="bat"
-  alias -g :b='-h 2>&1 | bat --language=help --style=plain'
-  alias -g :b='--help 2>&1 | bat --language=help --style=plain'
-fi
-
-if _exists git; then
-  alias ga="git add ."
-  alias gc="git commit -m"
-  alias gd="git clone"
-  alias gp="git push -u origin main"
-  alias gs="git status"
-fi
-
-if _exists nvim; then
-  alias v="nvim"
-  alias e="$EDITOR"
-  alias nv="NVIM_APPNAME=nvim-normal nvim"
-  alias nf="NVIM_APPNAME=nvim-fredrik nvim"
-  alias dotconf="cd $DOTFILES && nvim"
-  alias nvconf="cd $HOME/.config/nvim && nvim"
-fi
-
-if _exists tmux; then
-  alias tn="tmux new"
-  alias tl="tmux ls"
-  alias ta="tmux attach"
-  alias tk="tmux kill-session"
-  alias td="tmux detach"
-  bindkey -s ^p "tms\n"
-  bindkey -s ^w "tmux new\n"
-fi
-
-if _exists brew; then
-  alias bbin="brew bundle install --file=~/.dotfiles/config/brew/brewfile"
-  alias bbcl="brew bundle cleanup --file=~/.dotfiles/config/brew/brewfile"
-  alias bbch="brew bundle check --file=~/.dotfiles/config/brew/brewfile"
-  alias bleaves="brew leaves | xargs brew desc --eval-all"
-  alias bleavesc="brew ls --casks | xargs brew desc --eval-all"
-fi
-
-if _exists wget; then
-  alias wget="wget --no-check-certificate"
-fi
-
-if _exists curl; then
-  alias get="curl -O -L --silent"
-fi
-
-if _exists "/opt/homebrew/bin/gls"; then
-  alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
-  alias l="ls -gol"
-  alias ll="ls -AlgoL"
-  alias la="ls -Algo"
-fi
-
-if _exists "/opt/homebrew/bin/transmission-remote"; then
-  alias tran='transmission-remote'
-  alias trand='transmission-daemon --dump-settings'
-fi
-
 # create and cd into directory
 function mkd() {
   mkdir -p $@ && cd ${@:$#}
 }
 
 # canonical hex dump
-if _exists hd; then
-  alias hd="hexdump -C"
-fi
+alias hd="hexdump -C"
 
 # macos has no md5sum, so use md5 as a fallback
-if _exists md5sum; then
-  alias md5sum="md5"
-fi
+alias md5sum="md5"
 
 # macos has no sha1sum, so use shasum as a fallback
-if _exists sha1sum; then
-  alias sha1sum="shasum"
-fi
+alias sha1sum="shasum"
 
 # js core repl
 jscbin="/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc"

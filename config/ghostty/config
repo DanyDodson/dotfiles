@@ -62,7 +62,7 @@ resize-overlay = always
 
 # opacity -----------------------------------------------------------
 
-background-opacity = 0.95
+background-opacity = 0.98
 unfocused-split-opacity = 1
 background-blur-radius = 20
 

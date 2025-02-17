@@ -20,13 +20,13 @@ xattr -c "$LUA_DIR/lua-5.1.5.tar.gz" || error "Failed to remove extended attribu
 # Extract the archive; use a more robust method
 tar -xzf "$LUA_DIR/lua-5.1.5.tar.gz" -C "$LUA_DIR" || rror "Failed to extract Lua archive"
 
-#Simplified path handling
+# Simplified path handling
 cd "$LUA_DIR/lua-5.1.5" || errror "Failed to change directory"
 
-#Build and install; improved error handling and clarity
+# Build and install; improved error handling and clarity
 make macosx install INSTALL_TOP="$LUA_DIR" || error "Failed to build and install Lua"
 
-#Clean up the downloaded archive
+# Clean up the downloaded archive
 rm "$LUA_DIR/lua-5.1.5.tar.gz" || error "Failed to remove lua zip"
 
 finish "Lua installation complete"

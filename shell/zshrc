@@ -8,6 +8,9 @@ fi
 # run p10k configure
 [[ ! -f ${HOME}/.cache/p10k.zsh ]] || source ${HOME}/.cache/p10k.zsh
 
+# color support
+export CLICOLOR=1 # Enables colorized output for ls and other commands in Terminal
+
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
