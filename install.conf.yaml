@@ -1,17 +1,28 @@
 - defaults:
     link:
+      create: true
       relink: true
 
-- clean:
-    ~/:
-      force: true
-    ~/.config:
-      recursive: true
+- clean: ["~", ~/.config]
 
 - create:
-    - ~/.hushlogin
+    - ~/Developer/boiler
+    - ~/Developer/plugins
+    - ~/Developer/practice
+    - ~/Developer/repos
+    - ~/Developer/security
+    - ~/Developer/served
+    - ~/Developer/temp
 
 - link:
+    ~/.zlogin:
+      path: shell/zlogin
+    ~/.zprofile:
+      path: shell/zprofile
+    ~/.zshenv:
+      path: shell/zshenv
+    ~/.zshrc:
+      path: shell/zshrc
     ~/.config/1password/ssh/agent.toml:
       create: true
       path: config/1password/ssh/agent.toml
@@ -22,32 +33,27 @@
       create: true
       path: config/fastfetch/config.jsonc
     ~/.gitconfig:
-      create: true
       path: config/git/gitconfig
     ~/.gitignore:
-      create: true
       path: config/git/gitignore
     ~/.config/gh/config.yml:
-      create: true
       path: config/gh/config.yml
     ~/.config/ghostty/config:
       create: true
       path: config/ghostty/config
+    ~/.config/ranger/rc.conf:
+      create: true
+      path: config/ranger/rc.conf
     ~/.ssh/config:
       create: true
       path: config/ssh/config
-    ~/.tmux:
-      create: true
+    ~/.tmux.conf:
       path: config/tmux/tmux.conf
-    ~/.vim/plug.vim:
-      create: true
-      path: config/vim/plug.vim
     ~/.vimrc:
-      create: true
       path: config/vim/vimrc
-    ~/.config/skhdrc/config:
+    ~/.config/skhd/skhdrc:
       create: true
-      path: config/skhdrc/config
+      path: config/skhd/skhdrc
     ~/.config/yabai/yabairc:
       create: true
       path: config/yabai/yabairc
@@ -65,4 +71,16 @@
       path: config/yazi/yazi.toml
 
 - shell:
+    # - description: update submodules
+    #   command: submodule update --init --recursive
+
     - [git submodule update --init --recursive, Installing submodules]
+
+    - description: sync dotbot
+      command: git submodule sync --recursive
+
+    - description: ssh setup
+      command: |
+        mkdir -p ~/.ssh && chmod 700 ~/.ssh
+        touch ~/.ssh/known_hosts && chmod 644 ~/.ssh/known_hosts
+        touch ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys
