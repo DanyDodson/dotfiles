@@ -35,32 +35,62 @@ call plug#begin(vim_plug_plugins_dir)
   Plug 'wakatime/vim-wakatime'
 call plug#end()
 
-let g:airline#extensions#tabline#enabled = 1
+"---------------------
+" Basic editing config
+"---------------------
 
 let mapleader=" "
 
 set term=xterm-256color
-
 filetype plugin indent on
-
 syntax on
-
-set history=1000
-
 set termguicolors
 
-set nobackup
-set autoread
-set relativenumber
+set shortmess+=I " disable startup message
+set nu " number lines
+set rnu " relative line numbering
+set incsearch " incremental search (as string is being typed)
+set hls " highlight search
+set listchars=tab:>>,nbsp:~ " set list to see tabs and non-breakable spaces
+set lbr " line break
+set scrolloff=5 " show lines above and below cursor (when possible)
+set noshowmode " hide mode
+set laststatus=2
+set backspace=indent,eol,start " allow backspacing over everything
+set timeout timeoutlen=1000 ttimeoutlen=100 " fix slow O inserts
+set lazyredraw " skip redrawing screen in some cases
+set autochdir " automatically set current directory to directory of last opened file
+set hidden " allow auto-hiding of edited buffers
+set history=8192 " more history
+set nojoinspaces " suppress inserting two spaces between sentences
 
+set expandtab
 set tabstop=2
 set shiftwidth=2
-set smartindent
-set expandtab
+set softtabstop=2
 
-set hlsearch
-set incsearch
 set ignorecase
+set smartcase
 
-nmap <F8> :TagbarToggle<CR>
-nmap <leader>f :FZF<CR>
+set wildmode=longest,list
+set wildmenu
+set mouse+=a
+if &term =~ '^screen'
+    set ttymouse=xterm2
+endif
+set nofoldenable
+
+"---------------------
+" Plugin configuration
+"---------------------
+
+let g:airline#extensions#tabline#enabled = 1
+
+" nerdtree
+nnoremap <Leader>e :NERDTreeToggle<CR>
+
+"  fzf
+nnoremap <leader><leader> :FZF<CR>
+
+"  tagbar
+nnoremap <F8> :TagbarToggle<CR>

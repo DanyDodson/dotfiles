@@ -57,6 +57,14 @@ alias bbch="brew bundle check --file=$HOME/.dotfiles/macos/brewfile"
 alias bleaves="brew leaves | xargs brew desc --eval-all"
 alias bleavesc="brew ls --casks | xargs brew desc --eval-all"
 
+# python
+alias pyclean='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rvf'
+alias pip-purge='pip list --format freeze | xargs pip uninstall -y'
+alias pip-install-reqs='ls requirements*.txt | xargs -n 1 pip install -r'
+alias poetry-install-master='pipx install --suffix=@master --force git+https://github.com/python-poetry/poetry.git'
+alias activate='source .venv/bin/activate'
+alias venv='PIP_REQUIRE_VIRTUALENV=false python3 -m pip install --upgrade --user pip virtualenv && python3 -m virtualenv .venv && source .venv/bin/activate && python3 -m pip install --upgrade pip && which pip && pip list && pip --version && python3 --version'
+
 # gls
 alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
 alias l="ls -gol"

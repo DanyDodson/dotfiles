@@ -53,6 +53,15 @@ install_nvim_configs() {
   info 'skipped installing nvim configs...'
 }
 
+setup_vim() {
+  if [ ! -d "$HOME/.vim" ]; then
+    info 'comy vimrc to ~/.vimrc'
+    cp "$HOME/.dotfiles/config/vim/vimrc" "$HOME/.vimrc"
+  fi
+  
+  info 'skipped installing nvim configs...'
+}
+
 main() {
   setup_nvim "$"
   on_finish "$*"
