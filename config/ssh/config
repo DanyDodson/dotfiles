@@ -1,6 +1,11 @@
-Match host * exec "test -z $SSH_TTY"
+Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  IgnoreUnknown AddKeysToAgent,UseKeychain
+  AddKeysToAgent yes
+  UseKeychain yes
+  KeepAlive yes
   ForwardAgent yes
+  ServerAliveInterval 60
 
 Host github.com
   Hostname ssh.github.com
@@ -9,6 +14,11 @@ Host github.com
   UseKeychain yes
   AddKeysToAgent yes
   IdentityFile ~/.ssh/id_ed25519
+
+Host *github.com
+  User git
+  Hostname ssh.github.com
+  Port 443
 
 Host rawdog-instance
   HostName 18.235.113.176
