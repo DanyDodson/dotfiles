@@ -24,6 +24,8 @@ yabai -m config \
   mouse_follows_focus off \
   focus_follows_mouse of
 
+yabai -m rule --add app="^qutebrowser$" title!="^$" role="AXWindow" subrole="AXDialog" manage=on
+
 # rules for all
 yabai -m rule --add app=".*" sub-layer=normal
 

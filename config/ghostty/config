@@ -20,8 +20,6 @@ bold-is-bright = false
 font-thicken = true
 font-synthetic-style = false
 
-alpha-blending = linear-corrected
-
 adjust-cell-width = 1
 adjust-underline-thickness = 20%
 adjust-box-thickness = 20%
@@ -60,8 +58,6 @@ window-inherit-working-directory = true
 
 quit-after-last-window-closed = true
 
-resize-overlay = always
-
 # opacity -----------------------------------------------------------
 
 background-opacity = 0.98
@@ -97,9 +93,9 @@ keybind = global:ctrl+`=toggle_visibility
 # shader -------------------------------------------------------------
 
 # custom-shader-animation = false
-# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/gradient-background.glsl
+# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield.glsl
 
-# theme --------------------------------------------------------------
+# OneDark theme ------------------------------------------------------
 
 theme = Atom
 
