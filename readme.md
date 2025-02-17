@@ -8,15 +8,15 @@ possible.
 
 ### Systems 🚀
 
-- [macOS](docs/readme-macos.md)
+- [macOS](docs/macos.md)
 
 ### Neovim ⌨️
 
-- [nvim]()
+- [nvim](installers/nvim.sh)
 
 ### Git 🐙
 
-- [Configure git](docs/readme-git.md)
+- [Configure git](docs/git.md)
 
 ### Project config/tooling 🧢
 
@@ -30,7 +30,7 @@ possible.
 - [Iconic Fonts](https://github.com/mdSlash/iconic-fonts)
 - [Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 
-### Ansi art
+### Ansi art 🎨
 
 1. Go to [image-to-ansi](https://dom111.github.io/image-to-ansi) ([github repo](https://github.com/dom111/image-to-ansi)).
 2. Upload image.
