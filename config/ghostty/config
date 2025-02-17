@@ -90,14 +90,11 @@ keybind = super+alt+h=goto_split:left
 keybind = global:alt+`=toggle_quick_terminal
 keybind = global:ctrl+`=toggle_visibility
 
-# shader -------------------------------------------------------------
-
-# custom-shader-animation = false
-# custom-shader=/Users/dany/.dotfiles/config/ghostty/shaders/starfield.glsl
-
 # OneDark theme ------------------------------------------------------
 
 theme = Atom
+
+# background = #1f2328
 
 background = #282b33
 foreground = #acb1bd
