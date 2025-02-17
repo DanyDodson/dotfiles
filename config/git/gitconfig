@@ -67,9 +67,6 @@
 	useUnicodeRuler = false
 	rulerWidth = 80
 
-[url "git://"]
-	insteadOf = https://
-	
 [url "ssh://git@"]
 	insteadOf = https://
 
@@ -91,9 +88,11 @@
 
 [url "git@heroku.com:"]
   insteadOf = "heroku:"
+
 [credential "https://github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential
+	
 [credential "https://gist.github.com"]
 	helper = 
 	helper = !/opt/homebrew/bin/gh auth git-credential

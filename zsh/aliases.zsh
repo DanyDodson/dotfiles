@@ -24,6 +24,11 @@ alias nv="NVIM_APPNAME=nvim-normal nvim"
 alias dotconf="cd $DOTFILES && nvim"
 alias nvconf="cd $HOME/.config/nvim && nvim"
 
+# git
+alias gcl="git clone"
+alias gcm="git commit -S -m"
+alias gpm="git push -u origin main"
+
 # tmux
 alias tn="tmux new"
 alias tl="tmux ls"
