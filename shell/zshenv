@@ -13,6 +13,8 @@ export PAGER='less'
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export LESSHISTFILE="-"
 
+export GPG_TTY=$(tty) 
+
 export GOPATH="${HOME}/.go"
 export GOBIN="${HOME}/.go/bin"
 export GOROOT="/opt/homebrew/opt/go/libexec"

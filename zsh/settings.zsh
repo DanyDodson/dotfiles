@@ -46,13 +46,13 @@ zstyle ':completion:*:options' auto-description '%d'  # Automatic descriptions f
 
 # Formatting for different completion messages
 zstyle ':completion:*:corrections' format ' %F{green}-- %d (errors: %e) --%f'  # Format for corrections
-# zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'           # Configures how completion descriptions appear
+zstyle ':completion:*:descriptions' format ' %F{yellow}-- %d --%f'             # set descriptions format to enable group support
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'                # Format for messages
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'      # Format for no matches
 zstyle ':completion:*:default' list-prompt '%S%M matches%s'                    # Format for match count
 
 # General completion behavior
-# zstyle ':completion:*' format ' %F{yellow}-- %d --%f'                             # Configures how completion headers appear in the shell
+zstyle ':completion:*' format ' %F{yellow}-- %d --%f'                               # Configures how completion headers appear in the shell
 zstyle ':completion:*' list-dirs-first yes                                          # Lists directories first
 zstyle ':completion:*' group-name ''                                                # Groups completions by name
 zstyle ':completion:*' verbose yes                                                  # Shows detailed completion info
@@ -95,6 +95,9 @@ zstyle ':completion:*:history-words' menu yes             # Enables menu
 # Multiple entry handling
 zstyle ':completion:*:(rm|kill|diff):*' ignore-line other  # Ignores current line for certain commands
 zstyle ':completion:*:rm:*' file-patterns '*:all-files'    # File patterns for rm command
+
+# Zoxide support
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # location for completions
 zcompdump="${HOME}/.zcompdump"

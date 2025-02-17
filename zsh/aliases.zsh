@@ -78,6 +78,9 @@ alias la="ls -Algo"
 alias path="printf '%s\n' $path"
 alias fpath="printf '%s\n' $fpath"
 
+# fastfetch
+alias ff="fastfetch"
+
 # clean .DS_Store files
 alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
 

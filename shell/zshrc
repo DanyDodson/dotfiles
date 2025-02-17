@@ -66,6 +66,3 @@ if [ $(date +'%j') != $(stat -f '%Sm' -t '%j' ~/.zcompdump) ]; then
 else
   compinit -C
 fi
-
-# fastdetch
-# fastfetch
