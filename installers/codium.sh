@@ -29,7 +29,8 @@ install_codium() {
   fi
 
   info 'skipped installing VSCodium.app'
-  finish
+
+  finish 'codium install complete!'
 }
 
 main() {

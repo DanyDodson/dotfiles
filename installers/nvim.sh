@@ -12,7 +12,7 @@ setup_nvim() {
   install_nvim_release
   install_nvim_configs
 
-  finish
+  finish 'nvim install complete!'
 }
 
 install_nvim_release() {

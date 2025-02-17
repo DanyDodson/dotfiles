@@ -21,7 +21,7 @@ install_repos() {
   cd ~/Developer/repos
   curl "https://api.github.com/users/$GH_USER/repos?page=$PAGE&per_page=100" | grep -F 'clone_url' | cut -d \" -f 4 | xargs -L1 git clone --recursive
 
-  finish
+  finish 'repos install complete!'
 }
 
 main() {

@@ -145,3 +145,8 @@ alias sys_uti_file="mdls -name kMDItemContentTypeTree "
 # spotlight on/off
 alias spotlight_off="sudo mdutil -a -i off"
 alias spotlight_on="sudo mdutil -a -i on"
+
+# create and cd into directory
+function mkd() {
+  mkdir -p $@ && cd ${@:$#}
+}

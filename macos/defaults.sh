@@ -3,9 +3,6 @@
 # Sane OSX defaults
 # ~/.osx — http://mths.be/osx
 
-COMPUTERNAME='Mac'
-LOCALHOSTNAME='mac'
-
 # Ask for the administrator password upfront
 sudo -v
 
@@ -19,12 +16,6 @@ done 2>/dev/null &
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
-
-# Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName $COMPUTERNAME
-sudo scutil --set HostName $COMPUTERNAME
-sudo scutil --set LocalHostName $LOCALHOSTNAME
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string $LOCALHOSTNAME
 
 # Menu bar: hide the useless Time Machine and Volume icons
 defaults write com.apple.systemuiserver menuExtras -array "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" "/System/Library/CoreServices/Menu Extras/AirPort.menu" "/System/Library/CoreServices/Menu Extras/Battery.menu" "/System/Library/CoreServices/Menu Extras/Clock.menu"

@@ -45,7 +45,7 @@ install_tmux() {
 	*) ;;
 	esac
 
-	finish
+	finish 'tmux install complete!'
 }
 
 install_tmux_plugins() {
@@ -73,7 +73,7 @@ install_tmux_plugins() {
 		git clone https://github.com/niksingh710/minimal-tmux-status "$HOME/.tmux/plugins/minimal-tmux-status"
 	fi
 
-	info "To finish the installation, install all plugins with <prefix> + I in tmux."
+	info "to finish the installation, install all plugins with <prefix> + I in tmux."
 }
 
 main() {

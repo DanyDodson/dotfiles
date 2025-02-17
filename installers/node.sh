@@ -24,7 +24,7 @@ function install_node_with_nvm() {
   else
     error "Error: nvm is not available"
   fi
-  finish
+  finish 'node install complete!'
 }
 
 function install_npm_deps() {
@@ -45,7 +45,7 @@ function install_npm_deps() {
   else
     error "Error: npm is not available"
   fi
-  finish
+  finish 'npm packages install complete!'
 }
 
 main() {

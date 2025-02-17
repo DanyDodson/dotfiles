@@ -30,7 +30,7 @@ function install_go_packages() {
   else
     error "Error: go is not available"
   fi
-  finish
+  finish 'go packages install complete!'
 }
 
 main() {
