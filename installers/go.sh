@@ -9,7 +9,7 @@ set -e
 trap on_error SIGTERM
 
 function install_go_packages() {
-  if exists pyenv; then
+  if exists go; then
     read -rp "Do you want to install go packages yet? [y/N] " -n 1 answer
     echo
     if [ "${answer}" != "y" ]; then
@@ -30,7 +30,7 @@ function install_go_packages() {
   else
     error "Error: go is not available"
   fi
-  finish 'go packages install complete!'
+  finish
 }
 
 main() {

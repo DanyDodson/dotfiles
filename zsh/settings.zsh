@@ -96,22 +96,27 @@ zstyle ':completion:*:history-words' menu yes             # Enables menu
 zstyle ':completion:*:(rm|kill|diff):*' ignore-line other  # Ignores current line for certain commands
 zstyle ':completion:*:rm:*' file-patterns '*:all-files'    # File patterns for rm command
 
-# Location for completions
+# location for completions
 zcompdump="${HOME}/.zcompdump"
 
-# Load completions if present
+# load completions if present
 if [ -f $zsh_dump_file ]; then
     compinit -d $zcompdump
 fi
 
-# Only perform compinit once a day
+# only perform compinit once a day
 if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]];
 then
     zcompile "$zcompdump"
 fi
 
-# Disable pattern matching
+# disable pattern matching
 unsetopt extendedglob # Disable extended globbing so that ^ will behave as normal
+
+# use passphase from macOS keychain
+# if [[ "$OSTYPE" == "darwin"* ]]; then
+#   zstyle :omz:plugins:ssh-agent ssh-add-args --apple-load-keychain
+# fi
 
 # nvm autoload node version
 autoload -U add-zsh-hook

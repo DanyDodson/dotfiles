@@ -7,10 +7,8 @@
 
 trap on_error SIGTERM
 
-# Ask for the administrator password upfront
 sudo -v
 
-# Keep-alive: update existing `sudo` time stamp until `.osx` has finished
 while true; do
   sudo -n true
   sleep 60
@@ -23,7 +21,6 @@ function update_omz() {
   finish
 }
 
-# update macos system apps
 function update_macos_apps() {
   info "Updating macOS..."
   sudo -v
@@ -31,7 +28,6 @@ function update_macos_apps() {
   finish
 }
 
-# update and clean Homebrew
 function update_homebrew_packages() {
   info "Updating Homebrew packages..."
   sudo -v
@@ -42,14 +38,12 @@ function update_homebrew_packages() {
   finish
 }
 
-# update npm packages
 function update_npm_packages() {
   info "Updating npm modules..."
   npm update -g
   finish
 }
 
-# update pip packages
 function update_pip_packages() {
   info "Updating pip packages..."
   pip --disable-pip-version-check list --outdated --format=json |
@@ -58,12 +52,10 @@ function update_pip_packages() {
   finish
 }
 
-# clean trash and log files
 function clean_up() {
   info "Emptying trash and cleaning logs..."
   command rm -rfv ~/.Trash/*
   command rm -rfv /Volumes/*/.Trashes
-  # command rm -rfv /private/var/log/asl/*.asl
   finish
 }
 
@@ -72,7 +64,7 @@ update() {
   update_macos_apps "$*"
   update_homebrew_packages "$*"
   update_npm_packages "$*"
-  update_pip_packages
+  update_pip_packages "$*"
   clean_up "$*"
   on_finish "$*"
 }

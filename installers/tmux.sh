@@ -11,41 +11,21 @@ trap on_error SIGTERM
 install_tmux() {
 	case $(uname) in
 	Darwin)
-
 		if ! which tmux >/dev/null 2>&1; then
-			# commands for macOS go here
 			info "Install tmux via Brewfile on macOS."
 		fi
-
-		# tmux plugin manager
 		install_tmux_plugins
 		;;
 	Linux)
 		if ! which tmux >/dev/null 2>&1; then
-			# commands for Linux go here
 			info "Install tmux ßvia Brewfile on linux."
 		fi
-
-		# tmux plugin manager
 		install_tmux_plugins
-
-		# Install Ruby if not present
-		# if ! command -v gem &>/dev/null; then
-		# 	brew install ruby
-		# fi
-
-		# Install tmuxinator if not present
-		# if ! command -v tmuxinator &>/dev/null; then
-		# 	sudo gem install tmuxinator
-
-		# zsh completion
-		# 	sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
-		# fi
 		;;
 	*) ;;
 	esac
 
-	finish 'tmux install complete!'
+	finish
 }
 
 install_tmux_plugins() {

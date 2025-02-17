@@ -32,4 +32,4 @@ make macosx install INSTALL_TOP="$LUA_DIR" || error "Failed to build and install
 # Clean up the downloaded archive
 rm "$LUA_DIR/lua-5.1.5.tar.gz" || error "Failed to remove lua zip"
 
-finish "Lua installation complete"
+finish

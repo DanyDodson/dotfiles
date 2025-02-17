@@ -22,7 +22,7 @@ function install_python_with_pyenv() {
   else
     error "Error: pyenv is not available"
   fi
-  finish 'python install complete!'
+  finish
 }
 
 function install_python_packages() {
@@ -41,7 +41,7 @@ function install_python_packages() {
   else
     error "Error: python is not available"
   fi
-  finish 'pip packages installed!'
+  finish
 }
 
 main() {

@@ -30,7 +30,7 @@ install_codium() {
 
   info 'skipped installing VSCodium.app'
 
-  finish 'codium install complete!'
+  finish
 }
 
 main() {

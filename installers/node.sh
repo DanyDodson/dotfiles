@@ -8,6 +8,8 @@
 set -e
 trap on_error SIGTERM
 
+[[ -f "/opt/homebrew/opt/nvm/nvm.sh" ]] && . "/opt/homebrew/opt/nvm/nvm.sh"
+
 function install_node_with_nvm() {
   if exists nvm; then
     read -rp "Do you want to install node using nvm yet? [y/N] " -n 1 answer
@@ -24,7 +26,7 @@ function install_node_with_nvm() {
   else
     error "Error: nvm is not available"
   fi
-  finish 'node install complete!'
+  finish
 }
 
 function install_npm_deps() {
@@ -45,7 +47,7 @@ function install_npm_deps() {
   else
     error "Error: npm is not available"
   fi
-  finish 'npm packages install complete!'
+  finish
 }
 
 main() {
