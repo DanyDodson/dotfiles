@@ -20,7 +20,10 @@ alias wget="wget --no-check-certificate"
 alias e="$EDITOR"
 alias cc="codium"
 alias v="nvim"
-alias nv="NVIM_APPNAME=nvim-normal nvim"
+alias nv-normal="NVIM_APPNAME=nvim-normal nvim"
+alias nv-ide="NVIM_APPNAME=nv-ide nvim"
+
+# shortcuts
 alias dotconf="cd $DOTFILES && nvim"
 alias nvconf="cd $HOME/.config/nvim && nvim"
 

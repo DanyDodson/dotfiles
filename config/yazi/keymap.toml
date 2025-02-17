@@ -47,4 +47,3 @@ desc = "Maximize or restore preview"
 on = "<Tab>"
 run = "spot"
 desc = "Spot hovered file"
-

@@ -9,7 +9,7 @@ fi
 [[ ! -f ${HOME}/.cache/p10k.zsh ]] || source ${HOME}/.cache/p10k.zsh
 
 # # enables colors
-export CLICOLOR=1 
+export CLICOLOR=1
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 

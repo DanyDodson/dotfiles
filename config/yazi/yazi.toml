@@ -15,6 +15,27 @@ name = "*"
 run = "mime-ext"
 prio = "high"
 
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# name = "*"
+# run  = "git"
+
+# [[plugin.prepend_fetchers]]
+# id   = "git"
+# name = "*/"
+# run  = "git"
+
+# 
+[[plugin.append_previewers]]
+name = "*/"
+run = "folder"
+sync = true
+
+# 
+[[plugin.append_previewers]]
+name = "text/*"
+run = "codium"
+
 # rich-preview
 [[plugin.prepend_previewers]]
 name = "*.csv"
