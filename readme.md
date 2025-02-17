@@ -1,6 +1,6 @@
 # dotfiles 🍩
 
-![screenshot](https://github.com/user-attachments/assets/ef833ca0-3d39-4a7c-94af-0f76afb96e6b)
+![screenshot](.github/nvim.png)
 
 These are my personal dotfiles. The setup is based on
 [dotbot](https://github.com/anishathalye/dotbot) and aims to be as idempotent as
@@ -8,24 +8,30 @@ possible.
 
 ### Systems 🚀
 
-- [macOS](README_MACOS.md)
-- [Windows 11 + WSL](README_WIN_WSL.md)
+- [macOS](docs/readme-macos.md)
 
 ### Neovim ⌨️
 
-- [nvim-fredrik](nvim-fredrik/README.md)
+- [nvim]()
 
 ### Git 🐙
 
-- [Configure git](README_GIT.md)
+- [Configure git](docs/readme-git.md)
 
 ### Project config/tooling 🧢
 
-- [Configure projects](README_PROJECT.md)
+- [Configure projects](installers)
+- [Local commands](bin/)
 
 ### Fonts 💯
 
-- [Berkeley Mono](https://berkeleygraphics.com/typefaces/berkeley-mono)
-- [Maple Mono](https://github.com/subframe7536/maple-font)
-- [Noto Color Emoji](https://fonts.google.com/noto/specimen/Noto+Color+Emoji)
-- [Symbols Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts)
+- [Operator Mono](https://typography.com/blog/introducing-operator)
+- [FiraCode Nerd Font Mono](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/FiraCode)
+- [Iconic Fonts](https://github.com/mdSlash/iconic-fonts)
+- [Nerd Font](https://github.com/ryanoasis/nerd-fonts)
+
+### Ansi art
+
+1. Go to [image-to-ansi](https://dom111.github.io/image-to-ansi) ([github repo](https://github.com/dom111/image-to-ansi)).
+2. Upload image.
+3. Enable true colors, set width to 46.

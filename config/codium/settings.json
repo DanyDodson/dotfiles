@@ -7,10 +7,12 @@
   // 
   "redhat.telemetry.enabled": false,
   // 
-  "continue.enableQuickActions": false,
+  "continue.enableQuickActions": true,
   "continue.showInlineTip": true,
   "continue.telemetryEnabled": false,
-  "continue.enableTabAutocomplete": true,
+  "continue.enableTabAutocomplete": false,
+  // 
+  "code-runner.enableAppInsights": false,
   //
   "git.confirmSync": false,
   "git.enableStatusBarSync": false,
@@ -47,6 +49,8 @@
   "prettier.tabWidth": 2,
   "prettier.semi": true,
   //
+  "color-highlight.markRuler": false,
+  // 
   "explorer.incrementalNaming": "smart",
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
@@ -59,7 +63,6 @@
   "window.titleBarStyle": "native",
   "window.density.editorTabHeight": "compact",
   "window.confirmSaveUntitledWorkspace": false,
-  //
   "workbench.startupEditor": "none",
   "workbench.panel.showLabels": false,
   "workbench.layoutControl.enabled": false,
@@ -70,6 +73,7 @@
   "workbench.settings.editor": "json",
   "workbench.editor.decorations.badges": false,
   "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.statusBar.visible": false,
   //
   "editor.codeLens": false,
   "editor.autoClosingQuotes": "never",
@@ -213,12 +217,12 @@
   ],
   "apc.statusBar": {
     "fontSize": 10.5,
-    "height": 18
+    "height": 18,
   },
   "apc.activityBar": {
     "size": 30,
     "itemSize": 26,
-    "itemMargin": 10
+    "itemMargin": 10,
   },
   // 
   "settings.cycle": [
@@ -280,5 +284,20 @@
         "settings": { "foreground": "#e0af68", "fontStyle": "italic" }
       }
     ]
+  },
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "Cargo.toml": "Cargo.lock",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
   }
 }

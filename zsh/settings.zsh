@@ -1,25 +1,25 @@
 #!/usr/bin/env zsh
 
 # history settings
-export HISTFILE="$HOME/.zsh_history"    # Sets the file where history is saved
-export HISTSIZE=1000000000              # Sets maximum history entries in memory
-export SAVEHIST=$HISTSIZE               # Sets maximum history entries in file
+export HISTFILE="$HOME/.zsh_history" # Sets the file where history is saved
+export HISTSIZE=1000000000           # Sets maximum history entries in memory
+export SAVEHIST=$HISTSIZE            # Sets maximum history entries in file
 
-setopt APPEND_HISTORY                   # Adds history entries as they are executed
-setopt EXTENDED_HISTORY                 # Saves timestamp and duration for commands
-setopt INC_APPEND_HISTORY               # Adds commands to history immediately
-setopt SHARE_HISTORY                    # Shares history across multiple zsh sessions
-setopt HIST_EXPIRE_DUPS_FIRST           # Removes duplicate commands first when trimming history
-setopt HIST_FIND_NO_DUPS                # Skips duplicate entries when searching history
-setopt HIST_IGNORE_ALL_DUPS             # Removes older duplicate entries in history
-setopt HIST_IGNORE_SPACE                # Ignores commands that start with a space
-setopt HIST_SAVE_NO_DUPS                # Prevents duplicate entries from being saved
-setopt HIST_REDUCE_BLANKS               # Removes extra blank spaces from commands
-setopt HIST_VERIFY                      # Shows history expansion before executing
+setopt APPEND_HISTORY          # Adds history entries as they are executed
+setopt EXTENDED_HISTORY        # Saves timestamp and duration for commands
+setopt INC_APPEND_HISTORY      # Adds commands to history immediately
+setopt SHARE_HISTORY           # Shares history across multiple zsh sessions
+setopt HIST_EXPIRE_DUPS_FIRST  # Removes duplicate commands first when trimming history
+setopt HIST_FIND_NO_DUPS       # Skips duplicate entries when searching history
+setopt HIST_IGNORE_ALL_DUPS    # Removes older duplicate entries in history
+setopt HIST_IGNORE_SPACE       # Ignores commands that start with a space
+setopt HIST_SAVE_NO_DUPS       # Prevents duplicate entries from being saved
+setopt HIST_REDUCE_BLANKS      # Removes extra blank spaces from commands
+setopt HIST_VERIFY             # Shows history expansion before executing
 
 # History search
-bindkey '^[[A' history-substring-search-up     # Up arrow for searching history backwards
-bindkey '^[[B' history-substring-search-down   # Down arrow for searching history forwards
+bindkey '^[[A' history-substring-search-up    # Up arrow for searching history backwards
+bindkey '^[[B' history-substring-search-down  # Down arrow for searching history forwards
 
 # Vim keymaps history search
 bindkey -M vicmd 'k' history-substring-search-up    # Vim 'k' key for searching history backwards
@@ -28,7 +28,7 @@ bindkey -M vicmd 'j' history-substring-search-down  # Vim 'j' key for searching 
 # LS_COLORS - https://geoff.greer.fm/lscolors/
 if [ -f "/opt/homebrew/bin/gdircolors" ]; then
   source "${DOTFILES}"/config/lscolors/lscolors.sh
-  eval "$(gdircolors -b "${DOTFILES}"/config/lscolors/LS_COLORS)"
+  eval "$(gdircolors -b "${DOTFILES}"/config/lscolors/ls_colors)"
 fi
 
 # Complist and Colors

@@ -1,34 +1,30 @@
 #!/usr/bin/env zsh
 
+alias sudo="sudo "
+
+# file managers
 alias o="open"
 alias oo="open ."
+alias yy="yazi"
+alias rr="ranger"
 
 alias cl="clear"
 alias or="omz reload"
 alias c="cl && or"
 
-alias path="printf '%s\n' $path"
-alias fpath="printf '%s\n' $fpath"
+# get files
+alias get="curl -O -L --silent"
+alias wget="wget --no-check-certificate"
 
-alias sudo="sudo "
-
-alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
-
-alias yy="yazi"
-
-alias cat="bat"
-alias -g :b='-h 2>&1 | bat --language=help --style=plain'
-alias -g :b='--help 2>&1 | bat --language=help --style=plain'
-
-alias cc="codium"
-
-alias v="nvim"
+# editors
 alias e="$EDITOR"
+alias cc="codium"
+alias v="nvim"
 alias nv="NVIM_APPNAME=nvim-normal nvim"
-alias nf="NVIM_APPNAME=nvim-fredrik nvim"
 alias dotconf="cd $DOTFILES && nvim"
 alias nvconf="cd $HOME/.config/nvim && nvim"
 
+# tmux
 alias tn="tmux new"
 alias tl="tmux ls"
 alias ta="tmux attach"
@@ -37,39 +33,50 @@ alias td="tmux detach"
 bindkey -s ^p "tms\n"
 bindkey -s ^w "tmux new\n"
 
+# bat
+alias cat="bat"
+alias -g :b='-h 2>&1 | bat --language=help --style=plain'
+alias -g :b='--help 2>&1 | bat --language=help --style=plain'
+
+# pkg managers
 alias lsg-npm="npm ls -g --depth 0"
 alias lsg-yarn="yarn global list"
 alias lsg-pnpm="pnpm ls -g"
 
-alias bbin="brew bundle install --file=~/.dotfiles/config/brew/brewfile"
-alias bbcl="brew bundle cleanup --file=~/.dotfiles/config/brew/brewfile"
-alias bbch="brew bundle check --file=~/.dotfiles/config/brew/brewfile"
+# brew bundle
+alias bbin="brew bundle install --file=$HOME/.dotfiles/macos/brewfile"
+alias bbcl="brew bundle cleanup --file=$HOME/.dotfiles/macos/brewfile"
+alias bbch="brew bundle check --file=$HOME/.dotfiles/macos/brewfile"
+
+# pretty list of brew pkgs with pkg info
 alias bleaves="brew leaves | xargs brew desc --eval-all"
 alias bleavesc="brew ls --casks | xargs brew desc --eval-all"
 
-alias get="curl -O -L --silent"
-alias wget="wget --no-check-certificate"
-
+# gls
 alias ls='/opt/homebrew/bin/gls --color=auto --human-readable --group-directories-first -I .DS_Store -I .Trash -I "Icon'$'\r"'
 alias l="ls -gol"
 alias ll="ls -AlgoL"
 alias la="ls -Algo"
 
+# pretty paths
+alias path="printf '%s\n' $path"
+alias fpath="printf '%s\n' $fpath"
+
+# clean .DS_Store files
+alias rmds="find . -type f -name '*.DS_Store' -ls -delete"
+
 [ -d $HOME/Downloads ] && alias dl="cd $HOME/Downloads"
 [ -d $HOME/.dotfiles ] && alias dots="cd $HOME/.dotfiles"
+[ -d $HOME/.config/nvim ] && alias nvims="cd $HOME/.config/nvim"
 [ -d $HOME/Developer ] && alias dev="cd $HOME/Developer"
-[ -d $HOME/Developer/data ] && alias data="cd $HOME/Developer/data"
+[ -d $HOME/Developer/boiler ] && alias boiler="cd $HOME/Developer/boiler"
 [ -d $HOME/Developer/plugins ] && alias plugins="cd $HOME/Developer/plugins"
 [ -d $HOME/Developer/practice ] && alias practice="cd $HOME/Developer/practice"
 [ -d $HOME/Developer/courses ] && alias courses="cd $HOME/Developer/courses"
 [ -d $HOME/Developer/repos ] && alias repos="cd $HOME/Developer/repos"
+[ -d $HOME/Developer/security ] && alias security="cd $HOME/Developer/security"
 [ -d $HOME/Developer/served ] && alias served="cd $HOME/Developer/served"
 [ -d $HOME/Developer/temp ] && alias temp="cd $HOME/Developer/temp"
-
-# create and cd into directory
-function mkd() {
-  mkdir -p $@ && cd ${@:$#}
-}
 
 # canonical hex dump
 alias hd="hexdump -C"

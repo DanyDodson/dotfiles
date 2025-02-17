@@ -5,6 +5,9 @@
 # shellcheck disable=SC1091
 . "$HOME/.dotfiles/tools/reports.sh"
 
+set -e
+trap on_error SIGTERM
+
 LUA_DIR="$HOME/.local/share/lua"
 
 # Create directory; handle errors more robustly.
@@ -30,4 +33,3 @@ make macosx install INSTALL_TOP="$LUA_DIR" || error "Failed to build and install
 rm "$LUA_DIR/lua-5.1.5.tar.gz" || error "Failed to remove lua zip"
 
 finish "Lua installation complete"
-

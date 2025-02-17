@@ -1,48 +1,84 @@
-#!/bin/bash -ex
+#!/bin/bash
 
-# https://github.com/tmuxinator/tmuxinator
+# Set up tmux and install plugins
 
-# Per-platform settings
-case $(uname) in
-Darwin)
-	# commands for macOS go here
-	echo "Install via Brewfile on macOS."
+# shellcheck disable=SC1091
+. "$HOME/.dotfiles/tools/reports.sh"
 
-	# tmux plugin manager
-	if [ ! -d ~/.tmux/plugins/tpm ]; then
-		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	fi
+set -e
+trap on_error SIGTERM
 
-	;;
-Linux)
-	# commands for Linux go here
+install_tmux() {
+	case $(uname) in
+	Darwin)
 
-	echo "Install via Brewfile on linux."
+		if ! which tmux >/dev/null 2>&1; then
+			# commands for macOS go here
+			info "Install tmux via Brewfile on macOS."
+		fi
 
-	# tmux plugin manager
-	if [ ! -d ~/.tmux/plugins/tpm ]; then
-		mkdir -p ~/.tmux/plugins
-		git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-	fi
+		# tmux plugin manager
+		install_tmux_plugins
+		;;
+	Linux)
+		if ! which tmux >/dev/null 2>&1; then
+			# commands for Linux go here
+			info "Install tmux ßvia Brewfile on linux."
+		fi
 
-	if ! command -v gem &>/dev/null; then
-		brew install ruby
-	fi
+		# tmux plugin manager
+		install_tmux_plugins
 
-	if ! command -v tmuxinator &>/dev/null; then
-		sudo gem install tmuxinator
+		# Install Ruby if not present
+		# if ! command -v gem &>/dev/null; then
+		# 	brew install ruby
+		# fi
+
+		# Install tmuxinator if not present
+		# if ! command -v tmuxinator &>/dev/null; then
+		# 	sudo gem install tmuxinator
 
 		# zsh completion
-		sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
-	fi
-	;;
-FreeBSD)
-	# commands for FreeBSD go here
-	;;
-MINGW64_NT-*)
-	# commands for Git bash in Windows go here
-	;;
-*) ;;
-esac
+		# 	sudo wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
+		# fi
+		;;
+	*) ;;
+	esac
 
-echo "To finish the installation, install all plugins with <prefix> + I in tmux."
+	finish
+}
+
+install_tmux_plugins() {
+	if [ ! -d "$HOME"/.tmux/plugins ]; then
+		info 'Creating dir ~/.tmux/plugins...'
+		mkdir -p "$HOME"/.tmux/plugins
+	fi
+
+	if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+		git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+	fi
+	if [ ! -d "$HOME/.tmux/plugins/tmux-sensible" ]; then
+		git clone https://github.com/tmux-plugins/tmux-sensible "$HOME/.tmux/plugins/tmux-sensible"
+	fi
+	if [ ! -d "$HOME/.tmux/plugins/tmux-continuum" ]; then
+		git clone https://github.com/tmux-plugins/tmux-continuum "$HOME/.tmux/plugins/tmux-continuum"
+	fi
+	if [ ! -d "$HOME/.tmux/plugins/vim-tmux-navigator" ]; then
+		git clone https://github.com/christoomey/vim-tmux-navigator "$HOME/.tmux/plugins/vim-tmux-navigator"
+	fi
+	if [ ! -d "$HOME/.tmux/plugins/better-vim-tmux-resizer" ]; then
+		git clone https://github.com/RyanMillerC/better-vim-tmux-resizer "$HOME/.tmux/plugins/better-vim-tmux-resizer"
+	fi
+	if [ ! -d "$HOME/.tmux/plugins/minimal-tmux-status" ]; then
+		git clone https://github.com/niksingh710/minimal-tmux-status "$HOME/.tmux/plugins/minimal-tmux-status"
+	fi
+
+	info "To finish the installation, install all plugins with <prefix> + I in tmux."
+}
+
+main() {
+	install_tmux "$"
+	on_finish "$*"
+}
+
+main "$*"

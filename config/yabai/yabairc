@@ -3,7 +3,6 @@
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
-# global settings
 yabai -m config \
   layout bsp \
   external_bar all:0:0 \
@@ -25,72 +24,63 @@ yabai -m config \
   mouse_follows_focus off \
   focus_follows_mouse of
 
-# move apps to specific spaces
-# yabai -m rule --add app="^Ghostty$" space=2
-
-# hack for native tabs in ghostty
-# yabai -m signal --add app='^Ghostty$' event=window_created action='yabai -m space --layout bsp'
-# yabai -m signal --add app='^Ghostty$' event=window_destroyed action='yabai -m space --layout bsp'
-
 # rules for all
 yabai -m rule --add app=".*" sub-layer=normal
 
-# rules for macos default apps
-yabai -m rule --add app="^Activity Monitor$" manage=off
-yabai -m rule --add app="^App Store$" manage=off
-yabai -m rule --add app="^Bluetooth Inspector$" manage=off
-yabai -m rule --add app="^Calculator$" manage=off
-yabai -m rule --add app="^choose$" manage=off
-yabai -m rule --add app="^Console$" manage=off
-yabai -m rule --add app="^Contacts$" manage=off
-yabai -m rule --add app="^Dictionary$" manage=off
-yabai -m rule --add app="^Finder$" manage=off
-yabai -m rule --add app="^Find My$" manage=off
-yabai -m rule --add app="^Font Book$" manage=off
-yabai -m rule --add app="^iPhone Mirroring$" manage=off
-yabai -m rule --add app="^Keychain Access$" manage=off
-yabai -m rule --add app="^Mail$" manage=off
-yabai -m rule --add app="^Messages$" manage=off
-yabai -m rule --add app="^Music$" manage=off
-yabai -m rule --add app="^Notes$" manage=off
-yabai -m rule --add app="^Photo Booth$" manage=off
-yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^Reminders$" manage=off
-yabai -m rule --add app="^Shortcuts$" manage=off
-yabai -m rule --add app="^Software Update$" manage=off
-yabai -m rule --add app="^System Settings$" manage=off
-yabai -m rule --add app="^System Information$" manage=off sub-layer=above
-yabai -m rule --add app="^System Preferences$" manage=off sub-layer=above
-
-# rules for third party apps
+# rules for apps by name
 yabai -m rule --add app="^1Password$" manage=off
 yabai -m rule --add app="^Adium$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Apparency$" manage=off
 yabai -m rule --add app="^Alacritty$" manage=off
 yabai -m rule --add app="^Alfred Preferences$" manage=off
+yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^App Store$" manage=off
 yabai -m rule --add app="^Better Display$" manage=off
+yabai -m rule --add app="^Bluetooth Inspector$" manage=off
+yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^ChatGPT$" manage=off
+yabai -m rule --add app="^choose$" manage=off
+yabai -m rule --add app="^Console$" manage=off
+yabai -m rule --add app="^Contacts$" manage=off
 yabai -m rule --add app="^DevTools$" manage=off
 yabai -m rule --add app="^Downie 4$" manage=off
+yabai -m rule --add app="^Dictionary$" manage=off
+yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Find My$" manage=off
+yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Ghostty$" manage=off
 yabai -m rule --add app="^GPG Keychain$" manage=off
 yabai -m rule --add app="^GIMP$" manage=off
+yabai -m rule --add app="^iPhone Mirroring$" manage=off
 yabai -m rule --add app="^IINA$" manage=off
+yabai -m rule --add app="^Keychain Access$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^Karabiner-MultitouchExtension$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Manage WireGaurd Tunnels$" manage=off
 yabai -m rule --add app="^Mpv$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
+yabai -m rule --add app="^Messages$" manage=off
+yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Ollama$" manage=off
 yabai -m rule --add app="^Peek$" manage=off
 yabai -m rule --add app="^Postman$" manage=off
 yabai -m rule --add app="^Permute 3$" manage=off
+yabai -m rule --add app="^Photo Booth$" manage=off
+yabai -m rule --add app="^QuickTime Player$" manage=off
+yabai -m rule --add app="^Reminders$" manage=off
 yabai -m rule --add app="^RiseupVPN$" manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Source$" manage=off
 yabai -m rule --add app="^Suspicious Package$" manage=off
+yabai -m rule --add app="^Shortcuts$" manage=off
+yabai -m rule --add app="^Software Update$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
+yabai -m rule --add app="^System Information$" manage=off sub-layer=above
+yabai -m rule --add app="^System Preferences$" manage=off sub-layer=above
 yabai -m rule --add app="^Transmission$" manage=off
 yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Vesktop$" manage=off

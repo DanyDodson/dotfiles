@@ -17,9 +17,18 @@
 [core]
   excludesfile = ~/.gitignore
   editor = nvim
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  pager = delta
   fileMode = false
 	autocrlf = input
+
+[init]
+	defaultBranch = main
+
+[merge]
+  tool = vimdiff
+
+[pull]
+	rebase = false
 
 [color]
   ui = true
@@ -27,6 +36,9 @@
 [push]
   default = simple
   autoSetupRemote = true
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
 
 [filter "lfs"]
 	clean = git-lfs clean %f
@@ -55,23 +67,33 @@
 	useUnicodeRuler = false
 	rulerWidth = 80
 
-[merge]
-  tool = vimdiff
-
-[pull]
-	rebase = false
-
-[init]
-	defaultBranch = main
-
-[interactive]
-	diffFilter = diff-so-fancy --patch
-
-[url "git@github.com:"]
-	insteadOf = https://github.com/
-  
 [url "git://"]
 	insteadOf = https://
-
+	
 [url "ssh://git@"]
 	insteadOf = https://
+
+[url "git://github.com/"]
+  insteadOf = "github:"
+
+[url "git@github.com:"]
+  insteadOf = "gh:"
+  pushInsteadOf = "github:"
+  pushInsteadOf = "git://github.com/"
+
+[url "git://gist.github.com/"]
+  insteadOf = "gist:"
+
+[url "git@gist.github.com:"]
+  insteadOf = "gst:"
+  pushInsteadOf = "gist:"
+  pushInsteadOf = "git://gist.github.com/"
+
+[url "git@heroku.com:"]
+  insteadOf = "heroku:"
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential

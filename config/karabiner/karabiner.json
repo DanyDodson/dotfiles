@@ -17,15 +17,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f1",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f1" }],
+                                "to": [ { "key_code": "f1" } ],
                                 "type": "basic"
                             },
                             {
@@ -38,15 +38,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f2",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f2" }],
+                                "to": [ { "key_code": "f2" } ],
                                 "type": "basic"
                             },
                             {
@@ -59,15 +59,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f3",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f3" }],
+                                "to": [ { "key_code": "f3" } ],
                                 "type": "basic"
                             },
                             {
@@ -80,15 +80,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f4",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f4" }],
+                                "to": [ { "key_code": "f4" } ],
                                 "type": "basic"
                             },
                             {
@@ -101,15 +101,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f5",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f5" }],
+                                "to": [ { "key_code": "f5" } ],
                                 "type": "basic"
                             },
                             {
@@ -122,15 +122,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f6",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f6" }],
+                                "to": [ { "key_code": "f6" } ],
                                 "type": "basic"
                             },
                             {
@@ -143,15 +143,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f7",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f7" }],
+                                "to": [ { "key_code": "f7" } ],
                                 "type": "basic"
                             },
                             {
@@ -164,15 +164,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f8",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f8" }],
+                                "to": [ { "key_code": "f8" } ],
                                 "type": "basic"
                             },
                             {
@@ -185,15 +185,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f9",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f9" }],
+                                "to": [ { "key_code": "f9" } ],
                                 "type": "basic"
                             },
                             {
@@ -206,15 +206,15 @@
                                             "com.nvidia.gfnpc.mall",
                                             "com.microsoft.VSCode"
                                         ],
-                                        "file_paths": ["ck2\\.app", "eu4\\.app"],
+                                        "file_paths": [ "ck2\\.app", "eu4\\.app" ],
                                         "type": "frontmost_application_if"
                                     }
                                 ],
                                 "from": {
                                     "key_code": "f10",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
-                                "to": [{ "key_code": "f10" }],
+                                "to": [ { "key_code": "f10" } ],
                                 "type": "basic"
                             }
                         ]
@@ -225,12 +225,12 @@
                                 "description": "Change caps_lock to command+control+option+shift.",
                                 "from": {
                                     "key_code": "caps_lock",
-                                    "modifiers": { "optional": ["any"] }
+                                    "modifiers": { "optional": [ "any" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_shift",
-                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                        "modifiers": [ "left_command", "left_control", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -244,58 +244,58 @@
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
-                                        "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
-                                        "optional": ["any"]
+                                        "mandatory": [ "left_shift", "left_command", "left_control", "left_option" ],
+                                        "optional": [ "any" ]
                                     }
                                 },
-                                "to": [{ "key_code": "up_arrow" }],
+                                "to": [ { "key_code": "up_arrow" } ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
-                                        "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
-                                        "optional": ["any"]
+                                        "mandatory": [ "left_shift", "left_command", "left_control", "left_option" ],
+                                        "optional": [ "any" ]
                                     }
                                 },
-                                "to": [{ "key_code": "left_arrow" }],
+                                "to": [ { "key_code": "left_arrow" } ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
-                                        "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
-                                        "optional": ["any"]
+                                        "mandatory": [ "left_shift", "left_command", "left_control", "left_option" ],
+                                        "optional": [ "any" ]
                                     }
                                 },
-                                "to": [{ "key_code": "down_arrow" }],
+                                "to": [ { "key_code": "down_arrow" } ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
-                                        "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
-                                        "optional": ["any"]
+                                        "mandatory": [ "left_shift", "left_command", "left_control", "left_option" ],
+                                        "optional": [ "any" ]
                                     }
                                 },
-                                "to": [{ "key_code": "right_arrow" }],
+                                "to": [ { "key_code": "right_arrow" } ],
                                 "type": "basic"
                             },
                             {
                                 "from": {
                                     "key_code": "semicolon",
                                     "modifiers": {
-                                        "mandatory": ["left_shift", "left_command", "left_control", "left_option"],
-                                        "optional": ["any"]
+                                        "mandatory": [ "left_shift", "left_command", "left_control", "left_option" ],
+                                        "optional": [ "any" ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": [ "left_command" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -310,7 +310,7 @@
                                 "to": [
                                     {
                                         "key_code": "display_brightness_decrement",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -318,12 +318,12 @@
                             {
                                 "from": {
                                     "key_code": "f1",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f1",
-                                        "modifiers": ["fn"]
+                                        "modifiers": [ "fn" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -333,7 +333,7 @@
                                 "to": [
                                     {
                                         "key_code": "display_brightness_increment",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -341,12 +341,12 @@
                             {
                                 "from": {
                                     "key_code": "f2",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f2",
-                                        "modifiers": ["fn"]
+                                        "modifiers": [ "fn" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -359,12 +359,12 @@
                             {
                                 "from": {
                                     "key_code": "f1",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "display_brightness_decrement",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -372,12 +372,12 @@
                             {
                                 "from": {
                                     "key_code": "f2",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "display_brightness_increment",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -392,7 +392,7 @@
                                 "to": [
                                     {
                                         "key_code": "volume_decrement",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -400,12 +400,12 @@
                             {
                                 "from": {
                                     "key_code": "f11",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f11",
-                                        "modifiers": ["fn"]
+                                        "modifiers": [ "fn" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -415,7 +415,7 @@
                                 "to": [
                                     {
                                         "key_code": "volume_increment",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -423,12 +423,12 @@
                             {
                                 "from": {
                                     "key_code": "f12",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "f12",
-                                        "modifiers": ["fn"]
+                                        "modifiers": [ "fn" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -441,12 +441,12 @@
                             {
                                 "from": {
                                     "key_code": "f11",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "volume_decrement",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -454,12 +454,12 @@
                             {
                                 "from": {
                                     "key_code": "f12",
-                                    "modifiers": { "mandatory": ["fn"] }
+                                    "modifiers": { "mandatory": [ "fn" ] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "volume_increment",
-                                        "modifiers": ["left_shift", "left_option"]
+                                        "modifiers": [ "left_shift", "left_option" ]
                                     }
                                 ],
                                 "type": "basic"
@@ -499,7 +499,7 @@
                     "simple_modifications": [
                         {
                             "from": { "key_code": "right_shift" },
-                            "to": [{ "key_code": "vk_none" }]
+                            "to": [ { "key_code": "vk_none" } ]
                         }
                     ]
                 }
@@ -507,7 +507,7 @@
             "fn_function_keys": [
                 {
                     "from": { "key_code": "f5" },
-                    "to": [{ "key_code": "f5" }]
+                    "to": [ { "key_code": "f5" } ]
                 }
             ],
             "name": "macbook",

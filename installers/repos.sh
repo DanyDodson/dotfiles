@@ -1,12 +1,32 @@
-#!/bin/bash -ex
+#!/bin/bash
 
-# clone down all my public repos from github
+# clone my public repos from github
 
-cd ~/Developer/repos
+# shellcheck disable=SC1091
+. "$HOME/.dotfiles/tools/reports.sh"
 
-GH_USER=danydodson
+set -e
+trap on_error SIGTERM
 
-PAGE=1
+install_repos() {
+  GH_USER=danydodson
+  PAGE=1
 
-curl "https://api.github.com/users/$GH_USER/repos?page=$PAGE&per_page=100" | grep -F 'clone_url' | cut -d \" -f 4 | xargs -L1 git clone --recursive
+  # create developer directory
+  if [ ! -d "$HOME/Developer" ]; then
+    info 'Creating dir ~/Developer...'
+    mkdir -p "$HOME/Developer"
+  fi
 
+  cd ~/Developer/repos
+  curl "https://api.github.com/users/$GH_USER/repos?page=$PAGE&per_page=100" | grep -F 'clone_url' | cut -d \" -f 4 | xargs -L1 git clone --recursive
+
+  finish
+}
+
+main() {
+  install_repos "$"
+  on_finish "$*"
+}
+
+main "$*"

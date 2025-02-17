@@ -93,10 +93,6 @@ lalt - l : yabai -m window --resize right:12:0; \
 hyper - z : open -a /Applications/Ghostty.app
 hyper - b : open -a "Brave Browser.app"
 hyper - c : open "/Applications/VSCodium.app"
-# hyper - n : open -a "Finder.app"
-
-# toggle kitty
-# alt - 0x32 : ~/.dotfiles/config/skhd/scripts/kitty.sh
 
 # restart all wm services
 hyper - r : \

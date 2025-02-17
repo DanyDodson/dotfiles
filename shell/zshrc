@@ -8,8 +8,8 @@ fi
 # run p10k configure
 [[ ! -f ${HOME}/.cache/p10k.zsh ]] || source ${HOME}/.cache/p10k.zsh
 
-# color support
-export CLICOLOR=1 # Enables colorized output for ls and other commands in Terminal
+# # enables colors
+export CLICOLOR=1 
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
@@ -29,6 +29,7 @@ source $ZSH/oh-my-zsh.sh
 # zsh files
 source ${DOTFILES}/zsh/settings.zsh
 source ${DOTFILES}/zsh/aliases.zsh
+source ${DOTFILES}/zsh/functions.zsh
 
 # start ssh
 eval "$(ssh-agent -s)" > /dev/null 2>&1
