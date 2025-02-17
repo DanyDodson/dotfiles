@@ -1,0 +1,68 @@
+- defaults:
+    link:
+      relink: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- create:
+    - ~/.hushlogin
+
+- link:
+    ~/.config/1password/ssh/agent.toml:
+      create: true
+      path: config/1password/ssh/agent.toml
+    ~/.config/btop/btop.conf:
+      create: true
+      path: config/btop/btop.conf
+    ~/.config/fastfetch/config.jsonc:
+      create: true
+      path: config/fastfetch/config.jsonc
+    ~/.gitconfig:
+      create: true
+      path: config/git/gitconfig
+    ~/.gitignore:
+      create: true
+      path: config/git/gitignore
+    ~/.config/gh/config.yml:
+      create: true
+      path: config/gh/config.yml
+    ~/.config/ghostty/config:
+      create: true
+      path: config/ghostty/config
+    ~/.ssh/config:
+      create: true
+      path: config/ssh/config
+    ~/.tmux:
+      create: true
+      path: config/tmux/tmux.conf
+    ~/.vim/plug.vim:
+      create: true
+      path: config/vim/plug.vim
+    ~/.vimrc:
+      create: true
+      path: config/vim/vimrc
+    ~/.config/skhdrc/config:
+      create: true
+      path: config/skhdrc/config
+    ~/.config/yabai/yabairc:
+      create: true
+      path: config/yabai/yabairc
+    ~/.config/yazi/init.lua:
+      create: true
+      path: config/yazi/init.lua
+    ~/.config/yazi/keymap.toml:
+      create: true
+      path: config/yazi/keymap.toml
+    ~/.config/yazi/theme.toml:
+      create: true
+      path: config/yazi/theme.toml
+    ~/.config/yazi/yazi.toml:
+      create: true
+      path: config/yazi/yazi.toml
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
