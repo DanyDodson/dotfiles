@@ -37,6 +37,9 @@ install_tmux_plugins() {
 	if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
 		git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
 	fi
+	if [ ! -d "$HOME/.tmux/plugins/tmux-1password" ]; then
+		git clone https://github.com/yardnsm/tmux-1password "$HOME/.tmux/plugins/tmux-1password"
+	fi
 	if [ ! -d "$HOME/.tmux/plugins/tmux-sensible" ]; then
 		git clone https://github.com/tmux-plugins/tmux-sensible "$HOME/.tmux/plugins/tmux-sensible"
 	fi
