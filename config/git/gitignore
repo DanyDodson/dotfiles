@@ -1,14 +1,13 @@
 # os generated files
-.DS_Store
-.DS_Store?
-._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
+.DS_Store
+.DS_Store?
+._*
 
 # Editing
-.vscode
 /.nvim.lua
 /.lazy.lua
 
@@ -24,17 +23,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# go
-coverage.out
-
-# c extensions
-*.so
-
 # python distribution / packaging
 .Python
 build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/

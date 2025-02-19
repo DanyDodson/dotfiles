@@ -18,6 +18,7 @@ plugins=(
   nvm
   golang
   1password-op
+  tmux
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-history-substring-search

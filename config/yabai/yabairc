@@ -24,8 +24,6 @@ yabai -m config \
   mouse_follows_focus off \
   focus_follows_mouse of
 
-yabai -m rule --add app="^qutebrowser$" title!="^$" role="AXWindow" subrole="AXDialog" manage=on
-
 # rules for all
 yabai -m rule --add app=".*" sub-layer=normal
 
@@ -66,6 +64,7 @@ yabai -m rule --add app="^Mpv$" manage=off
 yabai -m rule --add app="^mpv$" manage=off
 yabai -m rule --add app="^Messages$" manage=off
 yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^MurGaa Auto Clicker$" manage=off
 yabai -m rule --add app="^Notes$" manage=off
 yabai -m rule --add app="^Ollama$" manage=off
 yabai -m rule --add app="^Peek$" manage=off
@@ -88,3 +87,9 @@ yabai -m rule --add app="^UTM$" manage=off
 yabai -m rule --add app="^Vesktop$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
 yabai -m rule --add app="^WireGaurd$" manage=off
+
+# move qutebrowser to space 3
+yabai -m rule --add app="^qutebrowser$" space=2
+
+# fix for borderless qutebrowser
+yabai -m rule --add app="^qutebrowser$" title!="^$" role="AXWindow" subrole="AXDialog" manage=on
